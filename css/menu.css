@@ -1,0 +1,98 @@
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/
+
+/* ---------------------------------------------------------------------------------------------------------------------
+   ------------------- INICIO ITred Spa menu.css -----------------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos generales */
+* {
+    margin: 0;                  /* Quita el margen predeterminado */
+    padding: 0;                 /* Quita el padding predetrminado */
+    list-style: none;           /* Quita el estilo predeterminado de las listas */
+    text-decoration: none;      /* Quita la decoración del texto predeterminada */
+}
+
+/* Cuerpo de la pagina */
+body{
+    padding: 2%;                /* Agrega un padding a todo el cuerpo del documento */
+}
+
+/* Navegador/menu del template */
+.nav-template{
+    width: 50%;
+}
+
+/* Elemento 'ul' del navegador del template */
+.nav-template ul{                 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #909090;
+    
+}
+
+/* Elemento 'li' del navegador del template */
+.nav-template ul li{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Elemento 'a' del navegador del template */
+.nav-template ul li a{
+    padding: 20px 20px;
+    color: white;
+    
+}
+
+/* Elemento 'a' cuando esta activo/seleccionado */
+.nav-template ul li a.active{
+    background-color: #5d5d5d;      /* Color de fondo*/
+}
+
+@media (max-width: 980px){
+    .nav-template{
+        width: 70%;
+    }
+}
+
+@media (max-width: 780px){
+    .nav-template{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    .nav-template ul{
+        flex-direction: column;
+    }
+
+    .nav-template ul li {
+        width: 100%;
+    }
+
+    .nav-template ul li a{
+        width: 100%;
+    }
+}
+/* ---------------------------------------------------------------------------------------------------------------------
+   ---------------------- FIN ITred Spa menu.css -----------------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------- */
+
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/

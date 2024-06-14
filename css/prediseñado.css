@@ -1,0 +1,102 @@
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/
+
+/* ---------------------------------------------------------------------------------------------------------------------
+   ------------------- INICIO ITred Spa prediseñado.css ----------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------- */
+
+/* Contenedor del Contenido general del documento */
+main{
+   display: grid;                              /* Agrega un estilo de grid */
+   grid-template-columns: repeat(4, 1fr);      /* Define cantidad de columnas del grid */     
+   padding: 2%;                                /* Agrega un padding al contenedor */
+   gap: 2%;                                    /* Separación entre contenidos */
+}
+
+#menuSeleccion{
+   grid-column: 1 / 3;
+}
+
+
+.menu_preview {
+   grid-column: 3 / 5;
+   border: solid 1px;
+   padding: 2%;
+   max-width: 600px; /* Ancho máximo del contenedor */
+   min-height: 500px;
+   max-height: 100%;
+}
+
+.Menu {
+   width: 100%;
+}
+
+.ul-columnas {
+   display: flex;
+   flex-wrap: nowrap; /* Evitar wrap de elementos */
+}
+
+.menu_column {
+   flex: 1 1 auto;
+   min-width: 0; /* Permitir que los elementos se reduzcan */
+   white-space: nowrap; /* Evitar que el texto se rompa */
+   font-size: clamp(10px, 1.5vw, 16px);
+}
+
+.menu_anchor {
+   display: block;
+   color: white;
+   text-decoration: none;
+   text-align: center;
+   padding: 10px;
+   background-color: blue;
+}
+
+.ul-sub {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: none; 
+}
+
+.menu_column:hover .ul-sub {
+   display: block;
+}
+
+.menu_column a:hover{
+   background-color: green;
+}
+
+@media (max-width: 780px){
+    main{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+}
+
+button{
+   height: 100%;
+   width: 70%;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------
+   ---------------------- FIN ITred Spa prediseñado.css ----------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------- */
+
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/
