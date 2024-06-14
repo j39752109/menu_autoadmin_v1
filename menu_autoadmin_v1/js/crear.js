@@ -1,6 +1,6 @@
 // Data de las columnas y subcolumnas
 let menuData = [];
-
+//a
 // Función para crear un boton
 function createButton(label) {
     // Se crea el boton
