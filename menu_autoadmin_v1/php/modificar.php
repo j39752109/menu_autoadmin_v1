@@ -136,7 +136,7 @@ BPPJ
                                 $result = $mysqli->query($sqlMenu);
 
                                 if ($result->num_rows > 0) {
-                                    echo '<div class="input_columns-container">';
+                                    echo '<div class="input_columns-container" id="select-container">';
                                     echo '<label for="opciones">Selecciona una opción:</label>';
                                     echo '<select id="opciones" name="opciones">';
                                 
@@ -164,10 +164,13 @@ BPPJ
                 ?>
             </div>
             <div id="display-none">
-                <p>Posicion</p>
-                <input id="valor" type="number" value="1"/>
-                <button id="btnAgregarColumna"> Agregar Boton</button>
-                <hr class="primer_hr">
+                <div class="container-select">
+                    <p>Agregar botones al menú:</p>
+                    <p id="text-1" >Posición</p>
+                    <input id="valor" class="input-num_columns" type="number" value="1" max="20"/>
+                    <button id="btnAgregarColumna"> Agregar Boton</button>
+                    <hr class="primer_hr">
+                </div>
             </div>
 
             <form id="contenedor-menu" class="input_names-container"></form>

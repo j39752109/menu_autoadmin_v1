@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
         }
     });
+
+    select = document.getElementById('select-container');
+    select.style.display = 'none';
     // Asigna el elemento con el id 'contenedor-menu' a la variable 'contenedor'
     contenedor = document.getElementById('contenedor-menu');
     // Asigna el elemento con el id 'prevista' a la variable 'navbar'

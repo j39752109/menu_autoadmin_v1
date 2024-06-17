@@ -250,6 +250,28 @@ BPPJ
    animation: scaleAnimation 2s infinite;
 }
 
+.input-num_columns{
+   width: 32px;
+}
+
+
+.container-select {
+   /* position: relative;
+   display: flex;
+   justify-content: center; */
+   display: block;
+   flex-direction: column;
+}
+
+/* #text-1 {
+   position: absolute;
+   top: -25px;
+}
+
+#btnAgregarColumna{
+   width: 150px;
+} */
+
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
    0%, 100% {
