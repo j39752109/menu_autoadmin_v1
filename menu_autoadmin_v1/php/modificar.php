@@ -169,7 +169,6 @@ BPPJ
                     <p class= "texto" id="text-1" >Posición</p>
                     <input id="valor" class="input-num_columns" type="number"  max="20"/>
                     <button id="btnAgregarColumna"> Agregar Boton</button>
-                    
                 </div>
                 <hr class="primer_hr">
             </div>

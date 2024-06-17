@@ -145,7 +145,7 @@ BPPJ
 }
 
 .cont-add-sub input {
-   width: 10%;  /* Establece que el input ocupe el 10% del ancho disponible */
+   width: 32px;  /* Establece que el input ocupe el 10% del ancho disponible */
 }
 
 .input_names-row-container {

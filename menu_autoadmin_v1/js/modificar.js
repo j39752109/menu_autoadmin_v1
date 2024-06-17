@@ -23,6 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const display_none = document.getElementById('display-none');
     // Oculta el elemento con id 'display-none' estableciendo su estilo como 'display: none'
     display_none.style.display = 'none';
+
+    let resetNumber = document.getElementById('valor');
+
+    // Agregar un evento de escucha para el evento input
+    resetNumber.addEventListener('input', function () {
+        // Verificar si el valor es menor que cero
+        if (parseFloat(this.value) <= 0) {
+            this.value = 1; // Establecer el valor como cadena vacía
+        }
+
+        if(parseFloat(this.value) > 20){
+            this.value = 20; // Establecer el valor como cadena vacía
+        }
+
+    });  
+
+
     // Asignar el evento click al botón btnAgregarColumna
     btnAgregarColumna.addEventListener('click', function () {
         // Verificar si Menu tiene elementos y si tiene al menos una columna
@@ -210,6 +227,9 @@ function agregarColumna(menu) {
     // Limpiar el navbar y volver a generar la vista previa del menú
     navbar.innerHTML = '';
     preview(menu);
+    //limpiar input
+    let input = document.getElementById('valor');
+    input.value = '';
 }
 
 // Define una función llamada crearMenu que toma un objeto 'menu' como argumento
