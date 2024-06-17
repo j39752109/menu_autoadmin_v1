@@ -166,11 +166,12 @@ BPPJ
             <div id="display-none">
                 <div class="container-select">
                     <p>Agregar botones al menú:</p>
-                    <p id="text-1" >Posición</p>
-                    <input id="valor" class="input-num_columns" type="number" value="1" max="20"/>
+                    <p class= "texto" id="text-1" >Posición</p>
+                    <input id="valor" class="input-num_columns" type="number"  max="20"/>
                     <button id="btnAgregarColumna"> Agregar Boton</button>
-                    <hr class="primer_hr">
+                    
                 </div>
+                <hr class="primer_hr">
             </div>
 
             <form id="contenedor-menu" class="input_names-container"></form>

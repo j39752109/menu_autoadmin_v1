@@ -172,6 +172,8 @@ BPPJ
 }
 
 
+
+
 /* Navegador (Menu) principal, se encuentra en la previsualización  */
 .menu_preview.fullscreen nav{
    width: 100%;                /* Ancho del navegador */
@@ -256,21 +258,24 @@ BPPJ
 
 
 .container-select {
-   /* position: relative;
+   position: relative;
    display: flex;
-   justify-content: center; */
-   display: block;
-   flex-direction: column;
+   justify-content: center; 
+   flex-direction: row;
+   margin-top: 7%;
 }
 
-/* #text-1 {
+.texto { 
    position: absolute;
    top: -25px;
 }
 
+
+
+
 #btnAgregarColumna{
    width: 150px;
-} */
+} 
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
