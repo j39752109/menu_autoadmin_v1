@@ -355,13 +355,18 @@ function crearMenu(menu) {
         const posicionInput = document.createElement('input');
         posicionInput.type = 'number';
         posicionInput.min = '1';
+        posicionInput.max = '20';
         posicionInput.value = '';
 
         // Agregar un evento de escucha para el evento input
         posicionInput.addEventListener('input', function () {
             // Verificar si el valor es menor que cero
-            if (parseFloat(this.value) < 0) {
+            if (parseFloat(this.value) <= 0) {
                 this.value = 1; // Establecer el valor como cadena vacía
+            }
+
+            if(parseFloat(this.value) > 20){
+                this.value = 20; // Establecer el valor como cadena vacía
             }
         });
 
