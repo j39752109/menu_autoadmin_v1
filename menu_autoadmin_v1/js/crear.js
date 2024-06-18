@@ -34,6 +34,21 @@ let isCreated = false;
 // Se añade un evento que se ejecuta cuando el contenido HTML del documento ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => {
 
+    let resetNumber = document.getElementById('input-num_columns');
+
+    // Agregar un evento de escucha para el evento input
+    resetNumber.addEventListener('input', function () {
+        // Verificar si el valor es menor que cero
+        if (parseFloat(this.value) <= 0) {
+            this.value = 1; // Establecer el valor como cadena vacía
+        }
+
+        if(parseFloat(this.value) > 20){
+            this.value = 20; // Establecer el valor como cadena vacía
+        }
+
+    });  
+
     document.querySelector('.input_names-container').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
           event.preventDefault();
@@ -60,7 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
             let hr = document.createElement('hr');
             // Se crea un elemento párrafo para mostrar el texto 'Posición'
             let text = document.createElement('p');
+            
+            // Agregar un evento de escucha para el evento input
+            inputPosicion.addEventListener('input', function () {
+                // Verificar si el valor es menor que cero
+                if (parseFloat(this.value) <= 0) {
+                    this.value = 1; // Establecer el valor como cadena vacía
+                }
 
+                if(parseFloat(this.value) > 20){
+                    this.value = 20; // Establecer el valor como cadena vacía
+                }
+
+            });  
             
             // Se asigna el texto 'Posición' al elemento text
             text.innerHTML = 'Posición';
@@ -835,6 +862,19 @@ function createRow(ulElement, index, posicion = null, subcolumna = null) {
                 pInput.innerHTML = 'Indique posición: '
                 btnSubcolumn.innerHTML = 'Agregar Sub-menu';
                 btnSubcolumn.classList.add('subcolumn-btn')
+
+                // Agregar un evento de escucha para el evento input
+                inputSubcolumn.addEventListener('input', function () {
+                    // Verificar si el valor es menor que cero
+                    if (parseFloat(this.value) <= 0) {
+                        this.value = 1; // Establecer el valor como cadena vacía
+                    }
+
+                    if(parseFloat(this.value) > 20){
+                        this.value = 20; // Establecer el valor como cadena vacía
+                    }
+                });
+
 
                 contSubcolumn.appendChild(pInput);
                 contSubcolumn.appendChild(inputSubcolumn);
