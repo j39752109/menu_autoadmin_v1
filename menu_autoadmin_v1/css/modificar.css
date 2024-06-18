@@ -270,12 +270,15 @@ BPPJ
    top: -25px;
 }
 
-
-
-
 #btnAgregarColumna{
    width: 150px;
-} 
+}
+
+.input_columns-container{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {

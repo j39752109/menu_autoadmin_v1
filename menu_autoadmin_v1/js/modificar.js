@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    select = document.getElementById('select-container');
-    select.style.display = 'none';
+    // select = document.getElementById('select-container');
+    // select.style.display = 'none';
     // Asigna el elemento con el id 'contenedor-menu' a la variable 'contenedor'
     contenedor = document.getElementById('contenedor-menu');
     // Asigna el elemento con el id 'prevista' a la variable 'navbar'
@@ -361,7 +361,7 @@ function crearMenu(menu) {
         posicionInput.addEventListener('input', function () {
             // Verificar si el valor es menor que cero
             if (parseFloat(this.value) < 0) {
-                this.value = ''; // Establecer el valor como cadena vacía
+                this.value = 1; // Establecer el valor como cadena vacía
             }
         });
 

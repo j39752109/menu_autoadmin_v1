@@ -137,7 +137,7 @@ BPPJ
 
                                 if ($result->num_rows > 0) {
                                     echo '<div class="input_columns-container" id="select-container">';
-                                    echo '<label for="opciones">Selecciona una opción:</label>';
+                                    echo '<label for="opciones">Nombre Menu:</label>';
                                     echo '<select id="opciones" name="opciones">';
                                 
                                     // La opción por defecto cuando no hay una ID seleccionada
