@@ -162,6 +162,26 @@ BPPJ
                                 }
 
                 ?>
+
+                <?php
+                    // Comprueba si el parámetro selectedMenuId está en la URL y no está vacío
+                    if (isset($_GET['selectedMenuId']) && !empty($_GET['selectedMenuId'])) {
+                        $selectedMenuId = $_GET['selectedMenuId'];
+
+                        echo'<div class="container-nombre">';
+                        echo'<div>Nombre Menu:</div>';
+                        echo'<div class="nombre-menu" id="nombre-menu"></div>';
+                        echo'</div>';
+
+                        echo '<script>';
+                        echo 'var autoselect = ' . $selectedMenuId . ';';
+                        echo '</script>';
+                    } else {
+                        echo '<script>';
+                        echo 'var autoselect = null;';
+                        echo '</script>';
+                    }
+                ?>
             </div>
             <div id="display-none">
                 <div class="container-select">
@@ -170,7 +190,6 @@ BPPJ
                     <input id="valor" class="input-num_columns" type="number"  max="20"/>
                     <button id="btnAgregarColumna"> Agregar Boton</button>
                 </div>
-                <hr class="primer_hr">
             </div>
 
             <form id="contenedor-menu" class="input_names-container"></form>

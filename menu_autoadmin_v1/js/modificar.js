@@ -1,5 +1,6 @@
 // Declara una variable llamada Menu como un array vacío
 let Menu = [];
+
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
     // Agrega un evento de tecla presionada al contenedor con la clase 'input_names-container'
@@ -10,9 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
         }
     });
-
-    // select = document.getElementById('select-container');
-    // select.style.display = 'none';
+    
+    select = document.getElementById('select-container');
     // Asigna el elemento con el id 'contenedor-menu' a la variable 'contenedor'
     contenedor = document.getElementById('contenedor-menu');
     // Asigna el elemento con el id 'prevista' a la variable 'navbar'
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         titulo_menu: resultado.titulo_menu,
                         columnas: []
                     }];
-                    console.log(Menu)
+                    // console.log(Menu)
                     // Reinicia el registro de JSON obtenidos
                     jsonObtenido = {};
 
@@ -141,8 +141,17 @@ document.addEventListener("DOMContentLoaded", function () {
             display_none.style.display = 'none';
         }
 
-        console.log('--despues de btn borrar---')
-        console.log(Menu)
+        if(autoselect){
+            console.log('autoselect: '+autoselect);
+            console.log(Menu[0].titulo_menu);
+
+            var nombre = document.getElementById('nombre-menu');
+            nombre.textContent = Menu[0].titulo_menu;
+            select.style.display = 'none';
+        }
+
+        // console.log('--despues de btn borrar---')
+        // console.log(Menu)
         // Limpia el contenido del contenedor
         contenedor.innerHTML = '';// Itera sobre cada menú en el array 'Menu' y crea el menú en el contenedor
         Menu.forEach(menu => crearMenu(menu));
@@ -236,8 +245,8 @@ function agregarColumna(menu) {
 function crearMenu(menu) {
     // Actualiza los IDs de las columnas y subcolumnas en el menú
     actualizarIds(menu);
-    console.log('---CrearMenu---')
-    console.log(menu)
+    // console.log('---CrearMenu---')
+    // console.log(menu)
     // Crea un nuevo elemento <div> para el menú
     const menuDiv = document.createElement('div');
     menuDiv.classList.add('menu');
@@ -251,8 +260,9 @@ function crearMenu(menu) {
     titulo.value = menu.titulo_menu;
     titulo.id = 'input-menu_name';
     titulo.name = menu.ID;
-    titulo.classList = 'titulo-menu'
-
+    titulo.classList = 'titulo-menu';
+    titulo.style.display = 'none';
+    labelTitulo.style.display = 'none';
     // Agrega los elementos de etiqueta y título al menú
     contenedor.appendChild(labelTitulo)
     contenedor.appendChild(titulo);
@@ -387,7 +397,7 @@ function crearMenu(menu) {
                 agregarSubcolumna(menu, columnaId, posicion);
             } else {
                 // Si el valor no es un número válido, muestra un mensaje de error
-                console.log('La posición debe ser un número válido.');
+                // console.log('La posición debe ser un número válido.');
                 // También puedes mostrar un mensaje de error en tu página para notificar al usuario.
             }
         });
@@ -767,7 +777,7 @@ function getData() {
         menuData: menuData
     };
     // Retorna el objeto formData
-    console.log(formData)
+    // console.log(formData)
     return formData;
     
 }
@@ -776,7 +786,7 @@ function DeleteAll(menu){
 
     var dato = menu[0];
 
-    console.log(menu)
+    // console.log(menu)
 
     var menuDelete = [{
         ID: dato.ID,
@@ -793,7 +803,7 @@ async function saveNav() {
     // Llama a la función getData() y guarda el resultado en la variable data
     var data = getData();
     // Imprime el contenido de la variable data en la consola del navegador
-    console.log(data);
+    // console.log(data);
     // Realiza una solicitud HTTP POST al archivo 'php/modificar.php'
     var response = await fetch('php/modificar.php', {
         // Utiliza el método POST
