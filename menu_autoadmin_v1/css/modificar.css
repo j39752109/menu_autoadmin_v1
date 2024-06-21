@@ -11,12 +11,12 @@ BPPJ
 /* ---------------------------------------------------------------------------------------------------------------------
    ------------------- INICIO ITred Spa crear.css ----------------------------------------------------------------------
    --------------------------------------------------------------------------------------------------------------------- */
-
-.container{
-  display: flex;
-  height: 100%;
-  width: 100%;
+.container {
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos de manera flexible dentro del contenedor */
+   height: 100%;  /* Establece que la altura del contenedor sea el 100% de la altura del contenedor padre */
+   width: 100%;  /* Establece que el ancho del contenedor sea el 100% del ancho del contenedor padre */
 }
+    
 
 .container__div1, .container__div2 {
    flex-basis: 50%;
@@ -29,20 +29,21 @@ BPPJ
 }
 
 .formulario__select,
-.formulario__data{
-   margin-top: 20px;
-   margin-bottom: 20px;
+.formulario__data {
+   margin-top: 20px;  /* Agrega un margen superior de 20 píxeles a los elementos con las clases .formulario__select y .formulario__data */
+   margin-bottom: 20px;  /* Agrega un margen inferior de 20 píxeles a los elementos con las clases .formulario__select y .formulario__data */
 }
 
-.prevista{
-   height: 100%;
-   width: 100%;
-   background: blue;
+.prevista {
+   height: 100%;  /* Establece que la altura del elemento sea el 100% de la altura del contenedor padre */
+   width: 100%;  /* Establece que el ancho del elemento sea el 100% del ancho del contenedor padre */
+   background: blue;  /* Establece el color de fondo del elemento a azul */
 }
 
-.addColumn-cont{
-   margin: 5%;
+.addColumn-cont {
+   margin: 5%;  /* Agrega un margen de 5% del tamaño del contenedor padre alrededor del elemento */
 }
+
 
 .menu_example {
    display: flex;  /* Hace que los elementos dentro del contenedor se distribuyan en línea */
@@ -158,17 +159,17 @@ BPPJ
 }
 
 .menu_preview.fullscreen {
-   position: absolute;  /* Establece que el elemento tenga una posición absoluta */
-   width: 100%;  /* Establece que el ancho del elemento sea el 100% del ancho del contenedor padre */
-   height: 1000%;  /* Establece que la altura del elemento sea el 1000% del alto del contenedor padre */
-   left: 0;  /* Establece que el elemento esté pegado al borde izquierdo del contenedor padre */
-   top: 0;  /* Establece que el elemento esté pegado al borde superior del contenedor padre */
-   background-color: rgb(65, 65, 65);  /* Establece el color de fondo del elemento */
-   border: none;
-   max-width: 100%;
-   padding: 0;
-   overflow: inherit;
-   margin-top: 0;
+   position: absolute;  /* Establece que el elemento tenga una posición absoluta respecto a su contenedor padre */
+   width: 100%;  /* El ancho del elemento ocupará el 100% del ancho del contenedor padre */
+   height: 1000%;  /* La altura del elemento será 1000% de la altura del contenedor padre, es decir, 10 veces la altura del contenedor padre */
+   left: 0;  /* El borde izquierdo del elemento se alinea con el borde izquierdo del contenedor padre */
+   top: 0;  /* El borde superior del elemento se alinea con el borde superior del contenedor padre */
+   background-color: rgb(65, 65, 65);  /* Establece el color de fondo del elemento a un gris oscuro */
+   border: none;  /* Elimina cualquier borde que el elemento pudiera tener */
+   max-width: 100%;  /* El ancho máximo del elemento será el 100% del ancho del contenedor padre, previniendo que se expanda más allá de este */
+   padding: 0;  /* Elimina cualquier relleno interior del elemento */
+   overflow: inherit;  /* Hereda la propiedad overflow del contenedor padre, que determina cómo manejar el contenido que desborda el elemento */
+   margin-top: 0;  /* Elimina cualquier margen superior del elemento */
 }
 
 
@@ -186,129 +187,145 @@ BPPJ
    justify-content: center;    /* Centra el contenido */
 }
 
-.titulo-menu{
-   margin-top: 2%;
-   margin-bottom: 2%;
+.titulo-menu {
+   margin-top: 2%;  /* Agrega un margen superior del 2% de la altura del contenedor padre */
+   margin-bottom: 2%;  /* Agrega un margen inferior del 2% de la altura del contenedor padre */
 }
 
 .menu_preview {
-   grid-column: 3 / 5;
-   border: solid 1px;
-   padding: 2%;
-   max-width: 700px;
-   min-height: 50%;
-   margin-top: 30px;
+   grid-column: 3 / 5;  /* Hace que el elemento ocupe desde la columna 3 hasta la columna 5 en un contenedor de cuadrícula (grid container) */
+   border: solid 1px;  /* Establece un borde sólido de 1 píxel alrededor del elemento */
+   padding: 2%;  /* Agrega un relleno del 2% del ancho del contenedor padre dentro del borde del elemento */
+   max-width: 700px;  /* Establece el ancho máximo del elemento en 700 píxeles, previniendo que se expanda más allá de este valor */
+   min-height: 50%;  /* Establece una altura mínima del 50% de la altura del contenedor padre */
+   margin-top: 30px;  /* Agrega un margen superior de 30 píxeles */
 }
 
 
 .Menu {
-   width: 100%;
+   width: 100%;  /* Establece que el ancho del elemento sea el 100% del ancho del contenedor padre */
 }
 
 .ul-columnas {
-   display: flex;
-   flex-wrap: nowrap; /* Evitar wrap de elementos */
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos en una fila o columna flexible */
+   flex-wrap: nowrap;  /* Evita que los elementos hijos se envuelvan a una nueva línea, manteniéndolos en una única fila o columna */
 }
 
 .menu_column {
-   flex: 1 1 auto;
-   min-width: 0; /* Permitir que los elementos se reduzcan */
-   white-space: nowrap; /* Evitar que el texto se rompa */
-   font-size: clamp(10px, 1.5vw, 16px);
+   flex: 1 1 auto;  /* Permite que los elementos se expandan y contraigan según sea necesario, tomando el mismo espacio disponible */
+   min-width: 0;  /* Permite que los elementos hijos se reduzcan más allá de su tamaño mínimo de contenido */
+   white-space: nowrap;  /* Evita que el texto dentro de los elementos se rompa en varias líneas */
+   font-size: clamp(10px, 1.5vw, 16px);  /* Establece el tamaño de fuente adaptativo, con un valor mínimo de 10px, un valor máximo de 16px y ajustándose proporcionalmente a 1.5% del ancho de la ventana gráfica */
 }
 
 .menu_anchor {
-   display: block;
-   color: white;
-   text-decoration: none;
-   text-align: center;
-   padding: 10px;
-   background-color: blue;
+   display: block;  /* Define que el elemento es un bloque, ocupando toda la anchura disponible y permitiendo margenes y padding */
+   color: white;  /* Establece el color del texto a blanco */
+   text-decoration: none;  /* Elimina cualquier decoración de texto, como subrayado, del enlace */
+   text-align: center;  /* Centra el texto horizontalmente dentro del elemento */
+   padding: 10px;  /* Agrega un relleno interno de 10 píxeles alrededor del contenido del elemento */
+   background-color: blue;  /* Establece el color de fondo del elemento a azul */
 }
 
 
+
 .ul-sub {
-   list-style: none;
-   padding: 0;
-   margin: 0;
-   display: none; /* Ocultar submenús por defecto */
+   list-style: none;  /* Elimina los estilos de lista predeterminados (viñetas, números) del elemento de lista */
+   padding: 0;  /* Elimina cualquier relleno interno del elemento */
+   margin: 0;  /* Elimina cualquier margen externo del elemento */
+   display: none;  /* Oculta el submenú por defecto */
 }
 
 /* Mostrar submenús al pasar el ratón */
 .menu_column:hover .ul-sub {
-   display: block;
+   display: block;  /* Muestra el submenú cuando el usuario pasa el ratón sobre el elemento con la clase .menu_column */
 }
 
-.menu_column:hover{
-   background-color: red;
-   a {
-      background-color: red;
-   }
+.menu_column:hover {
+   background-color: red;  /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
 }
 
-.menu_column a:hover{
-   background-color: rgb(255, 103, 103);
+.menu_column:hover a {
+   background-color: red;  /* Cambia el color de fondo de los enlaces dentro de .menu_column a rojo cuando el usuario pasa el ratón sobre .menu_column */
 }
 
-.Volverbtn{
-   padding: 10px;
-   border-radius: 16px;
-   border: solid 1px;
-   margin: 10px;
-   cursor: pointer;
-   animation: scaleAnimation 2s infinite;
+.menu_column a:hover {
+   background-color: rgb(255, 103, 103);  /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono más claro de rojo cuando el usuario pasa el ratón sobre el enlace */
 }
 
-.input-num_columns{
-   width: 32px;
+
+.Volverbtn {
+   padding: 10px;  /* Agrega un relleno interno de 10 píxeles alrededor del contenido del botón */
+   border-radius: 16px;  /* Redondea los bordes del botón con un radio de 16 píxeles */
+   border: solid 1px;  /* Establece un borde sólido de 1 píxel alrededor del botón */
+   margin: 10px;  /* Agrega un margen externo de 10 píxeles alrededor del botón */
+   cursor: pointer;  /* Cambia el cursor a un puntero (mano) cuando el usuario pasa el ratón sobre el botón */
+   animation: scaleAnimation 2s infinite;  /* Aplica una animación llamada 'scaleAnimation' que dura 2 segundos y se repite indefinidamente */
 }
 
+.input-num_columns {
+   width: 32px;  /* Establece un ancho fijo de 32 píxeles para el input */
+}
 
 .container-select {
-   position: relative;
-   display: flex;
-   justify-content: center; 
-   flex-direction: row;
-   margin-top: 7%;
-   margin-bottom: 7%;
+   position: relative;  /* Posiciona el contenedor de manera relativa para poder posicionar elementos hijos de manera absoluta dentro de él */
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos en una fila flexible */
+   justify-content: center;  /* Centra los elementos hijos horizontalmente */
+   flex-direction: row;  /* Organiza los elementos hijos en una fila (horizontalmente) */
+   margin-top: 7%;  /* Agrega un margen superior del 7% de la altura del contenedor padre */
+   margin-bottom: 7%;  /* Agrega un margen inferior del 7% de la altura del contenedor padre */
 }
 
-.texto { 
-   position: absolute;
-   top: -25px;
+.texto {
+   position: absolute;  /* Posiciona el elemento de manera absoluta respecto a su contenedor padre */
+   top: -25px;  /* Desplaza el elemento 25 píxeles hacia arriba desde la parte superior del contenedor padre */
 }
 
-#btnAgregarColumna{
-   width: 150px;
+#btnAgregarColumna {
+   width: 150px;  /* Establece un ancho fijo de 150 píxeles para el botón */
 }
 
-.input_columns-container{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
+.input_columns-container {
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos en una fila flexible */
+   flex-direction: row;  /* Organiza los elementos hijos en una fila (horizontalmente) */
+   justify-content: center;  /* Centra los elementos hijos horizontalmente */
 }
 
-.container-nombre{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   margin-top: 4%;
-   margin-bottom: 7%;
+
+.container-nombre {
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos en una fila flexible */
+   flex-direction: row;  /* Organiza los elementos hijos en una fila (horizontalmente) */
+   justify-content: center;  /* Centra los elementos hijos horizontalmente dentro del contenedor */
+   margin-top: 4%;  /* Agrega un margen superior del 4% de la altura del contenedor padre */
+   margin-bottom: 7%;  /* Agrega un margen inferior del 7% de la altura del contenedor padre */
 }
 
-.nombre-menu{
-   margin-left: 10px;
+.container-btn {
+   display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos en una fila flexible */
+   flex-direction: row;  /* Organiza los elementos hijos en una fila (horizontalmente) */
+   justify-content: center;  /* Centra los elementos hijos horizontalmente dentro del contenedor */
+   padding: 20px;  /* Agrega un relleno interno de 20 píxeles alrededor del contenido del contenedor */
+   margin-top: 20px;  /* Agrega un margen superior de 20 píxeles */
+}
+
+.container-btn button {
+   margin: 0 5px;  /* Agrega un margen de 5 píxeles a la izquierda y a la derecha de cada botón, creando espacio entre los botones */
+}
+
+.nombre-menu {
+   margin-left: 10px;  /* Agrega un margen a la izquierda de 10 píxeles */
 }
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
    0%, 100% {
-     transform: scale(1); /* Escala normal */
+     transform: scale(1);  /* Escala normal al inicio y al final de la animación */
    }
    50% {
-     transform: scale(1.1); /* Escalado al 120% del tamaño original */
+     transform: scale(1.1);  /* Escala al 110% del tamaño original en la mitad de la animación */
    }
- }
+}
+
 
 
 

@@ -106,29 +106,29 @@ main{
 }
 
 .Menu {
-    display: inline-block;
+    display: inline-block;  /* Hace que el contenedor del menú se comporte como un bloque en línea, permitiendo que se alinee con otros elementos en línea, pero manteniendo las propiedades de bloque */
 }
 
-.menu_column:hover{
-    ul{
-        display: block;
-        background-color: red;
+.menu_column:hover {
+    ul {
+        display: block;  /* Muestra los elementos <ul> cuando el usuario pasa el ratón sobre el contenedor .menu_column */
+        background-color: red;  /* Cambia el color de fondo de los elementos <ul> a rojo */
     }
-    background-color: red;
- 
- }
- 
- .ul-sub li:hover{
-    background: rgb(253, 101, 101);
- }
- 
- .menu_anchor:hover{
-    background-color: rgb(251, 116, 116);
- }
-
-#menuTitle{
-    margin-bottom: 20px;
+    background-color: red;  /* Cambia el color de fondo del contenedor .menu_column a rojo cuando el usuario pasa el ratón sobre él */
 }
+
+.ul-sub li:hover {
+    background: rgb(253, 101, 101);  /* Cambia el color de fondo de los elementos <li> dentro de .ul-sub a un tono claro de rojo cuando el usuario pasa el ratón sobre ellos */
+}
+
+.menu_anchor:hover {
+    background-color: rgb(251, 116, 116);  /* Cambia el color de fondo de los elementos con la clase .menu_anchor a un tono claro de rojo cuando el usuario pasa el ratón sobre ellos */
+}
+
+#menuTitle {
+    margin-bottom: 20px;  /* Agrega un margen inferior de 20 píxeles al elemento con el id #menuTitle */
+}
+
 
 /* Contenedor inputs para nombres de columnas */
 .input_names-container{
@@ -291,17 +291,17 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 .menu_preview.fullscreen {
-    position: absolute;  /* Establece que el elemento tenga una posición absoluta */
+    position: absolute;  /* Establece que el elemento tenga una posición absoluta con respecto a su primer ancestro posicionado */
     width: 100%;  /* Establece que el ancho del elemento sea el 100% del ancho del contenedor padre */
     height: 1000%;  /* Establece que la altura del elemento sea el 1000% del alto del contenedor padre */
     left: 0;  /* Establece que el elemento esté pegado al borde izquierdo del contenedor padre */
     top: 0;  /* Establece que el elemento esté pegado al borde superior del contenedor padre */
-    background-color: rgb(65, 65, 65);  /* Establece el color de fondo del elemento */
-    border: none;
-    max-width: 100%;
-    padding: 0;
-    overflow: inherit;
-    margin-top: 0;
+    background-color: rgb(65, 65, 65);  /* Establece el color de fondo del elemento como un tono gris oscuro */
+    border: none;  /* Elimina cualquier borde alrededor del elemento */
+    max-width: 100%;  /* Establece el ancho máximo del elemento como el 100% del ancho del contenedor padre */
+    padding: 0;  /* Elimina cualquier relleno interno dentro del elemento */
+    overflow: inherit;  /* Hereda el comportamiento de desbordamiento de su contenedor padre */
+    margin-top: 0;  /* Elimina cualquier margen superior que pueda haber por defecto */
 }
 
 
@@ -334,125 +334,119 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* Estilos básicos para el modal */
 .modelo {
-    display: none; /* Ocultar por defecto */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    display: none;  /* Oculta el modal por defecto */
+    position: fixed;  /* Posiciona el modal de manera fija con respecto a la ventana del navegador */
+    z-index: 1;  /* Establece la capa z-index para controlar el apilamiento de elementos; el modal estará en la capa más alta */
+    left: 0;  /* Alinea el modal con el borde izquierdo de la ventana del navegador */
+    top: 0;  /* Alinea el modal con el borde superior de la ventana del navegador */
+    width: 100%;  /* Establece que el ancho del modal sea igual al ancho de la ventana del navegador */
+    height: 100%;  /* Establece que la altura del modal sea igual a la altura de la ventana del navegador */
+    overflow: auto;  /* Agrega desplazamiento automático si el contenido del modal es más grande que la ventana */
+    background-color: rgba(0, 0, 0, 0.4);  /* Establece un fondo semitransparente de color negro para el modal */
 }
 
 .modelo-contenido {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 300px;
-    text-align: center;
-    border-radius: 10px;
+    background-color: #fefefe;  /* Establece el color de fondo del contenido del modal a blanco */
+    margin: 15% auto;  /* Establece un margen del 15% desde arriba y abajo y automáticamente a los lados para centrar verticalmente el modal */
+    padding: 20px;  /* Agrega un relleno interno de 20 píxeles al contenido del modal */
+    border: 1px solid #888;  /* Establece un borde sólido de 1 píxel con color gris para el contenido del modal */
+    width: 80%;  /* Establece que el ancho del contenido del modal sea el 80% del ancho disponible */
+    max-width: 300px;  /* Establece un ancho máximo de 300 píxeles para el contenido del modal */
+    text-align: center;  /* Centra el texto dentro del contenido del modal */
+    border-radius: 10px;  /* Agrega esquinas redondeadas con un radio de 10 píxeles al contenido del modal */
 }
 
 .modelo-contenido button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin: 10px;  /* Agrega un margen de 10 píxeles alrededor de los botones dentro del contenido del modal */
+    padding: 10px 20px;  /* Agrega un relleno interno de 10 píxeles arriba y abajo y 20 píxeles a los lados para los botones */
+    border: none;  /* Elimina los bordes alrededor de los botones */
+    border-radius: 5px;  /* Agrega esquinas redondeadas con un radio de 5 píxeles a los botones */
+    cursor: pointer;  /* Cambia el cursor a un puntero (mano) cuando el usuario pasa el ratón sobre los botones */
 }
 
+
 .btnSi {
-    background-color: #4CAF50; /* Verde */
-    color: white;
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto blanco */
 }
 
 .btnNo {
-    background-color: #f44336; /* Rojo */
-    color: white;
+    background-color: #f44336; /* Color de fondo rojo */
+    color: white; /* Color del texto blanco */
 }
-
 
 .menu_preview {
-    grid-column: 3 / 5;
-    border: solid 1px;
-    padding: 2%;
+    grid-column: 3 / 5; /* Ubicación en la cuadrícula: de la columna 3 a la columna 5 */
+    border: solid 1px; /* Borde sólido de 1 píxel */
+    padding: 2%; /* Relleno interno del 2% del ancho del contenedor */
     max-width: 600px; /* Ancho máximo del contenedor */
-    min-height: 50%;
-    max-height: 100%;
- }
- 
- .Menu {
-    width: 100%;
- }
- 
- .ul-columnas {
-    display: flex;
-    flex-wrap: nowrap; /* Evitar wrap de elementos */
- }
- 
- .menu_column {
-    flex: 1 1 auto;
-    min-width: 0; /* Permitir que los elementos se reduzcan */
-    white-space: nowrap; /* Evitar que el texto se rompa */
-    font-size: clamp(10px, 1.5vw, 16px);
- }
- 
- .menu_anchor {
-    display: block;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    background-color: blue;
- }
- 
- .ul-sub {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none; 
- }
- 
- .menu_column:hover .ul-sub {
-    display: block;
- }
- 
- .menu_column:hover{
-    background-color: red;
-    a {
-       background-color: red;
-    }
- }
- 
- .menu_column a:hover{
-    background-color: rgb(255, 103, 103);
- }
- .Volverbtn{
-    position: relative;
-    padding: 10px;
-    border-radius: 16px;
-    border: solid 1px;
-    margin: 10px;
-    cursor: pointer;
-    animation: scaleAnimation 2s infinite;
+    min-height: 50%; /* Altura mínima del contenedor del 50% */
+    max-height: 100%; /* Altura máxima del contenedor del 100% */
 }
 
+.Menu {
+    width: 100%; /* Ancho del elemento .Menu del 100% del ancho disponible */
+}
 
- /* Define la animación de escalado */
+.ul-columnas {
+    display: flex; /* Utiliza flexbox para organizar los elementos hijos */
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan (wrap) a la siguiente línea */
+}
+
+.menu_column {
+    flex: 1 1 auto; /* Flex: crecimiento, encogimiento y tamaño inicial automático */
+    min-width: 0; /* Permite que los elementos se reduzcan más allá de su tamaño mínimo */
+    white-space: nowrap; /* Evita que el texto se rompa y se mantenga en una sola línea */
+    font-size: clamp(10px, 1.5vw, 16px); /* Tamaño de fuente adaptable con un mínimo de 10px, un máximo de 1.5vw y un tope de 16px */
+}
+
+.menu_anchor {
+    display: block;  /* Hace que los elementos con clase .menu_anchor sean elementos de bloque */
+    color: white;  /* Color del texto en blanco */
+    text-decoration: none;  /* Elimina el subrayado del texto */
+    text-align: center;  /* Centra el texto dentro del elemento */
+    padding: 10px;  /* Espacio interno de 10 píxeles alrededor del contenido del elemento */
+    background-color: blue;  /* Color de fondo azul para los elementos */
+}
+
+.ul-sub {
+    list-style: none;  /* Elimina los estilos de viñeta de la lista */
+    padding: 0;  /* Elimina el relleno interno de la lista */
+    margin: 0;  /* Elimina los márgenes externos de la lista */
+    display: none;  /* Oculta los submenús por defecto */
+}
+
+.menu_column:hover .ul-sub {
+    display: block;  /* Muestra los submenús cuando el usuario pasa el ratón sobre .menu_column */
+}
+
+.menu_column:hover {
+    background-color: red;  /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
+}
+
+.menu_column a:hover {
+    background-color: rgb(255, 103, 103);  /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono rosa claro cuando el usuario pasa el ratón sobre ellos */
+}
+
+.Volverbtn {
+    position: relative;  /* Establece la posición del botón de retorno como relativa */
+    padding: 10px;  /* Espacio interno de 10 píxeles alrededor del contenido del botón */
+    border-radius: 16px;  /* Borde redondeado con un radio de 16 píxeles */
+    border: solid 1px;  /* Borde sólido de 1 píxel alrededor del botón */
+    margin: 10px;  /* Márgenes externos de 10 píxeles alrededor del botón */
+    cursor: pointer;  /* Cambia el cursor a un puntero (mano) cuando el usuario pasa el ratón sobre el botón */
+    animation: scaleAnimation 2s infinite;  /* Aplica la animación scaleAnimation durante 2 segundos, repitiéndola infinitamente */
+}
+
+/* Define la animación de escalado */
 @keyframes scaleAnimation {
     0%, 100% {
-      transform: scale(1); /* Escala normal */
+        transform: scale(1);  /* Escala normal del botón */
     }
     50% {
-      transform: scale(1.1); /* Escalado al 120% del tamaño original */
+        transform: scale(1.1);  /* Escala el botón al 120% de su tamaño original */
     }
 }
-
-
-
 
 
 /* ---------------------------------------------------------------------------------------------------------------------

@@ -194,6 +194,13 @@ BPPJ
 
             <form id="contenedor-menu" class="input_names-container"></form>
             
+            <div class="container-btn">
+                <!--button onClick="getData()">GetData</button-->
+                <button onClick="saveNav()">Guardar</button>
+                <button id='Delete'>Borrar todo</button>
+                <button id="fullscreeenButton" onClick=toggleFullscreen()>Ir al Sitio Web</button>
+                <button>Aplicar programa</button>
+            </div>
         </div>
 
         <div class="container__div2">
@@ -232,11 +239,6 @@ BPPJ
 
         
     </div>
-    <!--button onClick="getData()">GetData</button-->
-    <button onClick="saveNav()">Guardar</button>
-    <button id='Delete'>Borrar todo</button>
-    <button id="fullscreeenButton" onClick=toggleFullscreen()>Ir al Sitio Web</button>
-    <button>Aplicar programa</button>
 
     <?php
 // Se ejecuta el código si existe una petición HTTP POST

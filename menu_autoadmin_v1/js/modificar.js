@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
     resetNumber.addEventListener('input', function () {
         // Verificar si el valor es menor que cero
         if (parseFloat(this.value) <= 0) {
-            this.value = 1; // Establecer el valor como cadena vacía
+            this.value = 1; // Establecer el valor 1
         }
 
         if(parseFloat(this.value) > 20){
-            this.value = 20; // Establecer el valor como cadena vacía
+            this.value = 20; // Establecer el valor 20
         }
 
     });  
