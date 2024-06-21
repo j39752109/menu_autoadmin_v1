@@ -420,10 +420,16 @@ input[type=number]::-webkit-inner-spin-button {
     display: block;
  }
  
- .menu_column a:hover{
-    background-color: green;
+ .menu_column:hover{
+    background-color: red;
+    a {
+       background-color: red;
+    }
  }
  
+ .menu_column a:hover{
+    background-color: rgb(255, 103, 103);
+ }
  .Volverbtn{
     position: relative;
     padding: 10px;
