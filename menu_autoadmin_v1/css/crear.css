@@ -420,13 +420,17 @@ input[type=number]::-webkit-inner-spin-button {
     display: block;  /* Muestra los submenús cuando el usuario pasa el ratón sobre .menu_column */
 }
 
-.menu_column:hover {
-    background-color: red;  /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
+.menu_column:hover{
+    background-color: red;/*Cambia a color fondo a rojo*/
+    a {
+       background-color: red; /*Cambia a color fondo a rojo*/
+    }
+ }
+ 
+ .menu_column a:hover{
+    background-color: rgb(255, 103, 103); /*Cambia a color fondo a rosado*/
 }
-
-.menu_column a:hover {
-    background-color: rgb(255, 103, 103);  /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono rosa claro cuando el usuario pasa el ratón sobre ellos */
-}
+ 
 
 .Volverbtn {
     position: relative;  /* Establece la posición del botón de retorno como relativa */
