@@ -295,7 +295,7 @@ function crearMenu(menu) {
         const nombreColumna = document.createElement('input');
         nombreColumna.id = 'columnName';
         nombreColumna.name = 'columnName';
-        nombreColumna.value = columna.nombre_columna;
+        nombreColumna.value = columna.nombre_columna || 'Botón '+ columnaId;
         /*cambio Text */
         nombreColumna.addEventListener('input', (event) => {
             columna.nombre_columna = event.target.value;
@@ -426,7 +426,7 @@ function crearMenu(menu) {
             const nombreSubcolumna = document.createElement('input');
             nombreSubcolumna.id = 'rowName';
             nombreSubcolumna.name = 'rowName';
-            nombreSubcolumna.value = subcolumna.nombre_subcolumna;
+            nombreSubcolumna.value = subcolumna.nombre_subcolumna || 'Sub-menú '+subcolumnaId;
             nombreSubcolumna.addEventListener('input', (event) => {
                 subcolumna.nombre_subcolumna = event.target.value;
 
