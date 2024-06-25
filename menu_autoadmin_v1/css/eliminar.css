@@ -11,7 +11,12 @@ BPPJ
 /* ---------------------------------------------------------------------------------------------------------------------
    ------------------- INICIO ITred Spa eliminar.css ------------------------------------------------------------------
    --------------------------------------------------------------------------------------------------------------------- */
-
+main {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 2%;
+      gap: 2%;
+}
 #menuSeleccion {
    grid-column: 1 / 3; /* Ubica el elemento con ID #menuSeleccion en las columnas 1 a 2 de una cuadrícula (grid) */
 }
@@ -64,12 +69,15 @@ BPPJ
     display: block; /* Muestra los submenús cuando el usuario pasa el ratón sobre .menu_column */
 }
    
-.menu_column:hover {
-   background-color: red; /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
+.menu_column:hover{
+   background-color: red;/*Cambia a color fondo a rojo*/
+   a {
+      background-color: red; /*Cambia a color fondo a rojo*/
+   }
 }
-   
-.menu_column a:hover {
-   background-color: rgb(255, 103, 103); /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono rosa claro cuando el usuario pasa el ratón sobre ellos */
+
+.menu_column a:hover{
+   background-color: rgb(255, 103, 103); /*Cambia a color fondo a rosado*/
 }
    
 /* ---------------------------------------------------------------------------------------------------------------------

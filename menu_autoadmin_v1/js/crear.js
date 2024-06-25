@@ -465,6 +465,8 @@ function createInputs(columna, i) {
         input.id = 'columnName';
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
+        //
+        input.value = "Botón"
 
         // Se crea el botón para agregar filas
         const buttonRow = createButton('Agregar Submenu');
@@ -534,6 +536,8 @@ function createInputs(columna, i) {
         input.id = 'columnName';
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
+        //
+        input.value = 'Botón';
 
         buttonRow.classList.add('ButtonRowClick');
     }
