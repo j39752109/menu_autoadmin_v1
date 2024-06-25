@@ -968,7 +968,13 @@ function getData() {
     // Itera sobre cada elemento en columnName
     columnName.forEach((name, index) => {
         // Asigna el valor del campo de entrada al nombre de la columna correspondiente en menuData
-        menuData[index].name = name.value;
+        if(name.value){
+            menuData[index].name = name.value;
+
+        }else{
+            menuData[index].name = 'Botón'
+            
+        }
     });
 
     // Itera sobre cada elemento en columnUrl
