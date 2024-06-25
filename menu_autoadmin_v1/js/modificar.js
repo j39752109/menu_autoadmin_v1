@@ -295,7 +295,7 @@ function crearMenu(menu) {
         const nombreColumna = document.createElement('input');
         nombreColumna.id = 'columnName';
         nombreColumna.name = 'columnName';
-        nombreColumna.value = columna.nombre_columna || 'Botón '+ columnaId;
+        nombreColumna.value = columna.nombre_columna || 'Botón ';
         /*cambio Text */
         nombreColumna.addEventListener('input', (event) => {
             columna.nombre_columna = event.target.value;
@@ -526,7 +526,7 @@ function preview(menu) {
         // Establece el atributo 'target' del elemento <a> como '_blank' para que se abra en una nueva pestaña
         columnaAnchor.target = "_blank";
         // Establece el texto del enlace como el nombre de la columna o 'Botón' seguido del id de la columna si el nombre está vacío
-        columnaAnchor.textContent = columna.nombre_columna || 'Botón ' + columnaId;
+        columnaAnchor.textContent = columna.nombre_columna || 'Botón ';
         // Agrega el enlace de la columna al elemento <li> de la columna
         ColumnaLi.appendChild(columnaAnchor);
         // Crea un elemento <ul> para contener las subcolumnas de la columna actual del menú
@@ -548,7 +548,7 @@ function preview(menu) {
             // Establece el atributo 'target' del elemento <a> como '_blank' para que se abra en una nueva pestaña
             subcolumnAnchor.target = "_blank";
             // Establece el texto del enlace como el nombre de la subcolumna o 'Sub-Botón' seguido del id de la subcolumna si el nombre está vacío
-            subcolumnAnchor.textContent = subcolumna.nombre_subcolumna || 'Sub-Botón ' + subcolumnaId;
+            subcolumnAnchor.textContent = subcolumna.nombre_subcolumna || 'Sub-Botón ';
             // Agrega el enlace de la subcolumna al elemento <li> de la subcolumna
             SubColumna.appendChild(subcolumnAnchor);
             // Establece el ID del elemento <li> como el ID de la subcolumna actual
@@ -727,10 +727,17 @@ function getData() {
     const columnas = document.querySelectorAll('.input_names-column');
 
     // Itera sobre cada columna
-    columnas.forEach(columna => {
+    columnas.forEach((columna,index) => {
+        xd = '';
         // Obtiene el nombre y la URL del botón de la columna
         const nombreBoton = columna.querySelector('input[name="columnName"]').value;
         const urlBoton = columna.querySelector('input[name="columnUrl"]').value;
+
+        if(!nombreBoton){
+            xd = 'Boton ' + (index+1);
+        }else{
+            xd = nombreBoton;
+        }
 
         // Verifica y formatea la URL del botón si no empieza con 'https://'
         let urlBoton1 = urlBoton.startsWith('https://') ? urlBoton : 'https://' + urlBoton;
@@ -762,7 +769,7 @@ function getData() {
 
         // Agrega los datos de la columna al array de datos del menú
         menuData.push({
-            name: nombreBoton,
+            name: xd,
             type: 1,
             anchor: {},
             subColumns: submenus,
