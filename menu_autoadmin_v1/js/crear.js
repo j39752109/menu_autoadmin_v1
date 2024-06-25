@@ -972,8 +972,8 @@ function getData() {
             menuData[index].name = name.value;
 
         }else{
-            menuData[index].name = 'Botón'
-            
+            menuData[index].name = 'Botón ' +(index + 1);
+
         }
     });
 
