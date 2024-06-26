@@ -295,7 +295,12 @@ function crearMenu(menu) {
         const nombreColumna = document.createElement('input');
         nombreColumna.id = 'columnName';
         nombreColumna.name = 'columnName';
-        nombreColumna.value = columna.nombre_columna || 'Botón '+ columnaId;
+        let botonInput = columna.nombre_columna;
+        if(botonInput === '' || botonInput.startsWith('Botón ')){
+            nombreColumna.value = 'Botón ' + columnaId;
+        }else{
+            nombreColumna.value = columna.nombre_columna;
+        }
         /*cambio Text */
         nombreColumna.addEventListener('input', (event) => {
             columna.nombre_columna = event.target.value;
@@ -413,7 +418,7 @@ function crearMenu(menu) {
             let hr = document.createElement('hr');
             subcolumnaDiv.appendChild(hr);
             let text = document.createElement('p');
-            text.textContent = 'Sub-menú ' + subcolumnaId;
+            text.textContent = 'Sub-Menú ' + subcolumnaId;
 
             subcolumnaDiv.appendChild(text);
 
@@ -426,7 +431,15 @@ function crearMenu(menu) {
             const nombreSubcolumna = document.createElement('input');
             nombreSubcolumna.id = 'rowName';
             nombreSubcolumna.name = 'rowName';
-            nombreSubcolumna.value = subcolumna.nombre_subcolumna || 'Sub-menú '+subcolumnaId;
+            //nombreSubcolumna.value = subcolumna.nombre_subcolumna || 'Sub-Menú '+subcolumnaId;
+
+            let subInput = subcolumna.nombre_subcolumna;
+            if(subInput === '' || subInput.startsWith('Sub-Menú ')){
+                nombreSubcolumna.value = 'Sub-Menú ' + subcolumnaId;
+            }else{
+                nombreSubcolumna.value = subcolumna.nombre_subcolumna
+            }
+
             nombreSubcolumna.addEventListener('input', (event) => {
                 subcolumna.nombre_subcolumna = event.target.value;
 
@@ -455,7 +468,7 @@ function crearMenu(menu) {
             linkSubcolumna.id = 'rowUrl';
             linkSubcolumna.name = 'rowUrl';
 
-            linkSubcolumna.value = subcolumna.url_subcolumna;
+            linkSubcolumna.value = subcolumna.url_subcolumna || 'https://';
 
             // Agrega un evento de escucha para actualizar la URL de la subcolumna
             linkSubcolumna.addEventListener('input', (event) => {
@@ -526,7 +539,13 @@ function preview(menu) {
         // Establece el atributo 'target' del elemento <a> como '_blank' para que se abra en una nueva pestaña
         columnaAnchor.target = "_blank";
         // Establece el texto del enlace como el nombre de la columna o 'Botón' seguido del id de la columna si el nombre está vacío
-        columnaAnchor.textContent = columna.nombre_columna || 'Botón '+columnaId;
+        //columnaAnchor.textContent = columna.nombre_columna || 'Botón '+columnaId;
+        let botonInput = columna.nombre_columna;
+        if(botonInput === '' || botonInput.startsWith('Botón ')){
+            columnaAnchor.textContent = 'Botón ' + columnaId;
+        }else{
+            columnaAnchor.textContent = columna.nombre_columna;
+        }
         // Agrega el enlace de la columna al elemento <li> de la columna
         ColumnaLi.appendChild(columnaAnchor);
         // Crea un elemento <ul> para contener las subcolumnas de la columna actual del menú
@@ -547,8 +566,15 @@ function preview(menu) {
             subcolumnAnchor.href = subcolumna.url_subcolumna;
             // Establece el atributo 'target' del elemento <a> como '_blank' para que se abra en una nueva pestaña
             subcolumnAnchor.target = "_blank";
-            // Establece el texto del enlace como el nombre de la subcolumna o 'Sub-Botón' seguido del id de la subcolumna si el nombre está vacío
-            subcolumnAnchor.textContent = subcolumna.nombre_subcolumna || 'Sub-Botón ';
+            // Establece el texto del enlace como el nombre de la subcolumna o 'Sub-Botón' seguido del id de la subcolumna si el nombre está vacío            
+            //subcolumnAnchor.textContent = subcolumna.nombre_subcolumna || 'Sub-Menú ' + subcolumnaId;
+            let botonInput = subcolumna.nombre_subcolumna;
+
+            if(botonInput === '' || botonInput.startsWith('Sub-Menú ')){
+                subcolumnAnchor.textContent = 'Sub-Menú ' + subcolumnaId;
+            }else{
+                subcolumnAnchor.textContent = subcolumna.nombre_subcolumna;
+            }
             // Agrega el enlace de la subcolumna al elemento <li> de la subcolumna
             SubColumna.appendChild(subcolumnAnchor);
             // Establece el ID del elemento <li> como el ID de la subcolumna actual
@@ -728,15 +754,15 @@ function getData() {
 
     // Itera sobre cada columna
     columnas.forEach((columna,index) => {
-        xd = '';
+        btnindex = '';
         // Obtiene el nombre y la URL del botón de la columna
         const nombreBoton = columna.querySelector('input[name="columnName"]').value;
         const urlBoton = columna.querySelector('input[name="columnUrl"]').value;
 
         if(!nombreBoton){
-            xd = 'Boton ' + (index+1);
+            btnindex = 'Boton ' + (index+1);
         }else{
-            xd = nombreBoton;
+            btnindex = nombreBoton;
         }
 
         // Verifica y formatea la URL del botón si no empieza con 'https://'
@@ -769,7 +795,7 @@ function getData() {
 
         // Agrega los datos de la columna al array de datos del menú
         menuData.push({
-            name: xd,
+            name: btnindex,
             type: 1,
             anchor: {},
             subColumns: submenus,
