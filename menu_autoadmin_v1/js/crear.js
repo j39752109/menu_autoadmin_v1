@@ -651,7 +651,7 @@ function createInputs(columna, i) {
     });
 
     inputUrl.addEventListener('input', function () {
-        let inputValue = inputUrl.value.trim(); // Obtener el valor del input y eliminar espacios en blanco
+        let inputValue = inputUrl.value; // Obtener el valor del input y eliminar espacios en blanco
         // Verificar si el input ya comienza con 'https://'
         if (!inputValue.startsWith('https://')) {
             inputValue = 'https://' + inputValue;
@@ -1103,8 +1103,9 @@ function getData() {
             });
             // Itera sobre cada elemento en rowUrl
             rowUrl.forEach((url, i) => {
+                let urlvalue = url.value
                 // Si el valor del campo de entrada comienza con "https://"
-                if (url.value.substring(0, 7) == "https://") {
+                if (urlvalue.startsWith("https://")) {
                     // Asigna el valor del campo de entrada a la URL de la subcolumna correspondiente en menuData
                     menuData[index].subColumns[i].url = url.value;
                 } else {
