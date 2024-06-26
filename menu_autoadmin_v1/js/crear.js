@@ -115,10 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
             addColumnButton.addEventListener('click', () => {
                 // Se llama a la función addColumn con el valor ingresado en inputPosicion como argumento
                 addColumn(inputPosicion.value);
+
                 // Se reinicia el valor del inputPosicion
                 inputPosicion.value = '';
                 createId()
-                formatLabels()
 
             })
 
@@ -150,10 +150,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function formatLabels() {
     let labels = document.querySelectorAll('.labelInput');
+    let inputs = document.querySelectorAll('.columnName');
+    let a = document.querySelectorAll('.menu_anchor');
 
     labels.forEach((label, index) => {
         label.innerHTML = 'Botón ' + (index + 1)
     })
+
+    inputs.forEach((x, index) => {
+        x.value = 'Botón ' + (index + 1)
+    })
+
+    a.forEach((x, index) => {
+        x.textContent = 'Botón ' + (index + 1)
+    })
+
+
 }
 
 function formatLabelsRow() {
@@ -233,8 +245,9 @@ function addColumn(posicion) {
             })
             // Crea los id de input y button
             createId();
-            formatButtons()
-            buttonEvent(2)
+            formatButtons();
+            buttonEvent(2);
+            formatLabels();
         } else {
             if (posicionInput == cantidadColumnas.length + 1) {
                 if (i + 2 == posicionInput) {
@@ -275,6 +288,7 @@ function addColumn(posicion) {
                     createId();
                     formatButtons()
                     buttonEvent(2);
+                    formatLabels();
                 }
             }
 
@@ -385,7 +399,7 @@ function createColumn(ulElement) {
         let anchor = document.createElement('a');
 
         // Nombre del enlace por defecto
-        anchor.innerHTML = 'Botón';
+        anchor.innerHTML = 'Botón '+ (i+1);
 
         // Se agregan las clases css a la columna
         column.classList.add('menu_column');
@@ -419,6 +433,7 @@ function createColumn(ulElement) {
     })
     buttonEvent();
     createId();
+    formatLabels();
 }
 
 function createInputs(columna, i) {
@@ -466,8 +481,9 @@ function createInputs(columna, i) {
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
         //
-        input.value = "Botón"
-
+        input.value = "Botón " + i;
+        //
+        input.classList = 'columnName';
         // Se crea el botón para agregar filas
         const buttonRow = createButton('Agregar Submenu');
         buttonRow.classList.add('buttonDiv');
@@ -538,7 +554,8 @@ function createInputs(columna, i) {
         inputUrl.id = 'columnUrl';
         //
         input.value = 'Botón';
-
+        //
+        input.classList = 'columnName';
         buttonRow.classList.add('ButtonRowClick');
     }
 

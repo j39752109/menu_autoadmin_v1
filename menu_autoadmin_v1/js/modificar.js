@@ -295,7 +295,7 @@ function crearMenu(menu) {
         const nombreColumna = document.createElement('input');
         nombreColumna.id = 'columnName';
         nombreColumna.name = 'columnName';
-        nombreColumna.value = columna.nombre_columna || 'Botón ';
+        nombreColumna.value = columna.nombre_columna || 'Botón '+ columnaId;
         /*cambio Text */
         nombreColumna.addEventListener('input', (event) => {
             columna.nombre_columna = event.target.value;
@@ -526,7 +526,7 @@ function preview(menu) {
         // Establece el atributo 'target' del elemento <a> como '_blank' para que se abra en una nueva pestaña
         columnaAnchor.target = "_blank";
         // Establece el texto del enlace como el nombre de la columna o 'Botón' seguido del id de la columna si el nombre está vacío
-        columnaAnchor.textContent = columna.nombre_columna || 'Botón ';
+        columnaAnchor.textContent = columna.nombre_columna || 'Botón '+columnaId;
         // Agrega el enlace de la columna al elemento <li> de la columna
         ColumnaLi.appendChild(columnaAnchor);
         // Crea un elemento <ul> para contener las subcolumnas de la columna actual del menú
