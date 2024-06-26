@@ -317,7 +317,8 @@ function addColumn(posicion) {
             createId();
             formatButtons();
             buttonEvent(2);
-            formatLabels();
+            //formatLabels();
+            formatLabelsRow() 
         } else {
             if (posicionInput == cantidadColumnas.length + 1) {
                 if (i + 2 == posicionInput) {
