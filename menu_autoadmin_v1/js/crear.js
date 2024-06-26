@@ -169,11 +169,81 @@ function formatLabels() {
 }
 
 function formatLabelsRow() {
-    let labels = document.querySelectorAll('.labelSub');
+    // let labels = document.querySelectorAll('.labelSub');
+    // let inputs = document.querySelectorAll('.rowName');
+    // let anchors = document.querySelectorAll('.ul-sub a');
 
-    labels.forEach((label, index) => {
-        label.innerHTML = 'Sub-Menú ' + (index + 1)
-    })
+    // labels.forEach((label, index) => {
+    //     label.innerHTML = 'Sub-Menú ' + (index + 1)
+    // })
+
+    // inputs.forEach((label, index) => {
+    //     let labelValue = label.value;
+    
+    //     // Si el valor comienza con "Sub-Menú " o está vacío
+    //     if (labelValue === '' || labelValue.startsWith('Sub-Menú ')) {
+    //         label.value = 'Sub-Menú ' + (index + 1);
+    //     }
+    // });
+
+    // anchors.forEach((label, index) =>{
+    //     let labelValue = label.textContent;
+
+    //     if(labelValue === '' || labelValue.startsWith('Submenu')){
+    //         label.textContent = 'Sub-Menú ' + (index + 1);
+    //     }
+
+    //     if(labelValue === '' || labelValue.startsWith('Sub-Menú ')){
+    //         label.textContent = 'Sub-Menú ' + (index + 1);
+    //     }
+    // });
+    ///////
+
+    // Obtener todos los contenedores de columnas de menú
+    let menuColumns = document.querySelectorAll('.menu_column.menuPosicion');
+
+    // Iterar sobre cada contenedor de columnas de menú
+    menuColumns.forEach((menuColumn, columnIndex) => {
+        // Obtener todos los enlaces dentro del submenú de cada contenedor
+        let subMenuAnchors = menuColumn.querySelectorAll('.ul-sub a');
+        let labelSub = menuColumn.querySelectorAll('labelSub')
+        // Iterar sobre cada enlace del submenú
+        subMenuAnchors.forEach((anchor, anchorIndex) => {
+            let anchorValue = anchor.textContent;
+            // Asignar un valor único a cada enlace basado en el índice del contenedor y del enlace
+            anchor.id = 'Subcolumna '+(anchorIndex + 1);
+            // anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
+
+            if(anchor.textContent === '' || anchorValue.startsWith('Submenu')){
+                anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
+            }
+
+            if(anchor.textContent === '' || anchorValue.startsWith('Sub-Menú ')){
+                anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
+            }
+        });
+    });
+
+    // 
+    let menuContainers = document.querySelectorAll('.input_names-column');
+
+    menuContainers.forEach((menuContainer, menuContainerIndex)=>{
+
+        let submenuIndex = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .labelSub');
+        let inputSub = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .rowName')
+        submenuIndex.forEach((submenu, submenuIndex)=>{
+            submenu.textContent = 'Sub-Menú '+ (submenuIndex + 1);
+        })
+
+        inputSub.forEach((input, inputIndex)=>{
+            let inputValue = input.value;
+
+            if(input.value === '' || inputValue.startsWith('Sub-Menú ')){
+                input.value =  'Sub-Menú ' + (inputIndex + 1);
+            }
+        })
+
+    });
 }
 
 let cantAddColumn = 0;
@@ -412,6 +482,8 @@ function createColumn(ulElement) {
         anchor.id = 'Enlace ' + (i + 1);
 
 
+
+
         // Se agrega el elemento "a" dentro de la columna "li"
         column.appendChild(anchor);
         // Se agrega la columna dentro del elemento "ul"
@@ -481,6 +553,8 @@ function createInputs(columna, i) {
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
         //
+        inputUrl.value = 'https://'
+        //
         input.value = "Botón " + i;
         //
         input.classList = 'columnName';
@@ -526,9 +600,12 @@ function createInputs(columna, i) {
 
         // Se asigna un id a input
         input.id = 'rowName';
+        //
+        input.classList = 'rowName';
         // Se asigna un id a input
         inputUrl.id = 'rowUrl';
-
+        //
+        inputUrl.value = 'https://';
         // Se crea el botón para eliminar filas
         buttonDelete = createButton('Eliminar Submenu');
 
@@ -552,6 +629,7 @@ function createInputs(columna, i) {
         input.id = 'columnName';
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
+        inputUrl.value = 'https://'
         //
         input.value = 'Botón';
         //
