@@ -296,7 +296,7 @@ function crearMenu(menu) {
         nombreColumna.id = 'columnName';
         nombreColumna.name = 'columnName';
         let botonInput = columna.nombre_columna;
-        if(botonInput === '' || botonInput.startsWith('Botón ')){
+        if(botonInput === '' || botonInput.startsWith('Botón')){
             nombreColumna.value = 'Botón ' + columnaId;
         }else{
             nombreColumna.value = columna.nombre_columna;
@@ -434,7 +434,7 @@ function crearMenu(menu) {
             //nombreSubcolumna.value = subcolumna.nombre_subcolumna || 'Sub-Menú '+subcolumnaId;
 
             let subInput = subcolumna.nombre_subcolumna;
-            if(subInput === '' || subInput.startsWith('Sub-Menú ')){
+            if(subInput === '' || subInput.startsWith('Sub-Menú')){
                 nombreSubcolumna.value = 'Sub-Menú ' + subcolumnaId;
             }else{
                 nombreSubcolumna.value = subcolumna.nombre_subcolumna
@@ -541,7 +541,7 @@ function preview(menu) {
         // Establece el texto del enlace como el nombre de la columna o 'Botón' seguido del id de la columna si el nombre está vacío
         //columnaAnchor.textContent = columna.nombre_columna || 'Botón '+columnaId;
         let botonInput = columna.nombre_columna;
-        if(botonInput === '' || botonInput.startsWith('Botón ')){
+        if(botonInput === '' || botonInput.startsWith('Botón')){
             columnaAnchor.textContent = 'Botón ' + columnaId;
         }else{
             columnaAnchor.textContent = columna.nombre_columna;
@@ -570,7 +570,7 @@ function preview(menu) {
             //subcolumnAnchor.textContent = subcolumna.nombre_subcolumna || 'Sub-Menú ' + subcolumnaId;
             let botonInput = subcolumna.nombre_subcolumna;
 
-            if(botonInput === '' || botonInput.startsWith('Sub-Menú ')){
+            if(botonInput === '' || botonInput.startsWith('Sub-Menú')){
                 subcolumnAnchor.textContent = 'Sub-Menú ' + subcolumnaId;
             }else{
                 subcolumnAnchor.textContent = subcolumna.nombre_subcolumna;
