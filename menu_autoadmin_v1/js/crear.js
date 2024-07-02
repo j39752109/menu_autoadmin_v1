@@ -199,51 +199,54 @@ function formatLabelsRow() {
     // });
     ///////
 
-    // Obtener todos los contenedores de columnas de menú
-    let menuColumns = document.querySelectorAll('.menu_column.menuPosicion');
-
-    // Iterar sobre cada contenedor de columnas de menú
-    menuColumns.forEach((menuColumn, columnIndex) => {
-        // Obtener todos los enlaces dentro del submenú de cada contenedor
-        let subMenuAnchors = menuColumn.querySelectorAll('.ul-sub a');
-        let labelSub = menuColumn.querySelectorAll('labelSub')
-        // Iterar sobre cada enlace del submenú
-        subMenuAnchors.forEach((anchor, anchorIndex) => {
-            let anchorValue = anchor.textContent;
-            // Asignar un valor único a cada enlace basado en el índice del contenedor y del enlace
-            anchor.id = 'Subcolumna '+(anchorIndex + 1);
-            // anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
-
-            if(anchor.textContent === '' || anchorValue.startsWith('Submenu')){
-                anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
-            }
-
-            if(anchor.textContent === '' || anchorValue.startsWith('Sub-Menú ')){
-                anchor.textContent = 'Sub-Menú '+(anchorIndex + 1);
-            }
-        });
+// Obtener todos los contenedores de columnas de menú
+let menuColumns = document.querySelectorAll('.menu_column.menuPosicion');
+// Iterar sobre cada contenedor de columnas de menú
+menuColumns.forEach((menuColumn, columnIndex) => {
+    // Obtener todos los enlaces dentro del submenú de cada contenedor
+    let subMenuAnchors = menuColumn.querySelectorAll('.ul-sub a');
+    // Iterar sobre cada enlace del submenú
+    subMenuAnchors.forEach((anchor, anchorIndex) => {
+        // Guardar el texto del enlace en la variable 'anchorValue'
+        let anchorValue = anchor.textContent;
+        // Asignar un ID único a cada enlace basado en el índice del contenedor y del enlace
+        anchor.id = 'Subcolumna ' + (anchorIndex + 1);
+        // Comprobar si el texto del enlace está vacío o empieza con 'Submenu' y asignar un nuevo valor
+        if(anchor.textContent === '' || anchorValue.startsWith('Submenu')) {
+            anchor.textContent = 'Sub-Menú ' + (anchorIndex + 1);
+        }
+        // Comprobar si el texto del enlace está vacío o empieza con 'Sub-Menú ' y asignar un nuevo valor
+        if(anchor.textContent === '' || anchorValue.startsWith('Sub-Menú ')) {
+            anchor.textContent = 'Sub-Menú ' + (anchorIndex + 1);
+        }
     });
+});
 
-    // 
-    let menuContainers = document.querySelectorAll('.input_names-column');
 
-    menuContainers.forEach((menuContainer, menuContainerIndex)=>{
-
-        let submenuIndex = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .labelSub');
-        let inputSub = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .rowName')
-        submenuIndex.forEach((submenu, submenuIndex)=>{
-            submenu.textContent = 'Sub-Menú '+ (submenuIndex + 1);
-        })
-
-        inputSub.forEach((input, inputIndex)=>{
-            let inputValue = input.value;
-
-            if(input.value === '' || inputValue.startsWith('Sub-Menú ')){
-                input.value =  'Sub-Menú ' + (inputIndex + 1);
-            }
-        })
-
+// Selecciona todos los elementos con la clase 'input_names-column' y los guarda en la variable 'menuContainers'
+let menuContainers = document.querySelectorAll('.input_names-column');
+// Itera sobre cada 'menuContainer' en la lista de 'menuContainers'
+menuContainers.forEach((menuContainer, menuContainerIndex) => {
+    // Dentro de cada 'menuContainer', selecciona todos los elementos con la clase 'labelSub' dentro de la estructura especificada
+    let submenuIndex = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .labelSub');
+    // Dentro de cada 'menuContainer', selecciona todos los elementos con la clase 'rowName' dentro de la estructura especificada
+    let inputSub = menuContainer.querySelectorAll('.cont-sub .input_names-row-container .rowName');
+    // Itera sobre cada 'submenu' en la lista de 'submenuIndex'
+    submenuIndex.forEach((submenu, submenuIndex) => {
+        // Cambia el texto del 'submenu' al formato 'Sub-Menú X', donde X es el índice del submenú + 1
+        submenu.textContent = 'Sub-Menú ' + (submenuIndex + 1);
     });
+    // Itera sobre cada 'input' en la lista de 'inputSub'
+    inputSub.forEach((input, inputIndex) => {
+        // Guarda el valor del input en la variable 'inputValue'
+        let inputValue = input.value;
+        // Si el valor del input está vacío o ya empieza con 'Sub-Menú', establece el valor del input al formato 'Sub-Menú X', donde X es el índice del input + 1
+        if (input.value === '' || inputValue.startsWith('Sub-Menú ')) {
+            input.value = 'Sub-Menú ' + (inputIndex + 1);
+        }
+    });
+});
+
 }
 
 let cantAddColumn = 0;
@@ -631,9 +634,9 @@ function createInputs(columna, i) {
         // Se asigna un id a input
         inputUrl.id = 'columnUrl';
         inputUrl.value = 'https://'
-        //
+        // se asigna value al boton
         input.value = 'Botón';
-        //
+        //se asigna una class
         input.classList = 'columnName';
         buttonRow.classList.add('ButtonRowClick');
     }
