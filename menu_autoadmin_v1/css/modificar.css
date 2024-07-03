@@ -225,6 +225,7 @@ BPPJ
    text-align: center;  /* Centra el texto horizontalmente dentro del elemento */
    padding: 10px;  /* Agrega un relleno interno de 10 píxeles alrededor del contenido del elemento */
    background-color: blue;  /* Establece el color de fondo del elemento a azul */
+   font-family: Arial;
 }
 
 

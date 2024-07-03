@@ -202,14 +202,6 @@ BPPJ
                             <label for="">Fuentes</label>
                             <select id="selectFuentes">
                                 <option select>Seleccionar</option>
-                                <option value="1">Arial</option>
-                                <option value="2">Brush Script MT</option>
-                                <option value="3">Courier New</option>
-                                <option value="4">Garamond</option>
-                                <option value="5">Georgia</option>
-                                <option value="6">Helvetica</option>
-                                <option value="7">Impact</option>
-                                <option value="8">Lucida Console</option>
                             </select>
                         </div>
                     </div>

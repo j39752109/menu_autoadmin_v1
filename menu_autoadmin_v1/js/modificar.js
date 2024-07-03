@@ -1,8 +1,27 @@
 // Declara una variable llamada Menu como un array vacío
 let Menu = [];
 
+let Fuentes = [
+    {"id" : 1 , "nombre" : "serif"},
+    {"id" : 2 , "nombre" : "sans-serif"},
+    {"id" : 3 , "nombre" : "monospace"},
+    {"id" : 4 , "nombre" : "cursive"},
+    {"id" : 5 , "nombre" : "fantasy"},
+    {"id" : 6 , "nombre" : "system-ui"}
+];
+
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
+
+    let selectFuentes = document.getElementById('selectFuentes');
+
+    Fuentes.forEach(fuente => {
+        let option = document.createElement('option');
+        option.value = fuente.nombre;  // Establece el valor de la opción
+        option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
+        selectFuentes.appendChild(option);  // Añade la opción al select
+    });
+    CambiarFuente();
     // Agrega un evento de tecla presionada al contenedor con la clase 'input_names-container'
     document.querySelector('.input_names-container').addEventListener('keydown', function (event) {
         // Verifica si la tecla presionada es 'Enter'
@@ -50,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (Menu.length > 0 && Menu[0].columnas) {
             // Pasar la primera entrada de Menu a la función agregarColumna
             agregarColumna(Menu[0]);
+            CambiarFuente()
         }
     });
     // Obtiene el valor del elemento "valor" del almacenamiento local del navegador
@@ -247,6 +267,7 @@ function agregarColumna(menu) {
     //limpiar input
     let input = document.getElementById('valor');
     input.value = '';
+
 }
 
 // Define una función llamada crearMenu que toma un objeto 'menu' como argumento
@@ -871,4 +892,26 @@ async function saveNav() {
             location.reload();
         }
     }
+}
+
+
+function CambiarFuente(){
+    
+    // Agregar un event listener al <select> para escuchar cambios
+    selectFuentes.addEventListener('change', function() {
+        // Obtener el valor de la opción seleccionada en lugar de textContent
+        let content = this.value;
+
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
+        Array.from(textos).forEach(texto => {
+            texto.style.fontFamily = content;
+        });
+    });
+
+    selectFuentes.dispatchEvent(new Event('change'));
+
+
 }
