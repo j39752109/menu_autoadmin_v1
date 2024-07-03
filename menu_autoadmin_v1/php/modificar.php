@@ -186,10 +186,66 @@ BPPJ
             <div id="display-none">
                 <div class="container-select">
                     <p>Agregar botones al menú:</p>
-                    <p class= "texto" id="text-1" >Posición</p>
+                    <p class= "texto" id="text-1">Posición</p>
                     <input id="valor" class="input-num_columns" type="number"  max="20"/>
                     <button id="btnAgregarColumna"> Agregar Boton</button>
                 </div>
+            </div>
+
+            <div id="estilos" class="estilos">
+                <div class="estilos__titulo">Estilos Generales</div>
+                    <div class="contenedor__fuentes">
+                        <select id="selectFuentes">
+                            <option select>Seleccionar</option>
+                            <option value="1">Arial</option>
+                            <option value="2">Brush Script MT</option>
+                            <option value="3">Courier New</option>
+                            <option value="4">Garamond</option>
+                            <option value="5">Georgia</option>
+                            <option value="6">Helvetica</option>
+                            <option value="7">Impact</option>
+                            <option value="8">Lucida Console</option>
+                        </select>
+                    </div>
+
+                    <div class="contenedor__letras">
+                        <div>
+                            <label for="">Negrita</label>
+                            <input type="checkbox">                                
+                        </div>
+                            
+                        <div>
+                            <label for="">Cursiva</label>
+                            <input type="checkbox">                                
+                        </div>
+                            
+                        <div>
+                            <label for="">Subrayar</label>
+                            <input type="checkbox">                                
+                        </div>
+                    </div>
+
+                    <div class="contenedor__color">
+
+                        <div class="color__titulo">Colores Menú</div>
+
+                        <div>
+                            <label for="">Color Menú</label>
+                            <input type="color">
+                        </div>
+
+                        <div>
+                            <label for="">Color Hover 1</label>
+                            <input type="color">
+                        </div>
+
+                        <div>
+                            <label for="">Color Hover 2</label>
+                            <input type="color">
+                        </div>
+
+                    </div>
+
             </div>
 
             <form id="contenedor-menu" class="input_names-container"></form>
