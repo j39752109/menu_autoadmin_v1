@@ -316,6 +316,100 @@ BPPJ
    margin-left: 10px;  /* Agrega un margen a la izquierda de 10 píxeles */
 }
 
+
+.estilos{
+   display: flex;       /* Establece el contenedor como un contenedor flex */
+   flex-direction: column;  /* Organiza los elementos hijos en una columna */
+}
+
+.estilos__titulo{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   order: 0;                      /* Define el orden del elemento en el contenedor flex, aquí es el primer elemento */
+   justify-content: center;       /* Centra el contenido horizontalmente dentro del contenedor */
+   margin-bottom: 20px;           /* Agrega un margen inferior de 20 píxeles */
+   font-size: 25px;               /* Establece el tamaño de la fuente a 25 píxeles */
+   text-decoration-line: underline; /* Subraya el texto */
+}
+
+.estilos__contenedor1{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   flex-direction: row;            /* Organiza los elementos hijos en una fila */
+}
+
+.fuentes__titulo, 
+.letras__titulo, 
+.color-letras__titulo, 
+.color__titulo{
+   display: flex;                  /* Establece los elementos como contenedores flex */
+   font-size: 20px;                /* Establece el tamaño de la fuente a 20 píxeles */
+   margin-bottom: 14px;            /* Agrega un margen inferior de 14 píxeles */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+}
+
+
+.fuentes__select{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+}
+
+.letras__inputs{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+   flex-direction: column;         /* Organiza los elementos hijos en una columna */
+}
+
+.inputs__xd{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+   margin-bottom: 10px;            /* Agrega un margen inferior de 10 píxeles */
+}
+
+.input__estilo{
+   margin-right: 12px;             /* Agrega un margen derecho de 12 píxeles */
+}
+
+.estilos__contenedor2{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   flex-direction: row;            /* Organiza los elementos hijos en una fila */
+}
+
+
+.color__contenedor{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   flex-direction: column;         /* Organiza los elementos hijos en una columna */
+}
+
+.color__inputs{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+   margin-bottom: 12px;            /* Agrega un margen inferior de 12 píxeles */
+}
+
+.input__hover,
+.input-letras__label{
+   margin-right: 10px;             /* Agrega un margen derecho de 10 píxeles a los elementos con clases `input__hover` y `input-letras__label` */
+}
+
+.color-letras__contenedor{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   flex-direction: column;         /* Organiza los elementos hijos en una columna */
+}
+
+.contenedor__input-letras{
+   display: flex;                  /* Establece el elemento como un contenedor flex */
+   justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
+   margin-bottom: 12px;            /* Agrega un margen inferior de 12 píxeles */
+}
+
+
+.contenedor__color-letras,
+.contenedor__letras,
+.contenedor__color,
+.contenedor__fuentes{
+   flex-basis: 50%;    /* Establece la base flexible de los elementos, ocupando el 50% del espacio del contenedor principal */
+}
+
+
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
    0%, 100% {
