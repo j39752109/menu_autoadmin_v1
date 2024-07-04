@@ -64,7 +64,7 @@ let isCreated = false;
 
 
 
-
+//hace funcionar el boton de cerrar menu
 document.addEventListener('DOMContentLoaded', function() {
     const cerrarMenu = document.getElementById('cerrarMenu');
     cerrarMenu.addEventListener('click', function() {
