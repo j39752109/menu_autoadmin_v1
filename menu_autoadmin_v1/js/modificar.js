@@ -29,7 +29,45 @@ let Menu = [];
 
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
+    //TESTING
 
+const draggableElement = document.getElementById('btn-modifcar-boton');
+
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+
+// Evento cuando el usuario hace clic en el contenedor
+draggableElement.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    // Calcula el offset entre el mouse y la esquina superior izquierda del contenedor
+    offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+    offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+    // Añade la clase para el cursor de arrastre
+    draggableElement.classList.add('dragging');
+    document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
+});
+
+// Evento cuando el usuario mueve el mouse
+document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        // Actualiza la posición del contenedor
+        draggableElement.style.left = `${e.clientX - offsetX}px`;
+        draggableElement.style.top = `${e.clientY - offsetY}px`;
+    }
+});
+
+// Evento cuando el usuario suelta el botón del mouse
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        // Elimina la clase para el cursor de arrastre
+        draggableElement.classList.remove('dragging');
+        document.body.style.cursor = 'auto'; // Cambia el cursor de vuelta al predeterminado
+    }
+});
+
+////
     // let selectFuentes = document.getElementById('selectFuentes');
 
     // Fuentes.forEach(fuente => {
@@ -910,6 +948,8 @@ async function saveNav() {
         }
     }
 }
+
+
 
 
 // function CambiarFuente(){
