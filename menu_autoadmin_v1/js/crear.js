@@ -374,23 +374,6 @@ function formatButtons() {
 
 function createMenu() {
     menuData = [];
-
-    // // Se crea el 'h2' del nombre del menu
-    // let h2MenuName = document.createElement('h2');
-    // // Asigna un id al elemento 'h2'
-    // h2MenuName.id = 'menuTitle';
-
-    // // Llama al input del titulo del menu
-    // let inputMenuName = document.getElementById('input-menu_name');
-    // // Actualiza el nombre del titulo antes del evento input.
-    // h2MenuName.textContent = inputMenuName.value;
-
-    // // Evento escucha input para cambiar el titulo
-    // inputMenuName.addEventListener('input', () => {
-    //     // Actualiza el nombre del titulo con el valor del input
-    //     h2MenuName.textContent = inputMenuName.value;
-    // })
-
     // Llama al contenedor de la vista previa del menu
     let menuPreview = document.querySelector('.menu_preview');
     // Formatea en caso de haber contenido previo
@@ -404,11 +387,6 @@ function createMenu() {
     // Se crea el elemento ul
     let ulElement = document.createElement('ul');
     ulElement.classList = 'ul-columnas';
-
-    // let formuContenedor = document.querySelector('.input_names-container');
-
-    // Se agrega el titulo al contenedor del formulario
-    // formuContenedor.insertAdjacentElement('beforebegin', h2MenuName);
     // Se coloca el elmento "nav" dentro del contenedor de vista previa
     menuPreview.appendChild(navElement);
     // Se coloca el elemento "ul" dentro del elemento "nav"
@@ -477,10 +455,6 @@ function createColumn(ulElement) {
         anchor.classList.add('menu_anchor');
 
         anchor.id = 'Enlace ' + (i + 1);
-
-
-
-
         // Se agrega el elemento "a" dentro de la columna "li"
         column.appendChild(anchor);
         // Se agrega la columna dentro del elemento "ul"
