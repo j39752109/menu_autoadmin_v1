@@ -192,7 +192,7 @@ BPPJ
                 </div>
             </div>
 
-            <div id="estilos" class="estilos">
+            <!-- <div id="estilos" class="estilos">
                 <div class="estilos__titulo">Estilos Generales</div>
                     
                 <div class="estilos__contenedor1">
@@ -263,7 +263,7 @@ BPPJ
                         </div>
                     </div>
                 </div>    
-            </div>
+            </div> -->
 
             <form id="contenedor-menu" class="input_names-container"></form>
             
