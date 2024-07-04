@@ -31,41 +31,58 @@ let Menu = [];
 document.addEventListener("DOMContentLoaded", function () {
     //TESTING
 
-const draggableElement = document.getElementById('btn-modifcar-boton');
+    const draggableElement = document.getElementById('btn-modifcar-boton');
 
-let offsetX = 0;
-let offsetY = 0;
-let isDragging = false;
-
-// Evento cuando el usuario hace clic en el contenedor
-draggableElement.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    // Calcula el offset entre el mouse y la esquina superior izquierda del contenedor
-    offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
-    offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
-    // Añade la clase para el cursor de arrastre
-    draggableElement.classList.add('dragging');
-    document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
-});
-
-// Evento cuando el usuario mueve el mouse
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        // Actualiza la posición del contenedor
-        draggableElement.style.left = `${e.clientX - offsetX}px`;
-        draggableElement.style.top = `${e.clientY - offsetY}px`;
-    }
-});
-
-// Evento cuando el usuario suelta el botón del mouse
-document.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        // Elimina la clase para el cursor de arrastre
-        draggableElement.classList.remove('dragging');
-        document.body.style.cursor = 'auto'; // Cambia el cursor de vuelta al predeterminado
-    }
-});
+    let offsetX = 0;
+    let offsetY = 0;
+    let isDragging = false;
+    
+    // Evento cuando el usuario hace clic en el contenedor
+    draggableElement.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        // Calcula el offset entre el mouse y la esquina superior izquierda del contenedor
+        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
+    });
+    
+    // Evento cuando el usuario mueve el mouse
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            // Obtén el tamaño de la ventana
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+    
+            // Obtén el tamaño del contenedor
+            const elementWidth = draggableElement.offsetWidth;
+            const elementHeight = draggableElement.offsetHeight;
+    
+            // Calcula las nuevas posiciones
+            let newLeft = e.clientX - offsetX;
+            let newTop = e.clientY - offsetY;
+    
+            // Verifica los límites horizontales
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
+    
+            // Verifica los límites verticales
+            if (newTop < 0) newTop = 0;
+            if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
+    
+            // Actualiza la posición del contenedor
+            draggableElement.style.left = `${newLeft}px`;
+            draggableElement.style.top = `${newTop}px`;
+        }
+    });
+    
+    // Evento cuando el usuario suelta el botón del mouse
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'auto'; // Cambia el cursor de vuelta al predeterminado
+        }
+    });
+    
 
 ////
     // let selectFuentes = document.getElementById('selectFuentes');
