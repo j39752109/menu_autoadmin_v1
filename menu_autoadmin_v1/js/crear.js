@@ -62,6 +62,18 @@ function createButton(label) {
 // Se inicializa la variable isCreated como falsa
 let isCreated = false;
 
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cerrarMenu = document.getElementById('cerrarMenu');
+    cerrarMenu.addEventListener('click', function() {
+        document.getElementById('estilos').style.display = 'none';
+    });
+});
+
+
+
 // Se añade un evento que se ejecuta cuando el contenido HTML del documento ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => {
 

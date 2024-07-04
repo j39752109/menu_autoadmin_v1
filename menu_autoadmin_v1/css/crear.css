@@ -263,6 +263,7 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 10px;    /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para profundidad */
+    padding-bottom: 50px; /* Asegura espacio suficiente en la parte inferior para el botón */
 }
  
  .estilos__titulo{
@@ -272,6 +273,7 @@ input[type=number]::-webkit-inner-spin-button {
     margin-bottom: 20px;           /* Agrega un margen inferior de 20 píxeles */
     font-size: 25px;               /* Establece el tamaño de la fuente a 25 píxeles */
     text-decoration-line: underline; /* Subraya el texto */
+    
  }
  
  .estilos__contenedor1{
@@ -352,6 +354,19 @@ input[type=number]::-webkit-inner-spin-button {
     flex-basis: 50%;    /* Establece la base flexible de los elementos, ocupando el 50% del espacio del contenedor principal */
  }
 
+
+
+ #cerrarMenu {
+    position: absolute; /* Posicionamiento absoluto respecto a su contenedor más cercano con posición no estática */
+    bottom: 10px; /* Posiciona el botón 10px arriba del fondo del contenedor #estilos */
+    left: 50%; /* Inicia el botón en el centro horizontalmente */
+    transform: translateX(-50%); /* Ajusta el botón hacia atrás a la mitad de su ancho, centrando exactamente */
+    padding: 10px;
+    border-radius: 5px; /* Opcional: Para bordes redondeados */
+    border: 1px solid #ccc; /* Opcional: Para un borde sutil */
+    background-color: #f5f5f5; /* Opcional: Color de fondo */
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+}
 @media (max-width: 820px) {
     .container {
         display: flex;  /* Hace que los elementos dentro del contenedor se distribuyan en línea */
@@ -533,15 +548,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
  
 
-.Volverbtn {
-    position: relative;  /* Establece la posición del botón de retorno como relativa */
-    padding: 10px;  /* Espacio interno de 10 píxeles alrededor del contenido del botón */
-    border-radius: 16px;  /* Borde redondeado con un radio de 16 píxeles */
-    border: solid 1px;  /* Borde sólido de 1 píxel alrededor del botón */
-    margin: 10px;  /* Márgenes externos de 10 píxeles alrededor del botón */
-    cursor: pointer;  /* Cambia el cursor a un puntero (mano) cuando el usuario pasa el ratón sobre el botón */
-    animation: scaleAnimation 2s infinite;  /* Aplica la animación scaleAnimation durante 2 segundos, repitiéndola infinitamente */
-}
+
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {

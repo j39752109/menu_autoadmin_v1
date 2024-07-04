@@ -128,7 +128,8 @@ BPPJ
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
+                <button id="cerrarMenu">Cerrar</button>    
             </div>
 
 
@@ -180,8 +181,9 @@ BPPJ
             <div class="menu_preview">
                 
             </div>
-
+            
         </div>
+        
     </div>
 
 
