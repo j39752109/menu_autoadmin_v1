@@ -486,6 +486,10 @@ BPPJ
    cursor: pointer;
 }
 
+.btn__style:hover{
+   background-color: green;
+   cursor: pointer;
+}
 
 
 /* Define la animación de escalado */
