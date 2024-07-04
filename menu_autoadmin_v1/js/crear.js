@@ -167,24 +167,29 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function formatLabels() {
+    // Selecciona todos los elementos con la clase 'labelInput' y los guarda en la variable 'labels'
     let labels = document.querySelectorAll('.labelInput');
-    let inputs = document.querySelectorAll('.columnName');
+    // Selecciona todos los elementos con la clase 'columnName' y los guarda en la variable 'inputs'
+    let inputs = document.querySelectorAll('.columnName');   
+    // Selecciona todos los elementos con la clase 'menu_anchor' y los guarda en la variable 'a'
     let a = document.querySelectorAll('.menu_anchor');
-
+    // Recorre cada elemento en la colección 'labels'
     labels.forEach((label, index) => {
-        label.innerHTML = 'Botón ' + (index + 1)
-    })
-
+        // Cambia el contenido HTML de cada 'label' al texto 'Botón ' seguido del índice incrementado en 1
+        label.innerHTML = 'Botón ' + (index + 1);
+    });
+    // Recorre cada elemento en la colección 'inputs'
     inputs.forEach((x, index) => {
-        x.value = 'Botón ' + (index + 1)
-    })
-
+        // Cambia el valor de cada 'input' al texto 'Botón ' seguido del índice incrementado en 1
+        x.value = 'Botón ' + (index + 1);
+    });
+    // Recorre cada elemento en la colección 'a'
     a.forEach((x, index) => {
-        x.textContent = 'Botón ' + (index + 1)
-    })
-
-
+        // Cambia el contenido de texto de cada 'a' al texto 'Botón ' seguido del índice incrementado en 1
+        x.textContent = 'Botón ' + (index + 1);
+    });
 }
+
 
 function formatLabelsRow() {
 // Obtener todos los contenedores de columnas de menú
