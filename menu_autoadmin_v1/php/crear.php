@@ -71,7 +71,70 @@ BPPJ
             <form class="input_names-container">  
             </form>
 
+
+
+            <div id="estilos" class="estilos">
+                <div class="estilos__titulo">Estilos Generales</div>
+                    
+                <div class="estilos__contenedor1">
+                    <div class="contenedor__fuentes">
+                        <div class="fuentes__titulo">Estilo Fuentes</div>
+                        <div class="fuentes__select">
+                            <label for="">Fuentes</label>
+                            <select id="selectFuentes">
+                                <option select>Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fuentes__tamanio">
+                <label for="inputTamanioLetra">Tamaño de Letra:</label>
+                <input type="number" id="inputTamanioLetra" min="0" placeholder="Ejemplo: 14">
+            </div>
+                </div>
+                
+                <div class="estilos__contenedor2">
+                    <div class="contenedor__color">
+
+                        <div class="color__titulo">Colores Menú:</div>
+                            <div class="color__contenedor">
+                                <div class="color__inputs">
+                                    <label for="" class="input__hover">Color Menú:</label>
+                                    <input type="color">
+                                </div>
+
+                                <div class="color__inputs">
+                                    <label for="" class="input__hover">Color Hover 1:</label>
+                                    <input type="color">
+                                </div>
+
+                                <div class="color__inputs">
+                                    <label for="" class="input__hover">Color Hover 2:</label>
+                                    <input type="color">
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="contenedor__color-letras">
+                        <div class="color-letras__titulo">Color de Letras</div>
+                        <div class="color-letras__contenedor">
+                            <div class="contenedor__input-letras">
+                                <label for="" class="input-letras__label">Color Botón:</label>
+                                <input type="color">
+                            </div>
+                            <div class="contenedor__input-letras">
+                                <label for="" class="input-letras__label">Color SubMenú:</label>
+                                <input type="color">
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+
+
             <div class="footer">
+                <button id="btnModificarTextoMenu">Modificar Texto Menú</button> 
                 <button onClick=saveNav()>Guardar</button>
                 <!-- Boton para guardar el menu -->
                 <button onClick=saveNav(1)>Crear Nuevo Menú</button>

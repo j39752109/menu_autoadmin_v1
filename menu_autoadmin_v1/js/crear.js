@@ -18,6 +18,19 @@ BPPJ
 
 // Data de las columnas y subcolumnas
 let menuData = [];
+
+let Fuentes = [
+    {"id" : 1 , "nombre" : "serif"},
+    {"id" : 2 , "nombre" : "sans-serif"},
+    {"id" : 3 , "nombre" : "monospace"},
+    {"id" : 4 , "nombre" : "cursive"},
+    {"id" : 5 , "nombre" : "fantasy"},
+    {"id" : 6 , "nombre" : "system-ui"}
+];
+
+
+
+
 //a
 // Función para crear un boton
 function createButton(label) {
@@ -51,6 +64,36 @@ let isCreated = false;
 
 // Se añade un evento que se ejecuta cuando el contenido HTML del documento ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => {
+
+    var boton = document.getElementById('btnModificarTextoMenu');
+
+    var menu = document.getElementById('estilos');
+
+    boton.addEventListener('click', function() {
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'flex';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+
+    let selectFuentes = document.getElementById('selectFuentes');
+
+    Fuentes.forEach(fuente => {
+        let option = document.createElement('option');
+        option.value = fuente.nombre;  // Establece el valor de la opción
+        option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
+        selectFuentes.appendChild(option);  // Añade la opción al select
+    });
+    CambiarFuente();
+    // Agrega un evento de tecla presionada al contenedor con la clase 'input_names-container'
+    document.querySelector('.input_names-container').addEventListener('keydown', function (event) {
+        // Verifica si la tecla presionada es 'Enter'
+        if (event.key === 'Enter') {
+            // Evita que se ejecute la acción predeterminada del evento (como enviar un formulario)
+            event.preventDefault();
+        }
+    });
 
     let resetNumber = document.getElementById('input-num_columns');
 
@@ -1254,6 +1297,28 @@ function preguntarRedireccionamiento() {
         };
     });
 }
+
+function CambiarFuente(){
+
+    // Agregar un event listener al <select> para escuchar cambios
+    selectFuentes.addEventListener('change', function() {
+        // Obtener el valor de la opción seleccionada en lugar de textContent
+        let content = this.value;
+
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
+        Array.from(textos).forEach(texto => {
+            texto.style.fontFamily = content;
+        });
+    });
+
+    selectFuentes.dispatchEvent(new Event('change'));
+
+
+}
+
 
 
 /* ---------------------------------------------------------------------------------------------------------------------
