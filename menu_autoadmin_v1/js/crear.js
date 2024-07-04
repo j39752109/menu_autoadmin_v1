@@ -187,36 +187,6 @@ function formatLabels() {
 }
 
 function formatLabelsRow() {
-    // let labels = document.querySelectorAll('.labelSub');
-    // let inputs = document.querySelectorAll('.rowName');
-    // let anchors = document.querySelectorAll('.ul-sub a');
-
-    // labels.forEach((label, index) => {
-    //     label.innerHTML = 'Sub-Menú ' + (index + 1)
-    // })
-
-    // inputs.forEach((label, index) => {
-    //     let labelValue = label.value;
-    
-    //     // Si el valor comienza con "Sub-Menú " o está vacío
-    //     if (labelValue === '' || labelValue.startsWith('Sub-Menú ')) {
-    //         label.value = 'Sub-Menú ' + (index + 1);
-    //     }
-    // });
-
-    // anchors.forEach((label, index) =>{
-    //     let labelValue = label.textContent;
-
-    //     if(labelValue === '' || labelValue.startsWith('Submenu')){
-    //         label.textContent = 'Sub-Menú ' + (index + 1);
-    //     }
-
-    //     if(labelValue === '' || labelValue.startsWith('Sub-Menú ')){
-    //         label.textContent = 'Sub-Menú ' + (index + 1);
-    //     }
-    // });
-    ///////
-
 // Obtener todos los contenedores de columnas de menú
 let menuColumns = document.querySelectorAll('.menu_column.menuPosicion');
 // Iterar sobre cada contenedor de columnas de menú
