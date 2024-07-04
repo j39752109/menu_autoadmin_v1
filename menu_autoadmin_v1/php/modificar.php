@@ -267,6 +267,32 @@ BPPJ
 
             <form id="contenedor-menu" class="input_names-container"></form>
             
+            <div id="container-btn-sytle" class="container-btn-sytle">
+                <button class="btn-syle__btn">Modificar Texto Menu</button>
+                <button class="btn-syle__btn">Modificar Botón</button>
+            </div>
+
+            <div id="btn-modifcar-boton" class="btn-modifcar-boton">
+                <div class="container-title">
+                    <div class="title__menu">Menu Bóton</div>
+                    <div class="cerrar__menu">X</div>                    
+                </div>
+                <div class="container-btn-modificar">
+                    <div class="btn__style">Color Fondo Bóton</div>
+                    <div class="btn__style">Color Fondo Bóton Hover</div>
+                    <div class="btn__style">Ancho Bóton</div>
+                    <div class="btn__style">Borde Bóton</div>
+                    <div class="btn__style">Ancho Borde Bóton</div>
+                    <div class="btn__style">Borrar Todo el Formado</div>
+                    <div class="btn__style">Imagen Fondo Bóton</div>
+                    <div class="btn__style">Imagen Fondo Bóton Hover</div>
+                    <div class="btn__style">Alto Bóton</div>
+                    <div class="btn__style">Estilo Borde Bóton</div>
+                    <div class="btn__style">Color Borde Bóton</div>
+                    <div class="btn__style"></div>    
+                </div>
+            </div>
+
             <div class="container-btn">
                 <!--button onClick="getData()">GetData</button-->
                 <button onClick="saveNav()">Guardar</button>
