@@ -410,6 +410,87 @@ BPPJ
    flex-basis: 50%;    /* Establece la base flexible de los elementos, ocupando el 50% del espacio del contenedor principal */
 }
 
+.container-btn-sytle{
+   display: flex;
+   margin-top: 20px;
+   justify-content: center;
+}
+
+.btn-syle__btn{
+   margin-left: 10px;
+}
+
+.btn-modifcar-boton{
+   z-index: 99999;
+   position: absolute;
+   top: 50%;
+   padding: 10px;
+   border: 1px solid;
+   border-radius: 15px;
+   width: 750px;
+   height: 30%;
+   background-color: white;
+}
+
+.container-btn-modificar {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 30px 20px 0px 20px;
+}
+
+.btn__style{
+   border: 1px solid;
+   width: 110px;
+   height: 70px;
+   border-radius: 15px;
+   margin-bottom: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center; /* Para asegurar que el texto esté centrado */
+}
+
+.first-part, .second-part {
+   display: block; /* Asegurar que cada parte esté en una línea separada */
+}
+
+.container-title{
+   display: flex;
+   justify-content: space-between;
+   align-items: center; /* Para alinear verticalmente los elementos */
+}
+
+.title__menu {
+   display: flex;
+   justify-content: center;
+   flex: 1; /* Permitir que el elemento ocupe todo el espacio disponible */
+   text-align: center; /* Asegura que el texto esté centrado dentro del div */
+}
+
+.cerrar__menu {
+   padding: 10px;
+   border: solid 1px;
+   border-radius: 50%; /* Cambia esto a 50% para un círculo perfecto */
+   width: 8px; /* Ancho fijo para mantener el círculo */
+   height: 8px; /* Alto fijo para mantener el círculo */
+   display: flex;
+   justify-content: center; /* Centra el contenido horizontalmente */
+   align-items: center; /* Centra el contenido verticalmente */
+   text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.cerrar__menu:hover{
+   background-color: red;
+   cursor: pointer;
+}
+
+.btn__style:hover{
+   background-color: green;
+   cursor: pointer;
+}
+
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {

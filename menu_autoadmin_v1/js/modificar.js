@@ -18,27 +18,65 @@ BPPJ
 // Declara una variable llamada Menu como un array vacío
 let Menu = [];
 
-let Fuentes = [
-    {"id" : 1 , "nombre" : "serif"},
-    {"id" : 2 , "nombre" : "sans-serif"},
-    {"id" : 3 , "nombre" : "monospace"},
-    {"id" : 4 , "nombre" : "cursive"},
-    {"id" : 5 , "nombre" : "fantasy"},
-    {"id" : 6 , "nombre" : "system-ui"}
-];
+// let Fuentes = [
+//     {"id" : 1 , "nombre" : "serif"},
+//     {"id" : 2 , "nombre" : "sans-serif"},
+//     {"id" : 3 , "nombre" : "monospace"},
+//     {"id" : 4 , "nombre" : "cursive"},
+//     {"id" : 5 , "nombre" : "fantasy"},
+//     {"id" : 6 , "nombre" : "system-ui"}
+// ];
 
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
+    //TESTING
 
-    let selectFuentes = document.getElementById('selectFuentes');
+const draggableElement = document.getElementById('btn-modifcar-boton');
 
-    Fuentes.forEach(fuente => {
-        let option = document.createElement('option');
-        option.value = fuente.nombre;  // Establece el valor de la opción
-        option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
-        selectFuentes.appendChild(option);  // Añade la opción al select
-    });
-    CambiarFuente();
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+
+// Evento cuando el usuario hace clic en el contenedor
+draggableElement.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    // Calcula el offset entre el mouse y la esquina superior izquierda del contenedor
+    offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+    offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+    // Añade la clase para el cursor de arrastre
+    draggableElement.classList.add('dragging');
+    document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
+});
+
+// Evento cuando el usuario mueve el mouse
+document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        // Actualiza la posición del contenedor
+        draggableElement.style.left = `${e.clientX - offsetX}px`;
+        draggableElement.style.top = `${e.clientY - offsetY}px`;
+    }
+});
+
+// Evento cuando el usuario suelta el botón del mouse
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        // Elimina la clase para el cursor de arrastre
+        draggableElement.classList.remove('dragging');
+        document.body.style.cursor = 'auto'; // Cambia el cursor de vuelta al predeterminado
+    }
+});
+
+////
+    // let selectFuentes = document.getElementById('selectFuentes');
+
+    // Fuentes.forEach(fuente => {
+    //     let option = document.createElement('option');
+    //     option.value = fuente.nombre;  // Establece el valor de la opción
+    //     option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
+    //     selectFuentes.appendChild(option);  // Añade la opción al select
+    // });
+    // CambiarFuente();
     // Agrega un evento de tecla presionada al contenedor con la clase 'input_names-container'
     document.querySelector('.input_names-container').addEventListener('keydown', function (event) {
         // Verifica si la tecla presionada es 'Enter'
@@ -60,9 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Oculta el elemento con id 'display-none' estableciendo su estilo como 'display: none'
     display_none.style.display = 'none';
     
-    const estilos = document.getElementById('estilos');
+    // const estilos = document.getElementById('estilos');
 
-    estilos.style.display = 'none';
+    // estilos.style.display = 'none';
 
     let resetNumber = document.getElementById('valor');
 
@@ -134,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Si hay un resultado, muestra el elemento "display_none"
             display_none.style.display = 'block';
             // Si hay un resultado, muestra el elemento "estilos"
-            estilos.style.display = 'block';
+            // estilos.style.display = 'block';
             // Inicializa un objeto para almacenar las columnas de datos
             var Datacolumna = {};
             // Obtiene las columnas del resultado
@@ -183,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Si no hay un resultado, oculta el elemento "display_none"
             display_none.style.display = 'none';
             // Si no hay un resultado, oculta el elemento "estilos"
-            estilos.style.display = 'none';
+            // estilos.style.display = 'none';
         }
 
         if(autoselect){
@@ -912,26 +950,25 @@ async function saveNav() {
 }
 
 
-function CambiarFuente(){
+
+
+// function CambiarFuente(){
     
-    // Agregar un event listener al <select> para escuchar cambios
-    selectFuentes.addEventListener('change', function() {
-        // Obtener el valor de la opción seleccionada en lugar de textContent
-        let content = this.value;
+//     // Agregar un event listener al <select> para escuchar cambios
+//     selectFuentes.addEventListener('change', function() {
+//         // Obtener el valor de la opción seleccionada en lugar de textContent
+//         let content = this.value;
 
-        // Obtener todos los elementos con la clase 'menu_anchor'
-        let textos = document.getElementsByClassName('menu_anchor');
+//         // Obtener todos los elementos con la clase 'menu_anchor'
+//         let textos = document.getElementsByClassName('menu_anchor');
 
-        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
-        Array.from(textos).forEach(texto => {
-            texto.style.fontFamily = content;
-        });
-    });
-
-    selectFuentes.dispatchEvent(new Event('change'));
-
-
-}
+//         // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
+//         Array.from(textos).forEach(texto => {
+//             texto.style.fontFamily = content;
+//         });
+//     });
+//     selectFuentes.dispatchEvent(new Event('change'));
+// }
 
 
 /* ---------------------------------------------------------------------------------------------------------------------
