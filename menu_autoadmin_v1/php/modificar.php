@@ -272,7 +272,7 @@ BPPJ
                 <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
             </div>
 
-            <div id="btn-modifcar-boton" class="btn-modifcar-boton">
+            <div id="btn-modificar-boton" class="btn-modifcar-boton">
                 <div class="container-title">
                     <div class="title__menu">Menu Bóton</div>
                     <div id="cerrar_menu" class="cerrar__menu">X</div>                    
@@ -290,6 +290,37 @@ BPPJ
                     <div class="btn__style">Estilo Borde Bóton</div>
                     <div class="btn__style">Color Borde Bóton</div>
                     <div class="btn__style"></div>    
+                </div>
+            </div>
+
+            <div id="btn-modificar-texto" class="btn-modifcar-texto">
+                <div class="container-title">
+                    <div class="title__menu">Menu Texto </div>
+                    <div id="cerrar_menu_texto" class="cerrar_menu_texto">X</div>                    
+                </div>
+                <div>
+                    <select class="modificar__tipoletra">
+                        <option>Tipo Letra</option>
+                    </select>
+                    <select class="modificar__tamanoletra">
+                        <option>11</option>
+                    </select>
+                </div>
+                <div class="container-btn-modificar_texto">
+                    <div class="btn__style_texto">Negrita</div>
+                    <div class="btn__style_texto">Cursiva</div>
+                    <div class="btn__style_texto">Subrayado</div>
+                    <div class="btn__style_texto">Color</div>
+                    <div class="btn__style_texto">Posición Fila</div>
+                    <div class="btn__style_texto">Posicion columna</div>
+                    <div class="btn__style_texto">Viñeta</div>
+                    <div class="btn__style_texto">Alineación izquierda</div>
+                    <div class="btn__style_texto">Alineación centro</div>
+                    <div class="btn__style_texto">Alineación derecha</div>
+                    <div class="btn__style_texto">Justificado</div>
+                    <div class="btn__style_texto">Animación</div>
+                    <div class="btn__style_texto">Tiempo Animación</div>
+                    <div class="btn__style_texto">Borrar todo el formato</div>      
                 </div>
             </div>
 

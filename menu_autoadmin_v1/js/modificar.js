@@ -29,71 +29,36 @@ let Menu = [];
 
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
-    //TESTING
 
-    const draggableElement = document.getElementById('btn-modifcar-boton');
+    makeElementDraggable('btn-modificar-boton');
+    makeElementDraggable('btn-modificar-texto');
 
-    let offsetX = 0;
-    let offsetY = 0;
-    let isDragging = false;
-    
-    // Evento cuando el usuario hace clic en el contenedor
-    draggableElement.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        // Calcula el offset entre el mouse y la esquina superior izquierda del contenedor
-        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
-        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
-        document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
-    });
-    
-    // Evento cuando el usuario mueve el mouse
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            // Obtén el tamaño de la ventana
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-    
-            // Obtén el tamaño del contenedor
-            const elementWidth = draggableElement.offsetWidth;
-            const elementHeight = draggableElement.offsetHeight;
-    
-            // Calcula las nuevas posiciones
-            let newLeft = e.clientX - offsetX;
-            let newTop = e.clientY - offsetY;
-    
-            // Verifica los límites horizontales
-            if (newLeft < 0) newLeft = 0;
-            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
-    
-            // Verifica los límites verticales
-            if (newTop < 0) newTop = 0;
-            if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
-    
-            // Actualiza la posición del contenedor
-            draggableElement.style.left = `${newLeft}px`;
-            draggableElement.style.top = `${newTop}px`;
-        }
-    });
-    
-    // Evento cuando el usuario suelta el botón del mouse
-    document.addEventListener('mouseup', () => {
-        if (isDragging) {
-            isDragging = false;
-            document.body.style.cursor = 'auto'; // Cambia el cursor de vuelta al predeterminado
-        }
-    });
-    
-    let divModificar = document.getElementById('btn-modifcar-boton');
+    let divModificarBoton = document.getElementById('btn-modificar-boton');
     let cerrarmodificar = document.getElementById('cerrar_menu');
     let modificarBtn = document.getElementById('modificarBtn');
 
-    cerrarmodificar.addEventListener('click',function(){
-        divModificar.style.display = 'none'
+    let divModificarTexto = document.getElementById('btn-modificar-texto');
+    let cerrarTexto = document.getElementById('cerrar_menu_texto');
+    let modificarTexto = document.getElementById('modificarTexto');
+
+    cerrarmodificar.addEventListener('click', function(){
+        divModificarBoton.style.display = 'none'
     })
 
-    modificarBtn.addEventListener('click',function(){
-        divModificar.style.display = 'block'
+    modificarBtn.addEventListener('click', function(){
+        divModificarBoton.style.display = 'block'
+        divModificarTexto.style.display = 'none'
     })
+
+    cerrarTexto.addEventListener('click', function(){
+        divModificarTexto.style.display = 'none'
+    })
+
+    modificarTexto.addEventListener('click', function(){
+        divModificarTexto.style.display = 'block'
+        divModificarBoton.style.display = 'none'
+    })
+
 
 
     ////
@@ -1000,6 +965,46 @@ async function saveNav() {
 //     selectFuentes.dispatchEvent(new Event('change'));
 // }
 
+function makeElementDraggable(elementId) {
+    const draggableElement = document.getElementById(elementId);
+    let offsetX = 0;
+    let offsetY = 0;
+    let isDragging = false;
+
+    draggableElement.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        document.body.style.cursor = 'move';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const elementWidth = draggableElement.offsetWidth;
+            const elementHeight = draggableElement.offsetHeight;
+
+            let newLeft = e.clientX - offsetX;
+            let newTop = e.clientY - offsetY;
+
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
+            if (newTop < 0) newTop = 0;
+            if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
+
+            draggableElement.style.left = `${newLeft}px`;
+            draggableElement.style.top = `${newTop}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'auto';
+        }
+    });
+}
 
 /* ---------------------------------------------------------------------------------------------------------------------
    -------------------------------------- FIN ITred Spa eliminar.js ----------------------------------------------------

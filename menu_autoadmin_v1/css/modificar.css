@@ -434,11 +434,32 @@ BPPJ
    display: none;
 }
 
+.btn-modifcar-texto{
+   z-index: 99999;
+   position: absolute;
+   top:66%;
+   left: 1%;
+   padding: 10px;
+   border: 1px solid;
+   border-radius: 15px;
+   width: 750px;
+   height: 30%;
+   background-color: white;
+   display: none;
+}
+
 .container-btn-modificar {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
    margin: 30px 20px 0px 20px;
+}
+
+.container-btn-modificar_texto{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 30px 1px 0px 1px;
 }
 
 .btn__style{
@@ -452,6 +473,19 @@ BPPJ
    justify-content: center;
    align-items: center;
    text-align: center; /* Para asegurar que el texto esté centrado */
+}
+
+.btn__style_texto{
+   border: 1px solid;
+    width: 98px;
+    height: 70px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .first-part, .second-part {
@@ -471,7 +505,8 @@ BPPJ
    text-align: center; /* Asegura que el texto esté centrado dentro del div */
 }
 
-.cerrar__menu {
+.cerrar__menu,
+.cerrar_menu_texto{
    padding: 10px;
    border: solid 1px;
    border-radius: 50%; /* Cambia esto a 50% para un círculo perfecto */
@@ -483,16 +518,37 @@ BPPJ
    text-align: center; /* Asegura que el texto esté centrado */
 }
 
-.cerrar__menu:hover{
+.cerrar__menu:hover,
+.cerrar_menu_texto:hover{
    background-color: red;
    cursor: pointer;
 }
 
-.btn__style:hover{
+.btn__style:hover,
+.btn__style_texto:hover {
    background-color: green;
    cursor: pointer;
 }
 
+.modificar__tipoletra{
+   width: 300px;
+   height: 30px;
+   margin-left: 20px;
+   font-size: 20px;
+   text-align: center;
+}
+
+.modificar__tamanoletra{
+   width: 100px;
+   height: 30px;
+   font-size: 20px;
+   text-align: center;
+}
+
+.title__menu{
+   font-size: 25px;
+   margin-bottom: 20px;
+}
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
