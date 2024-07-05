@@ -546,8 +546,11 @@ input[type=number]::-webkit-inner-spin-button {
  .menu_column a:hover{
     background-color: rgb(255, 103, 103); /*Cambia a color fondo a rosado*/
 }
+ 
 
-/* Contenedor del menú de modificación de botón */
+
+
+/* Contenedor del menú de modificación de botones */
 .btn-modifcar-boton {
     z-index: 99999;
     position: absolute;
@@ -562,41 +565,22 @@ input[type=number]::-webkit-inner-spin-button {
     display: none;
  }
  
- /* Contenedor del título dentro del menú de modificación de botón */
- .container-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Para alinear verticalmente los elementos */
- }
- 
- /* Estilo del título dentro del menú de modificación de botón */
- .title__menu {
-    display: flex;
-    justify-content: center;
-    flex: 1; /* Permitir que el elemento ocupe todo el espacio disponible */
-    text-align: center; /* Asegura que el texto esté centrado dentro del div */
- }
- 
- /* Estilo del botón de cerrar menú */
- .cerrar__menu {
+ /* Contenedor del menú de modificación de texto */
+ .btn-modifcar-texto {
+    z-index: 99999;
+    position: absolute;
+    top: 66%;
+    left: 1%;
     padding: 10px;
-    border: solid 1px;
-    border-radius: 50%; /* Cambia esto a 50% para un círculo perfecto */
-    width: 8px; /* Ancho fijo para mantener el círculo */
-    height: 8px; /* Alto fijo para mantener el círculo */
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    text-align: center; /* Asegura que el texto esté centrado */
+    border: 1px solid;
+    border-radius: 15px;
+    width: 750px;
+    height: 30%;
+    background-color: white;
+    display: none;
  }
  
- /* Estilo al pasar el ratón sobre el botón de cerrar menú */
- .cerrar__menu:hover {
-    background-color: red;
-    cursor: pointer;
- }
- 
- /* Contenedor de los botones de modificación dentro del menú de modificación de botón */
+ /* Contenedor de los botones de modificación */
  .container-btn-modificar {
     display: flex;
     flex-wrap: wrap;
@@ -604,7 +588,14 @@ input[type=number]::-webkit-inner-spin-button {
     margin: 30px 20px 0px 20px;
  }
  
- /* Estilo de cada botón dentro del menú de modificación de botón */
+ .container-btn-modificar_texto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 1px 0px 1px;
+ }
+ 
+ /* Estilo de cada botón dentro del menú de modificación de botones */
  .btn__style {
     border: 1px solid;
     width: 110px;
@@ -618,12 +609,83 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center; /* Para asegurar que el texto esté centrado */
  }
  
+ /* Estilo de cada botón dentro del menú de modificación de texto */
+ .btn__style_texto {
+    border: 1px solid;
+    width: 98px;
+    height: 70px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
+ 
  /* Estilo al pasar el ratón sobre los botones de modificación */
- .btn__style:hover {
+ .btn__style:hover,
+ .btn__style_texto:hover {
     background-color: green;
     cursor: pointer;
  }
  
+ /* Contenedor del título dentro del menú de modificación */
+ .container-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Para alinear verticalmente los elementos */
+ }
+ 
+ /* Estilo del título dentro del menú de modificación */
+ .title__menu {
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Permitir que el elemento ocupe todo el espacio disponible */
+    text-align: center; /* Asegura que el texto esté centrado dentro del div */
+ }
+ 
+ /* Estilo del botón de cerrar menú */
+ .cerrar__menu,
+ .cerrar_menu_texto {
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 50%; /* Cambia esto a 50% para un círculo perfecto */
+    width: 8px; /* Ancho fijo para mantener el círculo */
+    height: 8px; /* Alto fijo para mantener el círculo */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+ }
+ 
+ /* Estilo al pasar el ratón sobre el botón de cerrar menú */
+ .cerrar__menu:hover,
+ .cerrar_menu_texto:hover {
+    background-color: red;
+    cursor: pointer;
+ }
+ 
+ /* Estilo de los select dentro del menú de modificación de texto */
+ .modificar__tipoletra,
+ .modificar__tamanoletra {
+    width: 300px;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+ }
+ 
+ .modificar__tamanoletra {
+    width: 100px;
+ }
+ 
+ /* Estilo del título dentro del menú de modificación */
+ .title__menu {
+    font-size: 25px;
+    margin-bottom: 20px;
+ }
+
 
 
 /* Define la animación de escalado */

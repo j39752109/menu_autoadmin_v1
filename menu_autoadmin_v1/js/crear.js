@@ -19,14 +19,14 @@ BPPJ
 // Data de las columnas y subcolumnas
 let menuData = [];
 
-let Fuentes = [
-    {"id" : 1 , "nombre" : "serif"},
-    {"id" : 2 , "nombre" : "sans-serif"},
-    {"id" : 3 , "nombre" : "monospace"},
-    {"id" : 4 , "nombre" : "cursive"},
-    {"id" : 5 , "nombre" : "fantasy"},
-    {"id" : 6 , "nombre" : "system-ui"}
-];
+// let Fuentes = [
+//     {"id" : 1 , "nombre" : "serif"},
+//     {"id" : 2 , "nombre" : "sans-serif"},
+//     {"id" : 3 , "nombre" : "monospace"},
+//     {"id" : 4 , "nombre" : "cursive"},
+//     {"id" : 5 , "nombre" : "fantasy"},
+//     {"id" : 6 , "nombre" : "system-ui"}
+// ];
 
 
 
@@ -62,66 +62,41 @@ function createButton(label) {
 // Se inicializa la variable isCreated como falsa
 let isCreated = false;
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    var menu = document.getElementById('estilos'); // El menú que quieres hacer movible
-    var drag = false; // Estado del arrastre
-    var offsetX, offsetY; // Para calcular la diferencia de posición
+    // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
+    makeElementDraggable('btn-modificar-boton');
+    makeElementDraggable('btn-modificar-texto');
 
-    // Función para iniciar el arrastre del menú
-    menu.addEventListener('mousedown', function(e) {
-        drag = true;
-        offsetX = e.clientX - menu.getBoundingClientRect().left;
-        offsetY = e.clientY - menu.getBoundingClientRect().top;
-        menu.style.position = 'absolute';
-        menu.style.cursor = 'move';
+    // Obtener referencias a los elementos del DOM necesarios
+    let divModificarBoton = document.getElementById('btn-modificar-boton'); // Elemento del botón modificar
+    let cerrarmodificar = document.getElementById('cerrar_menu'); // Botón para cerrar el menú de modificar botón
+    let modificarBtn = document.getElementById('modificarBtn'); // Botón que abre el menú de modificar botón
+
+    let divModificarTexto = document.getElementById('btn-modificar-texto'); // Elemento del texto modificar
+    let cerrarTexto = document.getElementById('cerrar_menu_texto'); // Botón para cerrar el menú de modificar texto
+    let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
+
+    // Agregar un evento al botón 'cerrarmodificar' para ocultar el menú de modificar botón cuando se haga clic
+    cerrarmodificar.addEventListener('click', function() {
+        divModificarBoton.style.display = 'none';
     });
 
-    // Función para mover el menú
-    document.addEventListener('mousemove', function(e) {
-        if (drag) {
-            menu.style.left = e.clientX - offsetX + 'px';
-            menu.style.top = e.clientY - offsetY + 'px';
-        }
+    // Agregar un evento al botón 'modificarBtn' para mostrar el menú de modificar botón y ocultar el menú de modificar texto cuando se haga clic
+    modificarBtn.addEventListener('click', function() {
+        divModificarBoton.style.display = 'block';
+        divModificarTexto.style.display = 'none';
     });
 
-    // Función para detener el arrastre del menú
-    document.addEventListener('mouseup', function() {
-        drag = false;
-        menu.style.cursor = 'default';
+    // Agregar un evento al botón 'cerrarTexto' para ocultar el menú de modificar texto cuando se haga clic
+    cerrarTexto.addEventListener('click', function() {
+        divModificarTexto.style.display = 'none';
     });
 
-    // Inicio del código para hacer arrastrable el botón 'btn-modifcar-boton'
-    const draggableElement = document.getElementById('btn-modifcar-boton');
-    let isDragging = false;
-
-    // Evento cuando el usuario hace clic en el botón
-    draggableElement.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
-        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
-        draggableElement.style.position = 'absolute';
-        document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
+    // Agregar un evento al botón 'modificarTexto' para mostrar el menú de modificar texto y ocultar el menú de modificar botón cuando se haga clic
+    modificarTexto.addEventListener('click', function() {
+        divModificarTexto.style.display = 'block';
+        divModificarBoton.style.display = 'none';
     });
-
-    // Evento para mover el botón
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            draggableElement.style.left = e.clientX - offsetX + 'px';
-            draggableElement.style.top = e.clientY - offsetY + 'px';
-        }
-    });
-
-    // Evento para detener el arrastre del botón
-    document.addEventListener('mouseup', () => {
-        if (isDragging) {
-            isDragging = false;
-            document.body.style.cursor = 'default';
-        }
-    });
-
-    
 });
 
 
@@ -1393,7 +1368,38 @@ function CambiarFuente(){
 
 }
 
+// Función para hacer que un elemento sea arrastrable
+function makeElementDraggable(elementId) {
+    const el = document.getElementById(elementId);
+    let offsetX = 0, offsetY = 0, startX = 0, startY = 0;
 
+    if (el) {
+        const handleMouseDown = (e) => {
+            e.preventDefault();
+            startX = e.clientX;
+            startY = e.clientY;
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        };
+
+        const handleMouseMove = (e) => {
+            e.preventDefault();
+            offsetX = startX - e.clientX;
+            offsetY = startY - e.clientY;
+            startX = e.clientX;
+            startY = e.clientY;
+            el.style.top = (el.offsetTop - offsetY) + "px";
+            el.style.left = (el.offsetLeft - offsetX) + "px";
+        };
+
+        const handleMouseUp = () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+
+        el.addEventListener('mousedown', handleMouseDown);
+    }
+}
 
 /* ---------------------------------------------------------------------------------------------------------------------
    -------------------------------------- FIN ITred Spa eliminar.js ----------------------------------------------------

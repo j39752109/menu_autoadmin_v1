@@ -71,74 +71,73 @@ BPPJ
             <form class="input_names-container">  
             </form>
 
-
-
-            <div id="estilos" class="estilos">
-                <div class="estilos__titulo">Estilos Generales</div>
-                    
-                <div class="estilos__contenedor1">
-                    <div class="contenedor__fuentes">
-                        <div class="fuentes__titulo">Estilo Fuentes</div>
-                        <div class="fuentes__select">
-                            <label for="">Fuentes</label>
-                            <select id="selectFuentes">
-                                <option select>Seleccionar</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="fuentes__tamanio">
-                <label for="inputTamanioLetra">Tamaño de Letra:</label>
-                <input type="number" id="inputTamanioLetra" min="0" placeholder="Ejemplo: 14">
-            </div>
-                </div>
-                
-                <div class="estilos__contenedor2">
-                    <div class="contenedor__color">
-
-                        <div class="color__titulo">Colores Menú:</div>
-                            <div class="color__contenedor">
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Menú:</label>
-                                    <input type="color">
-                                </div>
-
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Hover 1:</label>
-                                    <input type="color">
-                                </div>
-
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Hover 2:</label>
-                                    <input type="color">
-                                </div>
-                            </div>
-                    </div>
-
-                    <div class="contenedor__color-letras">
-                        <div class="color-letras__titulo">Color de Letras</div>
-                        <div class="color-letras__contenedor">
-                            <div class="contenedor__input-letras">
-                                <label for="" class="input-letras__label">Color Botón:</label>
-                                <input type="color">
-                            </div>
-                            <div class="contenedor__input-letras">
-                                <label for="" class="input-letras__label">Color SubMenú:</label>
-                                <input type="color">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button id="cerrarMenu">Cerrar</button>    
+            <form id="contenedor-menu" class="input_names-container"></form>
+            
+            <div id="container-btn-sytle" class="container-btn-sytle">
+                <button id="modificarTexto" class="btn-syle__btn">Modificar Texto Menu</button>
+                <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
             </div>
 
+            <div id="btn-modificar-boton" class="btn-modifcar-boton">
+                <div class="container-title">
+                    <div class="title__menu">Menu Bóton</div>
+                    <div id="cerrar_menu" class="cerrar__menu">X</div>                    
+                </div>
+                <div class="container-btn-modificar">
+                    <div class="btn__style">Color Fondo Bóton</div>
+                    <div class="btn__style">Color Fondo Bóton Hover</div>
+                    <div class="btn__style">Ancho Bóton</div>
+                    <div class="btn__style">Borde Bóton</div>
+                    <div class="btn__style">Ancho Borde Bóton</div>
+                    <div class="btn__style">Borrar Todo el Formado</div>
+                    <div class="btn__style">Imagen Fondo Bóton</div>
+                    <div class="btn__style">Imagen Fondo Bóton Hover</div>
+                    <div class="btn__style">Alto Bóton</div>
+                    <div class="btn__style">Estilo Borde Bóton</div>
+                    <div class="btn__style">Color Borde Bóton</div>
+                    <div class="btn__style"></div>    
+                </div>
+            </div>
+
+            <div id="btn-modificar-texto" class="btn-modifcar-texto">
+                <div class="container-title">
+                    <div class="title__menu">Menu Texto </div>
+                    <div id="cerrar_menu_texto" class="cerrar_menu_texto">X</div>                    
+                </div>
+                <div>
+                    <select class="modificar__tipoletra">
+                        <option>Tipo Letra</option>
+                    </select>
+                    <select class="modificar__tamanoletra">
+                        <option>11</option>
+                    </select>
+                </div>
+                <div class="container-btn-modificar_texto">
+                    <div class="btn__style_texto">Negrita</div>
+                    <div class="btn__style_texto">Cursiva</div>
+                    <div class="btn__style_texto">Subrayado</div>
+                    <div class="btn__style_texto">Color</div>
+                    <div class="btn__style_texto">Posición Fila</div>
+                    <div class="btn__style_texto">Posicion columna</div>
+                    <div class="btn__style_texto">Viñeta</div>
+                    <div class="btn__style_texto">Alineación izquierda</div>
+                    <div class="btn__style_texto">Alineación centro</div>
+                    <div class="btn__style_texto">Alineación derecha</div>
+                    <div class="btn__style_texto">Justificado</div>
+                    <div class="btn__style_texto">Animación</div>
+                    <div class="btn__style_texto">Tiempo Animación</div>
+                    <div class="btn__style_texto">Borrar todo el formato</div>      
+                </div>
+            </div>
+
+
+           
 
             
 
 
 
             <div class="footer">
-                <button id="btnModificarTextoMenu">Modificar Texto Menú</button> 
                 <button onClick=saveNav()>Guardar</button>
                 <!-- Boton para guardar el menu -->
                 <button onClick=saveNav(1)>Crear Nuevo Menú</button>
