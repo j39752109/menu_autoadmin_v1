@@ -1000,10 +1000,10 @@ function makeElementDraggable(elementId) {
             let newLeft = e.clientX - offsetX;
             let newTop = e.clientY - offsetY;
             // Asegurarse de que el elemento no salga de los límites de la ventana
-            if (newLeft < 0) newLeft = 0;
-            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
-            if (newTop < 0) newTop = 0;
-            if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
+            // if (newLeft < 0) newLeft = 0;
+            // if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
+            // if (newTop < 0) newTop = 0;
+            // if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
             // Aplicar la nueva posición al elemento
             draggableElement.style.left = `${newLeft}px`;
             draggableElement.style.top = `${newTop}px`;
