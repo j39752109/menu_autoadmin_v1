@@ -64,6 +64,68 @@ let isCreated = false;
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    var menu = document.getElementById('estilos'); // El menú que quieres hacer movible
+    var drag = false; // Estado del arrastre
+    var offsetX, offsetY; // Para calcular la diferencia de posición
+
+    // Función para iniciar el arrastre del menú
+    menu.addEventListener('mousedown', function(e) {
+        drag = true;
+        offsetX = e.clientX - menu.getBoundingClientRect().left;
+        offsetY = e.clientY - menu.getBoundingClientRect().top;
+        menu.style.position = 'absolute';
+        menu.style.cursor = 'move';
+    });
+
+    // Función para mover el menú
+    document.addEventListener('mousemove', function(e) {
+        if (drag) {
+            menu.style.left = e.clientX - offsetX + 'px';
+            menu.style.top = e.clientY - offsetY + 'px';
+        }
+    });
+
+    // Función para detener el arrastre del menú
+    document.addEventListener('mouseup', function() {
+        drag = false;
+        menu.style.cursor = 'default';
+    });
+
+    // Inicio del código para hacer arrastrable el botón 'btn-modifcar-boton'
+    const draggableElement = document.getElementById('btn-modifcar-boton');
+    let isDragging = false;
+
+    // Evento cuando el usuario hace clic en el botón
+    draggableElement.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        draggableElement.style.position = 'absolute';
+        document.body.style.cursor = 'move'; // Cambia el cursor cuando arrastra
+    });
+
+    // Evento para mover el botón
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            draggableElement.style.left = e.clientX - offsetX + 'px';
+            draggableElement.style.top = e.clientY - offsetY + 'px';
+        }
+    });
+
+    // Evento para detener el arrastre del botón
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'default';
+        }
+    });
+
+    
+});
+
+
+
 //hace funcionar el boton de cerrar menu
 document.addEventListener('DOMContentLoaded', function() {
     const cerrarMenu = document.getElementById('cerrarMenu');
