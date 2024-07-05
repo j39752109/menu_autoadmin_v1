@@ -423,13 +423,15 @@ BPPJ
 .btn-modifcar-boton{
    z-index: 99999;
    position: absolute;
-   top: 50%;
+   top:66%;
+   left: 1%;
    padding: 10px;
    border: 1px solid;
    border-radius: 15px;
    width: 750px;
    height: 30%;
    background-color: white;
+   display: none;
 }
 
 .container-btn-modificar {

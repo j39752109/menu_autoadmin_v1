@@ -268,14 +268,14 @@ BPPJ
             <form id="contenedor-menu" class="input_names-container"></form>
             
             <div id="container-btn-sytle" class="container-btn-sytle">
-                <button class="btn-syle__btn">Modificar Texto Menu</button>
-                <button class="btn-syle__btn">Modificar Botón</button>
+                <button id="modificarTexto" class="btn-syle__btn">Modificar Texto Menu</button>
+                <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
             </div>
 
             <div id="btn-modifcar-boton" class="btn-modifcar-boton">
                 <div class="container-title">
                     <div class="title__menu">Menu Bóton</div>
-                    <div class="cerrar__menu">X</div>                    
+                    <div id="cerrar_menu" class="cerrar__menu">X</div>                    
                 </div>
                 <div class="container-btn-modificar">
                     <div class="btn__style">Color Fondo Bóton</div>

@@ -83,8 +83,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
+    let divModificar = document.getElementById('btn-modifcar-boton');
+    let cerrarmodificar = document.getElementById('cerrar_menu');
+    let modificarBtn = document.getElementById('modificarBtn');
 
-////
+    cerrarmodificar.addEventListener('click',function(){
+        divModificar.style.display = 'none'
+    })
+
+    modificarBtn.addEventListener('click',function(){
+        divModificar.style.display = 'block'
+    })
+
+
+    ////
+
     // let selectFuentes = document.getElementById('selectFuentes');
 
     // Fuentes.forEach(fuente => {
