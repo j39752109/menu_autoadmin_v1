@@ -546,8 +546,84 @@ input[type=number]::-webkit-inner-spin-button {
  .menu_column a:hover{
     background-color: rgb(255, 103, 103); /*Cambia a color fondo a rosado*/
 }
- 
 
+/* Contenedor del menú de modificación de botón */
+.btn-modifcar-boton {
+    z-index: 99999;
+    position: absolute;
+    top: 66%;
+    left: 1%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 15px;
+    width: 750px;
+    height: 30%;
+    background-color: white;
+    display: none;
+ }
+ 
+ /* Contenedor del título dentro del menú de modificación de botón */
+ .container-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Para alinear verticalmente los elementos */
+ }
+ 
+ /* Estilo del título dentro del menú de modificación de botón */
+ .title__menu {
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Permitir que el elemento ocupe todo el espacio disponible */
+    text-align: center; /* Asegura que el texto esté centrado dentro del div */
+ }
+ 
+ /* Estilo del botón de cerrar menú */
+ .cerrar__menu {
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 50%; /* Cambia esto a 50% para un círculo perfecto */
+    width: 8px; /* Ancho fijo para mantener el círculo */
+    height: 8px; /* Alto fijo para mantener el círculo */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+ }
+ 
+ /* Estilo al pasar el ratón sobre el botón de cerrar menú */
+ .cerrar__menu:hover {
+    background-color: red;
+    cursor: pointer;
+ }
+ 
+ /* Contenedor de los botones de modificación dentro del menú de modificación de botón */
+ .container-btn-modificar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 20px 0px 20px;
+ }
+ 
+ /* Estilo de cada botón dentro del menú de modificación de botón */
+ .btn__style {
+    border: 1px solid;
+    width: 110px;
+    height: 70px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Para asegurar que el texto esté centrado */
+ }
+ 
+ /* Estilo al pasar el ratón sobre los botones de modificación */
+ .btn__style:hover {
+    background-color: green;
+    cursor: pointer;
+ }
+ 
 
 
 /* Define la animación de escalado */
