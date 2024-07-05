@@ -30,36 +30,40 @@ let Menu = [];
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
     makeElementDraggable('btn-modificar-boton');
     makeElementDraggable('btn-modificar-texto');
 
-    let divModificarBoton = document.getElementById('btn-modificar-boton');
-    let cerrarmodificar = document.getElementById('cerrar_menu');
-    let modificarBtn = document.getElementById('modificarBtn');
+    // Obtener referencias a los elementos del DOM necesarios
+    let divModificarBoton = document.getElementById('btn-modificar-boton'); // Elemento del botón modificar
+    let cerrarmodificar = document.getElementById('cerrar_menu'); // Botón para cerrar el menú de modificar botón
+    let modificarBtn = document.getElementById('modificarBtn'); // Botón que abre el menú de modificar botón
 
-    let divModificarTexto = document.getElementById('btn-modificar-texto');
-    let cerrarTexto = document.getElementById('cerrar_menu_texto');
-    let modificarTexto = document.getElementById('modificarTexto');
+    let divModificarTexto = document.getElementById('btn-modificar-texto'); // Elemento del texto modificar
+    let cerrarTexto = document.getElementById('cerrar_menu_texto'); // Botón para cerrar el menú de modificar texto
+    let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
 
-    cerrarmodificar.addEventListener('click', function(){
-        divModificarBoton.style.display = 'none'
-    })
+    // Agregar un evento al botón 'cerrarmodificar' para ocultar el menú de modificar botón cuando se haga clic
+    cerrarmodificar.addEventListener('click', function() {
+        divModificarBoton.style.display = 'none';
+    });
 
-    modificarBtn.addEventListener('click', function(){
-        divModificarBoton.style.display = 'block'
-        divModificarTexto.style.display = 'none'
-    })
+    // Agregar un evento al botón 'modificarBtn' para mostrar el menú de modificar botón y ocultar el menú de modificar texto cuando se haga clic
+    modificarBtn.addEventListener('click', function() {
+        divModificarBoton.style.display = 'block';
+        divModificarTexto.style.display = 'none';
+    });
 
-    cerrarTexto.addEventListener('click', function(){
-        divModificarTexto.style.display = 'none'
-    })
+    // Agregar un evento al botón 'cerrarTexto' para ocultar el menú de modificar texto cuando se haga clic
+    cerrarTexto.addEventListener('click', function() {
+        divModificarTexto.style.display = 'none';
+    });
 
-    modificarTexto.addEventListener('click', function(){
-        divModificarTexto.style.display = 'block'
-        divModificarBoton.style.display = 'none'
-    })
-
-
+    // Agregar un evento al botón 'modificarTexto' para mostrar el menú de modificar texto y ocultar el menú de modificar botón cuando se haga clic
+    modificarTexto.addEventListener('click', function() {
+        divModificarTexto.style.display = 'block';
+        divModificarBoton.style.display = 'none';
+    });
 
     ////
 
@@ -965,46 +969,57 @@ async function saveNav() {
 //     selectFuentes.dispatchEvent(new Event('change'));
 // }
 
+
 function makeElementDraggable(elementId) {
+    // Obtener el elemento a partir del ID proporcionado
     const draggableElement = document.getElementById(elementId);
+    // Variables para almacenar los offsets de la posición del ratón
     let offsetX = 0;
     let offsetY = 0;
+    // Variable para rastrear si se está arrastrando el elemento
     let isDragging = false;
-
+    // Evento que se dispara al presionar el botón del ratón sobre el elemento
     draggableElement.addEventListener('mousedown', (e) => {
+        // Indicar que se ha iniciado el arrastre
         isDragging = true;
+        // Calcular el offset del ratón respecto a la posición del elemento
         offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
         offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        // Cambiar el cursor para indicar que se está arrastrando
         document.body.style.cursor = 'move';
     });
-
+    // Evento que se dispara al mover el ratón sobre el documento
     document.addEventListener('mousemove', (e) => {
         if (isDragging) {
+            // Obtener las dimensiones de la ventana y del elemento
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
             const elementWidth = draggableElement.offsetWidth;
             const elementHeight = draggableElement.offsetHeight;
-
+            // Calcular la nueva posición del elemento
             let newLeft = e.clientX - offsetX;
             let newTop = e.clientY - offsetY;
-
+            // Asegurarse de que el elemento no salga de los límites de la ventana
             if (newLeft < 0) newLeft = 0;
             if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
             if (newTop < 0) newTop = 0;
             if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
-
+            // Aplicar la nueva posición al elemento
             draggableElement.style.left = `${newLeft}px`;
             draggableElement.style.top = `${newTop}px`;
         }
     });
-
+    // Evento que se dispara al soltar el botón del ratón
     document.addEventListener('mouseup', () => {
         if (isDragging) {
+            // Indicar que se ha terminado el arrastre
             isDragging = false;
+            // Restaurar el cursor original
             document.body.style.cursor = 'auto';
         }
     });
 }
+
 
 /* ---------------------------------------------------------------------------------------------------------------------
    -------------------------------------- FIN ITred Spa eliminar.js ----------------------------------------------------
