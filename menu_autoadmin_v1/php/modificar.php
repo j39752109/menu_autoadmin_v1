@@ -278,18 +278,31 @@ BPPJ
                     <div id="cerrar_menu" class="cerrar__menu">X</div>                    
                 </div>
                 <div class="container-btn-modificar">
-                    <div class="btn__style">Color Fondo Bóton</div>
-                    <div class="btn__style">Color Fondo Bóton Hover</div>
-                    <div class="btn__style">Ancho Bóton</div>
-                    <div class="btn__style">Borde Bóton</div>
-                    <div class="btn__style">Ancho Borde Bóton</div>
-                    <div class="btn__style">Borrar Todo el Formado</div>
-                    <div class="btn__style">Imagen Fondo Bóton</div>
-                    <div class="btn__style">Imagen Fondo Bóton Hover</div>
-                    <div class="btn__style">Alto Bóton</div>
-                    <div class="btn__style">Estilo Borde Bóton</div>
-                    <div class="btn__style">Color Borde Bóton</div>
+                    <div id="bg-color" class="btn__style" onclick="bgcolor();" >Color Fondo Bóton</div>
+                    <div id="bg-color-hover" class="btn__style">Color Fondo Bóton Hover</div>
+                    <div id="btn-width" class="btn__style">Ancho Bóton</div>
+                    <div id="btn-border" class="btn__style">Borde Bóton</div>
+                    <div id="btn-border-width" class="btn__style">Ancho Borde Bóton</div>
+                    <div id="delete-all" class="btn__style">Borrar Todo el Formado</div>
+                    <div id="bg-img" class="btn__style">Imagen Fondo Bóton</div>
+                    <div id="bg-img-hover" class="btn__style">Imagen Fondo Bóton Hover</div>
+                    <div id="btn-height" class="btn__style">Alto Bóton</div>
+                    <div id="btn-borde-style" class="btn__style">Estilo Borde Bóton</div>
+                    <div id="btn-border-color" class="btn__style">Color Borde Bóton</div>
                     <div class="btn__style"></div>    
+                </div>
+                <div id="MenuSeleccionado" class="MenuSeleccionado">
+                    <div class="seleccionado">
+                        <div class="seleccionado__container-title">
+                            <div class="seleccionado_titulo">titulo</div>
+                            <div id="seleccionado__cerrar" class="seleccionado__cerrar">X</div> 
+                        </div>
+                        <div id="seleccionado__contenido" class="seleccionado__contenido">
+                            <div class="seleccionado__contenedor">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
