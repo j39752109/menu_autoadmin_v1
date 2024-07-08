@@ -63,6 +63,17 @@ function createButton(label) {
 let isCreated = false;
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    var MenuSeleccionado = document.getElementById('MenuSeleccionado');
+    var seleccionado__cerrar = document.getElementById('seleccionado__cerrar');
+    
+    seleccionado__cerrar.addEventListener('click', function(){
+        MenuSeleccionado.style.display = 'none';
+    })
+    
+
+
+
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
     makeElementDraggable('btn-modificar-boton');
     makeElementDraggable('btn-modificar-texto');

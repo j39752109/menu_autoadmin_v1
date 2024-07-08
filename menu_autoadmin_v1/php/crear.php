@@ -121,6 +121,19 @@ BPPJ
                     <div class="btn__style">Color Borde Bóton</div>
                     <div class="btn__style"></div>    
                 </div>
+                <div id="MenuSeleccionado" class="MenuSeleccionado">
+                    <div class="seleccionado">
+                        <div class="seleccionado__container-title">
+                            <div class="seleccionado_titulo">titulo</div>
+                            <div id="seleccionado__cerrar" class="seleccionado__cerrar">X</div> 
+                        </div>
+                        <div id="seleccionado__contenido" class="seleccionado__contenido">
+                            <div class="seleccionado__contenedor">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="btn-modificar-texto" class="btn-modifcar-texto">
