@@ -11,6 +11,17 @@ BPPJ
 /* ---------------------------------------------------------------------------------------------------------------------
    ------------------- INICIO ITred Spa crear.css ----------------------------------------------------------------------
    --------------------------------------------------------------------------------------------------------------------- */
+
+   
+/*VARIABLES DE COLORES*/
+:root{
+ --menu-bg-color:blue;  
+ --menu-hover-color1:red;
+ --menu-hover-color2:pink;
+}
+
+
+
 .container {
    display: flex;  /* Utiliza el modelo de diseño flexbox para organizar los elementos hijos de manera flexible dentro del contenedor */
    height: 100%;  /* Establece que la altura del contenedor sea el 100% de la altura del contenedor padre */
@@ -224,7 +235,7 @@ BPPJ
    text-decoration: none;  /* Elimina cualquier decoración de texto, como subrayado, del enlace */
    text-align: center;  /* Centra el texto horizontalmente dentro del elemento */
    padding: 10px;  /* Agrega un relleno interno de 10 píxeles alrededor del contenido del elemento */
-   background-color: blue;  /* Establece el color de fondo del elemento a azul */
+   background-color: var(--menu-bg-color);  /* Establece el color de fondo del elemento a azul */
    font-family: Arial;
 }
 
@@ -243,15 +254,15 @@ BPPJ
 }
 
 .menu_column:hover {
-   background-color: red;  /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
+   background-color: var(--menu-hover-color1);  /* Cambia el color de fondo de .menu_column a rojo cuando el usuario pasa el ratón sobre él */
 }
 
 .menu_column:hover a {
-   background-color: red;  /* Cambia el color de fondo de los enlaces dentro de .menu_column a rojo cuando el usuario pasa el ratón sobre .menu_column */
+   background-color:var(--menu-hover-color1);;  /* Cambia el color de fondo de los enlaces dentro de .menu_column a rojo cuando el usuario pasa el ratón sobre .menu_column */
 }
 
 .menu_column a:hover {
-   background-color: rgb(255, 103, 103);  /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono más claro de rojo cuando el usuario pasa el ratón sobre el enlace */
+   background-color: var(--menu-hover-color2);  /* Cambia el color de fondo de los enlaces dentro de .menu_column a un tono más claro de rojo cuando el usuario pasa el ratón sobre el enlace */
 }
 
 

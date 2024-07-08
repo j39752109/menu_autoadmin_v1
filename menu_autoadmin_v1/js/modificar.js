@@ -983,7 +983,7 @@ function bgcolor(){
     let seleccionado__contenedor = MenuSeleccionado.querySelector('.seleccionado__contenedor')
     let colorMenus = document.querySelectorAll('.menu_anchor');
     let color__Menu = document.querySelector('.menu_anchor');
-    
+
     seleccionado__contenedor.innerHTML = ''
     // Obtén el color de fondo del elemento usando getComputedStyle
     let color = window.getComputedStyle(color__Menu).backgroundColor;
@@ -1003,9 +1003,7 @@ function bgcolor(){
     // Actualiza el color de fondo de colorMenu cuando cambie el valor del input
     inputColor.addEventListener('input', (event) => {
         let selectedColor = event.target.value;  // Obtiene el color seleccionado en formato hexadecimal
-        colorMenus.forEach(menu => {
-            menu.style.backgroundColor = selectedColor;  // Cambia el color de fondo de cada elemento
-        });    
+        document.documentElement.style.setProperty('--menu-bg-color', selectedColor);    
     });
 
     tituloSeleccionado.textContent = 'Color Fondo Bóton';
