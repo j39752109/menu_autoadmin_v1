@@ -423,8 +423,7 @@ BPPJ
 .btn-modifcar-boton{
    z-index: 99999;
    position: absolute;
-   top:66%;
-   left: 1%;
+   bottom: 2px;
    padding: 10px;
    border: 1px solid;
    border-radius: 15px;
@@ -437,8 +436,7 @@ BPPJ
 .btn-modifcar-texto{
    z-index: 99999;
    position: absolute;
-   top:66%;
-   left: 1%;
+   bottom: 2px;
    padding: 10px;
    border: 1px solid;
    border-radius: 15px;

@@ -969,54 +969,58 @@ async function saveNav() {
 //     selectFuentes.dispatchEvent(new Event('change'));
 // }
 
-
 function makeElementDraggable(elementId) {
-    // Obtener el elemento a partir del ID proporcionado
     const draggableElement = document.getElementById(elementId);
-    // Variables para almacenar los offsets de la posición del ratón
     let offsetX = 0;
     let offsetY = 0;
-    // Variable para rastrear si se está arrastrando el elemento
     let isDragging = false;
-    // Evento que se dispara al presionar el botón del ratón sobre el elemento
-    draggableElement.addEventListener('mousedown', (e) => {
-        // Indicar que se ha iniciado el arrastre
-        isDragging = true;
-        // Calcular el offset del ratón respecto a la posición del elemento
-        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
-        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
-        // Cambiar el cursor para indicar que se está arrastrando
-        document.body.style.cursor = 'move';
-    });
-    // Evento que se dispara al mover el ratón sobre el documento
-    document.addEventListener('mousemove', (e) => {
+
+    function onMouseMove(e) {
         if (isDragging) {
-            // Obtener las dimensiones de la ventana y del elemento
             const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
             const elementWidth = draggableElement.offsetWidth;
-            const elementHeight = draggableElement.offsetHeight;
-            // Calcular la nueva posición del elemento
+
             let newLeft = e.clientX - offsetX;
             let newTop = e.clientY - offsetY;
-            // Asegurarse de que el elemento no salga de los límites de la ventana
-            // if (newLeft < 0) newLeft = 0;
-            // if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
-            // if (newTop < 0) newTop = 0;
-            // if (newTop + elementHeight > windowHeight) newTop = windowHeight - elementHeight;
-            // Aplicar la nueva posición al elemento
+
+            // Limitar movimiento a la izquierda y derecha
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
+
+            // Limitar movimiento hacia arriba
+            if (newTop < 0) newTop = 0;
+
+            // Actualizar la posición del elemento
             draggableElement.style.left = `${newLeft}px`;
             draggableElement.style.top = `${newTop}px`;
         }
-    });
-    // Evento que se dispara al soltar el botón del ratón
-    document.addEventListener('mouseup', () => {
+    }
+
+    function onMouseUp() {
         if (isDragging) {
-            // Indicar que se ha terminado el arrastre
             isDragging = false;
-            // Restaurar el cursor original
             document.body.style.cursor = 'auto';
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
         }
+    }
+
+    draggableElement.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        document.body.style.cursor = 'move';
+
+        // Inicializar las posiciones left y top si no están configuradas
+        if (!draggableElement.style.left) {
+            draggableElement.style.left = `${draggableElement.getBoundingClientRect().left}px`;
+        }
+        if (!draggableElement.style.top) {
+            draggableElement.style.top = `${draggableElement.getBoundingClientRect().top}px`;
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
     });
 }
 

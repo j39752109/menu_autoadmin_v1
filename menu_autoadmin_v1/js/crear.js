@@ -1368,37 +1368,59 @@ function CambiarFuente(){
 
 }
 
-// Función para hacer que un elemento sea arrastrable
 function makeElementDraggable(elementId) {
-    const el = document.getElementById(elementId);
-    let offsetX = 0, offsetY = 0, startX = 0, startY = 0;
+    const draggableElement = document.getElementById(elementId);
+    let offsetX = 0;
+    let offsetY = 0;
+    let isDragging = false;
 
-    if (el) {
-        const handleMouseDown = (e) => {
-            e.preventDefault();
-            startX = e.clientX;
-            startY = e.clientY;
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
-        };
+    function onMouseMove(e) {
+        if (isDragging) {
+            const windowWidth = window.innerWidth;
+            const elementWidth = draggableElement.offsetWidth;
 
-        const handleMouseMove = (e) => {
-            e.preventDefault();
-            offsetX = startX - e.clientX;
-            offsetY = startY - e.clientY;
-            startX = e.clientX;
-            startY = e.clientY;
-            el.style.top = (el.offsetTop - offsetY) + "px";
-            el.style.left = (el.offsetLeft - offsetX) + "px";
-        };
+            let newLeft = e.clientX - offsetX;
+            let newTop = e.clientY - offsetY;
 
-        const handleMouseUp = () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
+            // Limitar movimiento a la izquierda y derecha
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
 
-        el.addEventListener('mousedown', handleMouseDown);
+            // Limitar movimiento hacia arriba
+            if (newTop < 0) newTop = 0;
+
+            // Actualizar la posición del elemento
+            draggableElement.style.left = `${newLeft}px`;
+            draggableElement.style.top = `${newTop}px`;
+        }
     }
+
+    function onMouseUp() {
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'auto';
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+    }
+
+    draggableElement.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        document.body.style.cursor = 'move';
+
+        // Inicializar las posiciones left y top si no están configuradas
+        if (!draggableElement.style.left) {
+            draggableElement.style.left = `${draggableElement.getBoundingClientRect().left}px`;
+        }
+        if (!draggableElement.style.top) {
+            draggableElement.style.top = `${draggableElement.getBoundingClientRect().top}px`;
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------
