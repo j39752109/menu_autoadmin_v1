@@ -1372,6 +1372,8 @@ function makeElementDraggable(elementId) {
     const draggableElement = document.getElementById(elementId);
     let offsetX = 0;
     let offsetY = 0;
+    let initialX = 0;
+    let initialY = 0;
     let isDragging = false;
 
     function onMouseMove(e) {
@@ -1406,17 +1408,11 @@ function makeElementDraggable(elementId) {
 
     draggableElement.addEventListener('mousedown', (e) => {
         isDragging = true;
-        offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
-        offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+        initialX = draggableElement.offsetLeft;
+        initialY = draggableElement.offsetTop;
+        offsetX = e.clientX - initialX;
+        offsetY = e.clientY - initialY;
         document.body.style.cursor = 'move';
-
-        // Inicializar las posiciones left y top si no están configuradas
-        if (!draggableElement.style.left) {
-            draggableElement.style.left = `${draggableElement.getBoundingClientRect().left}px`;
-        }
-        if (!draggableElement.style.top) {
-            draggableElement.style.top = `${draggableElement.getBoundingClientRect().top}px`;
-        }
 
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
