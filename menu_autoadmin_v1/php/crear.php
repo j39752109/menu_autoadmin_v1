@@ -56,6 +56,30 @@ BPPJ
                 <input type="text" id="input-menu_name">
             </div>
 
+            <div class="radio-group">
+            <p>Indique la orientación del menú:</p>
+                <!-- Opción 1: Horizontal -->
+                <div class="radio-item">
+                    <input type="radio" id="horizontal" name="orientacion" value="horizontal">
+                    <label for="horizontal">HORIZONTAL</label>
+                </div>
+                <!-- Opción 2: Vertical Izquierda -->
+                <div class="radio-item">
+                    <input type="radio" id="vertical_izquierda" name="orientacion" value="vertical_izquierda">
+                    <label for="vertical_izquierda">VERTICAL IZQUIERDA</label>
+                </div>
+                <!-- Opción 3: Vertical Centro -->
+                <div class="radio-item">
+                    <input type="radio" id="vertical_centro" name="orientacion" value="vertical_centro">
+                    <label for="vertical_centro">VERTICAL CENTRO</label>
+                </div>
+                <!-- Opción 4: Vertical Derecha -->
+                <div class="radio-item">
+                    <input type="radio" id="vertical_derecha" name="orientacion" value="vertical_derecha">
+                    <label for="vertical_derecha">VERTICAL DERECHA</label>
+                </div>
+            </div>
+
             <div class="input_columns-button">
                 <!-- Input que nos permite ingresar la cantidad minimo de 1 y maximo 20 -->
                 <div class="flex-center m-t">

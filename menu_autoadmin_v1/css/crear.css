@@ -680,6 +680,47 @@ input[type=number]::-webkit-inner-spin-button {
     margin-bottom: 20px;
  }
 
+/* Estilos para el grupo de radio buttons */
+.radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.radio-item input {
+    margin-right: 5px;
+    transform: scale(0.8); /* Hace el radio button más pequeño */
+}
+
+.radio-item label {
+    font-size: 12px; /* Ajusta el tamaño de la fuente del label */
+}
+
+/* Estilos para las entradas y el botón de creación del menú */
+.input_columns-button .flex-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="submit"] {
+    margin-top: 20px; /* Espacio superior para el botón de envío */
+    padding: 10px 20px; /* Relleno interno del botón */
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón por encima */
+}
 
 
 /* Define la animación de escalado */
