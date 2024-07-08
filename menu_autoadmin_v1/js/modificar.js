@@ -103,10 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const display_none = document.getElementById('display-none');
     // Oculta el elemento con id 'display-none' estableciendo su estilo como 'display: none'
     display_none.style.display = 'none';
-    
-    // const estilos = document.getElementById('estilos');
-
-    // estilos.style.display = 'none';
+    const container_btn_sytle_none = document.getElementById('container-btn-sytle');
 
     let resetNumber = document.getElementById('valor');
 
@@ -177,8 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (resultado) {
             // Si hay un resultado, muestra el elemento "display_none"
             display_none.style.display = 'block';
-            // Si hay un resultado, muestra el elemento "estilos"
-            // estilos.style.display = 'block';
+
+            container_btn_sytle_none.style.display = 'block';
             // Inicializa un objeto para almacenar las columnas de datos
             var Datacolumna = {};
             // Obtiene las columnas del resultado
@@ -226,8 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // Si no hay un resultado, oculta el elemento "display_none"
             display_none.style.display = 'none';
-            // Si no hay un resultado, oculta el elemento "estilos"
-            // estilos.style.display = 'none';
+            // Si no hay un resultado, oculta el elemento
+            container_btn_sytle_none.style.display = 'none';
         }
 
         if(autoselect){

@@ -425,6 +425,7 @@ BPPJ
    display: flex;
    margin-top: 20px;
    justify-content: center;
+   display: none;
 }
 
 .btn-syle__btn{
