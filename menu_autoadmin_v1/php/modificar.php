@@ -279,7 +279,7 @@ BPPJ
                 </div>
                 <div class="container-btn-modificar">
                     <div id="bg-color" class="btn__style" onclick="bgcolor();" >Color Fondo Bóton</div>
-                    <div id="bg-color-hover" class="btn__style">Color Fondo Bóton Hover</div>
+                    <div id="bg-color-hover" class="btn__style" onclick="bghover();">Color Fondo Bóton Hover</div>
                     <div id="btn-width" class="btn__style">Ancho Bóton</div>
                     <div id="btn-border" class="btn__style">Borde Bóton</div>
                     <div id="btn-border-width" class="btn__style">Ancho Borde Bóton</div>

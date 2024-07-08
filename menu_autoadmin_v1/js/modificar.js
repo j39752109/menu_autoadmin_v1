@@ -977,43 +977,129 @@ async function saveNav() {
 // }
 
 //FUNCIONES DE "MENU BOTON"
-function bgcolor(){
+function bgcolor() {
 
+    // Obtén el título de la sección donde se encuentra el contenedor de opciones.
     const tituloSeleccionado = MenuSeleccionado.querySelector('.seleccionado_titulo');
-    let seleccionado__contenedor = MenuSeleccionado.querySelector('.seleccionado__contenedor')
-    let colorMenus = document.querySelectorAll('.menu_anchor');
+
+    // Obtén el contenedor dentro de `MenuSeleccionado` donde agregaremos los elementos para cambiar el color.
+    let seleccionado__contenedor = MenuSeleccionado.querySelector('.seleccionado__contenedor');
+
+    // Selecciona el primer elemento con la clase `menu_anchor` para obtener el color de fondo actual.
     let color__Menu = document.querySelector('.menu_anchor');
 
-    seleccionado__contenedor.innerHTML = ''
-    // Obtén el color de fondo del elemento usando getComputedStyle
+    // Limpia el contenido del contenedor para evitar duplicados si la función se llama varias veces.
+    seleccionado__contenedor.innerHTML = '';
+
+    // Obtén el color de fondo del elemento usando `getComputedStyle` para poder manipular el color.
     let color = window.getComputedStyle(color__Menu).backgroundColor;
+
+    // Convierte el color RGB obtenido a formato hexadecimal para establecer el valor del input tipo color.
     let hexColor = rgbToHex(color);
 
+    // Crea un nuevo elemento div para mostrar el texto "Cambiar Color:".
     let divNombre = document.createElement('div');
     divNombre.textContent = 'Cambiar Color:';
 
+    // Crea un nuevo input de tipo color para permitir al usuario elegir un nuevo color de fondo.
     let inputColor = document.createElement('input');
-    inputColor.type = 'color'
-    inputColor.value = hexColor;
+    inputColor.type = 'color';
+    inputColor.value = hexColor;  // Establece el color hexadecimal como el valor inicial del input de color.
 
-    
-    seleccionado__contenedor.appendChild(divNombre)
-    seleccionado__contenedor.appendChild(inputColor)
+    // Añade el div y el inputColor al contenedor `seleccionado__contenedor`.
+    seleccionado__contenedor.appendChild(divNombre);
+    seleccionado__contenedor.appendChild(inputColor);
 
-    // Actualiza el color de fondo de colorMenu cuando cambie el valor del input
+    // Añade un evento que se ejecuta cuando cambia el valor del input de color.
     inputColor.addEventListener('input', (event) => {
-        let selectedColor = event.target.value;  // Obtiene el color seleccionado en formato hexadecimal
-        document.documentElement.style.setProperty('--menu-bg-color', selectedColor);    
+        let selectedColor = event.target.value;  // Obtiene el color seleccionado en formato hexadecimal desde el input de color.
+        
+        // Actualiza la variable CSS `--menu-bg-color` con el nuevo color seleccionado por el usuario.
+        document.documentElement.style.setProperty('--menu-bg-color', selectedColor);
     });
 
-    tituloSeleccionado.textContent = 'Color Fondo Bóton';
+    // Actualiza el texto del título de la sección para mostrar el mensaje adecuado.
+    tituloSeleccionado.textContent = 'Color Fondo Botón';
+
+    // Asegura que el `MenuSeleccionado` se muestre en la página.
     MenuSeleccionado.style.display = "block";
 }
 
+function bghover(){
+    let seleccionado__contenedor = MenuSeleccionado.querySelector('.seleccionado__contenedor')
+    seleccionado__contenedor.innerHTML = ''
+    const tituloSeleccionado = MenuSeleccionado.querySelector('.seleccionado_titulo');
+
+    let hover1Color = getComputedStyle(document.documentElement).getPropertyValue('--menu-hover-color1').trim();
+    let hover2Color = getComputedStyle(document.documentElement).getPropertyValue('--menu-hover-color2').trim();
+
+    let hexHover1Color = rgbToHex(hover1Color);
+    let hexHover2Color = rgbToHex(hover2Color);
+
+
+    let div1 = document.createElement('div');
+    div1.className = 'contenedor__color'
+
+    let divHover1 = document.createElement('div');
+    divHover1.textContent = 'Cambiar Color Hover 1:';
+
+    let inputHover1 = document.createElement('input');
+    inputHover1.type = 'color'
+    inputHover1.value = hexHover1Color;
+
+    let div2 = document.createElement('div');
+    div2.className = 'contenedor__color'
+
+    let divHover2 = document.createElement('div');
+    divHover2.textContent = 'Cambiar Color Hover 2:';
+
+    let inputHover2 = document.createElement('input');
+    inputHover2.type = 'color'
+    inputHover2.value = hexHover2Color;
+
+
+    div1.appendChild(divHover1);
+    div1.appendChild(inputHover1);
+    seleccionado__contenedor.appendChild(div1);
+
+    div2.appendChild(divHover2);
+    div2.appendChild(inputHover2);
+    seleccionado__contenedor.appendChild(div2);
+
+    // Añade un evento que se ejecuta cuando cambia el valor del input de color.
+    inputHover1.addEventListener('input', (event) => {
+        let selectedColor = event.target.value;  // Obtiene el color seleccionado en formato hexadecimal desde el input de color.
+        
+        // Actualiza la variable CSS `--menu-bg-color` con el nuevo color seleccionado por el usuario.
+        document.documentElement.style.setProperty('--menu-hover-color1', selectedColor);
+    });
+
+    // Añade un evento que se ejecuta cuando cambia el valor del input de color.
+    inputHover2.addEventListener('input', (event) => {
+        let selectedColor = event.target.value;  // Obtiene el color seleccionado en formato hexadecimal desde el input de color.
+        
+        // Actualiza la variable CSS `--menu-bg-color` con el nuevo color seleccionado por el usuario.
+        document.documentElement.style.setProperty('--menu-hover-color2', selectedColor);
+    });
+
+    tituloSeleccionado.textContent = 'Color Fondo Bóton Hover';
+    MenuSeleccionado.style.display = "block";
+}
+
+// Función para convertir un color en formato RGB a formato hexadecimal
 function rgbToHex(rgb) {
+    // Usa una expresión regular para extraer los valores de rojo (r), verde (g) y azul (b) del color RGB.
+    // La expresión regular \d+ busca uno o más dígitos en el texto.
+    // El método match() devuelve una matriz con los valores de r, g, y b en formato de cadena.
     let [r, g, b] = rgb.match(/\d+/g).map(Number);
+    // Convierte los valores de r, g y b de formato numérico a formato hexadecimal.
+    // map(x => x.toString(16)) convierte cada número a una cadena hexadecimal en minúsculas.
+    // padStart(2, '0') asegura que cada valor hexadecimal tenga al menos dos dígitos, agregando un 0 si es necesario.
+    // join('') une los valores hexadecimales en una sola cadena.
+    // toUpperCase() convierte la cadena resultante a mayúsculas.
     return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase()}`;
 }
+
 
 // FIN FUNCIONES DE "MENU BOTON"
 

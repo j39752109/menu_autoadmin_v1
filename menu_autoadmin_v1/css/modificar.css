@@ -15,9 +15,9 @@ BPPJ
    
 /*VARIABLES DE COLORES*/
 :root{
- --menu-bg-color:blue;  
- --menu-hover-color1:red;
- --menu-hover-color2:pink;
+ --menu-bg-color:rgb(0, 0, 255);  
+ --menu-hover-color1:rgb(255, 0, 0);
+ --menu-hover-color2:rgb(255, 192, 203);
 }
 
 
@@ -609,9 +609,14 @@ BPPJ
 
 .seleccionado__contenedor{
    display: flex;
+   flex-direction: column;
    margin: 30px;
 }
 
+.contenedor__color {
+   display: flex;
+   flex-direction: row;
+}
 
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
