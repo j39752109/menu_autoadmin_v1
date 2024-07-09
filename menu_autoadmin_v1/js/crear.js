@@ -19,14 +19,14 @@ BPPJ
 // Data de las columnas y subcolumnas
 let menuData = [];
 
-// let Fuentes = [
-//     {"id" : 1 , "nombre" : "serif"},
-//     {"id" : 2 , "nombre" : "sans-serif"},
-//     {"id" : 3 , "nombre" : "monospace"},
-//     {"id" : 4 , "nombre" : "cursive"},
-//     {"id" : 5 , "nombre" : "fantasy"},
-//     {"id" : 6 , "nombre" : "system-ui"}
-// ];
+let Fuentes = [
+    {"id" : 1 , "nombre" : "serif"},
+    {"id" : 2 , "nombre" : "sans-serif"},
+    {"id" : 3 , "nombre" : "monospace"},
+    {"id" : 4 , "nombre" : "cursive"},
+    {"id" : 5 , "nombre" : "fantasy"},
+    {"id" : 6 , "nombre" : "system-ui"}
+];
 
 
 
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
+    makeElementDraggable('estilos');
     makeElementDraggable('btn-modificar-boton');
-    makeElementDraggable('btn-modificar-texto');
 
     // Obtener referencias a los elementos del DOM necesarios
     let divModificarBoton = document.getElementById('btn-modificar-boton'); // Elemento del botón modificar

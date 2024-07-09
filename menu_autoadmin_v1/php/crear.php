@@ -96,7 +96,7 @@ BPPJ
             </form>
 
             <div id="container-btn-sytle" class="container-btn-sytle">
-                <button id="modificarTexto" class="btn-syle__btn">Modificar Texto Menu</button>
+                <button id="btnModificarTextoMenu">Modificar Texto Menú</button>
                 <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
             </div>
 
@@ -134,36 +134,44 @@ BPPJ
                 </div>
             </div>
 
-            <div id="btn-modificar-texto" class="btn-modifcar-texto">
-                <div class="container-title">
-                    <div class="title__menu">Menu Texto </div>
-                    <div id="cerrar_menu_texto" class="cerrar_menu_texto">X</div>                    
+            <div id="estilos" class="estilos">
+                <div class="estilos__titulo">Estilos Generales</div>
+                    
+                <div class="estilos__contenedor1">
+                    <div class="contenedor__fuentes">
+                        <div class="fuentes__titulo">Estilo Fuentes</div>
+                        <div class="fuentes__select">
+                            <label for="">Fuentes</label>
+                            <select id="selectFuentes">
+                                <option selected>Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contenedor__letras">
+                        <div for="" class="letras__titulo">Estilos Letras</div>
+                        <div class="letras__inputs">
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Negrita:</label>
+                                <input type="checkbox">                                
+                            </div>
+                                
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Cursiva:</label>
+                                <input type="checkbox">                                
+                            </div>
+                                
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Subrayar:</label>
+                                <input type="checkbox">                                
+                            </div>
+                        </div>
+                    </div>
+                    <button id="cerrarMenu">Cerrar</button>    
                 </div>
-                <div>
-                    <select class="modificar__tipoletra">
-                        <option>Tipo Letra</option>
-                    </select>
-                    <select class="modificar__tamanoletra">
-                        <option>11</option>
-                    </select>
-                </div>
-                <div class="container-btn-modificar_texto">
-                    <div class="btn__style_texto">Negrita</div>
-                    <div class="btn__style_texto">Cursiva</div>
-                    <div class="btn__style_texto">Subrayado</div>
-                    <div class="btn__style_texto">Color</div>
-                    <div class="btn__style_texto">Posición Fila</div>
-                    <div class="btn__style_texto">Posicion columna</div>
-                    <div class="btn__style_texto">Viñeta</div>
-                    <div class="btn__style_texto">Alineación izquierda</div>
-                    <div class="btn__style_texto">Alineación centro</div>
-                    <div class="btn__style_texto">Alineación derecha</div>
-                    <div class="btn__style_texto">Justificado</div>
-                    <div class="btn__style_texto">Animación</div>
-                    <div class="btn__style_texto">Tiempo Animación</div>
-                    <div class="btn__style_texto">Borrar todo el formato</div>      
-                </div>
-            </div>
+               
+            </div> 
+
 
 
            
