@@ -723,6 +723,56 @@ input[type="submit"]:hover {
 }
 
 
+.MenuSeleccionado{
+    display: none;
+}
+ 
+ 
+.seleccionado{
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    height: 83%;
+    width: 50%;
+    border: 1px solid;
+    border-radius: 11px;
+}
+ 
+.seleccionado__container-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Para alinear verticalmente los elementos */   
+}
+ 
+.seleccionado_titulo{
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Permitir que el elemento ocupe todo el espacio disponible */
+    text-align: center; /* Asegura que el texto esté centrado dentro del div */
+    font-size: 19px;
+}
+ 
+.seleccionado__cerrar{
+    padding: 9px;
+    border: solid 1px;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+ 
+.seleccionado__contenedor{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+ 
+
 /* Define la animación de escalado */
 @keyframes scaleAnimation {
     0%, 100% {

@@ -95,8 +95,6 @@ BPPJ
             <form class="input_names-container">  
             </form>
 
-            <form id="contenedor-menu" class="input_names-container"></form>
-            
             <div id="container-btn-sytle" class="container-btn-sytle">
                 <button id="modificarTexto" class="btn-syle__btn">Modificar Texto Menu</button>
                 <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
