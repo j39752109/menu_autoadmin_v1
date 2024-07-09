@@ -266,7 +266,7 @@ input[type=number]::-webkit-inner-spin-button {
     padding-bottom: 50px; /* Asegura espacio suficiente en la parte inferior para el botón */
 }
  
- .estilos__titulo{
+.estilos__titulo{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     order: 0;                      /* Define el orden del elemento en el contenedor flex, aquí es el primer elemento */
     justify-content: center;       /* Centra el contenido horizontalmente dentro del contenedor */
@@ -274,89 +274,89 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 25px;               /* Establece el tamaño de la fuente a 25 píxeles */
     text-decoration-line: underline; /* Subraya el texto */
     
- }
+}
  
- .estilos__contenedor1{
+.estilos__contenedor1{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     flex-direction: row;            /* Organiza los elementos hijos en una fila */
- }
+}
  
- .fuentes__titulo, 
- .letras__titulo, 
- .color-letras__titulo, 
- .color__titulo{
+.fuentes__titulo, 
+.letras__titulo, 
+.color-letras__titulo, 
+.color__titulo{
     display: flex;                  /* Establece los elementos como contenedores flex */
     font-size: 20px;                /* Establece el tamaño de la fuente a 20 píxeles */
     margin-bottom: 14px;            /* Agrega un margen inferior de 14 píxeles */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
- }
+}
  
  
- .fuentes__select{
+.fuentes__select{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
- }
+}
  
- .letras__inputs{
+.letras__inputs{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
     flex-direction: column;         /* Organiza los elementos hijos en una columna */
- }
+}
  
- .inputs__xd{
+.inputs__xd{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
     margin-bottom: 10px;            /* Agrega un margen inferior de 10 píxeles */
- }
+}
  
- .input__estilo{
+.input__estilo{
     margin-right: 12px;             /* Agrega un margen derecho de 12 píxeles */
- }
+}
  
- .estilos__contenedor2{
+.estilos__contenedor2{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     flex-direction: row;            /* Organiza los elementos hijos en una fila */
- }
+}
  
  
- .color__contenedor{
+.color__contenedor{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     flex-direction: column;         /* Organiza los elementos hijos en una columna */
- }
+}
  
- .color__inputs{
+.color__inputs{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
     margin-bottom: 12px;            /* Agrega un margen inferior de 12 píxeles */
- }
+}
  
- .input__hover,
- .input-letras__label{
+.input__hover,
+.input-letras__label{
     margin-right: 10px;             /* Agrega un margen derecho de 10 píxeles a los elementos con clases `input__hover` y `input-letras__label` */
- }
+}
  
- .color-letras__contenedor{
+.color-letras__contenedor{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     flex-direction: column;         /* Organiza los elementos hijos en una columna */
- }
+}
  
- .contenedor__input-letras{
+.contenedor__input-letras{
     display: flex;                  /* Establece el elemento como un contenedor flex */
     justify-content: center;        /* Centra el contenido horizontalmente dentro del contenedor */
     margin-bottom: 12px;            /* Agrega un margen inferior de 12 píxeles */
- }
+}
  
  
- .contenedor__color-letras,
- .contenedor__letras,
- .contenedor__color,
- .contenedor__fuentes{
+.contenedor__color-letras,
+.contenedor__letras,
+.contenedor__color,
+.contenedor__fuentes{
     flex-basis: 50%;    /* Establece la base flexible de los elementos, ocupando el 50% del espacio del contenedor principal */
- }
+}
 
 
 
- #cerrarMenu {
+#cerrarMenu {
     position: absolute; /* Posicionamiento absoluto respecto a su contenedor más cercano con posición no estática */
     bottom: 10px; /* Posiciona el botón 10px arriba del fondo del contenedor #estilos */
     left: 50%; /* Inicia el botón en el centro horizontalmente */

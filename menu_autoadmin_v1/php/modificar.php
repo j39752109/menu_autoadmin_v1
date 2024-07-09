@@ -192,83 +192,10 @@ BPPJ
                 </div>
             </div>
 
-            <!-- <div id="estilos" class="estilos">
-                <div class="estilos__titulo">Estilos Generales</div>
-                    
-                <div class="estilos__contenedor1">
-                    <div class="contenedor__fuentes">
-                        <div class="fuentes__titulo">Estilo Fuentes</div>
-                        <div class="fuentes__select">
-                            <label for="">Fuentes</label>
-                            <select id="selectFuentes">
-                                <option select>Seleccionar</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="contenedor__letras">
-                        <div for="" class="letras__titulo">Estilos Letras</div>
-                        <div class="letras__inputs">
-                            <div class="inputs__xd">
-                                <label for="" class="input__estilo">Negrita:</label>
-                                <input type="checkbox">                                
-                            </div>
-                                
-                            <div class="inputs__xd">
-                                <label for="" class="input__estilo">Cursiva:</label>
-                                <input type="checkbox">                                
-                            </div>
-                                
-                            <div class="inputs__xd">
-                                <label for="" class="input__estilo">Subrayar:</label>
-                                <input type="checkbox">                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="estilos__contenedor2">
-                    <div class="contenedor__color">
-
-                        <div class="color__titulo">Colores Menú:</div>
-                            <div class="color__contenedor">
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Menú:</label>
-                                    <input type="color">
-                                </div>
-
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Hover 1:</label>
-                                    <input type="color">
-                                </div>
-
-                                <div class="color__inputs">
-                                    <label for="" class="input__hover">Color Hover 2:</label>
-                                    <input type="color">
-                                </div>
-                            </div>
-                    </div>
-
-                    <div class="contenedor__color-letras">
-                        <div class="color-letras__titulo">Color de Letras</div>
-                        <div class="color-letras__contenedor">
-                            <div class="contenedor__input-letras">
-                                <label for="" class="input-letras__label">Color Botón:</label>
-                                <input type="color">
-                            </div>
-                            <div class="contenedor__input-letras">
-                                <label for="" class="input-letras__label">Color SubMenú:</label>
-                                <input type="color">
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-            </div> -->
-
             <form id="contenedor-menu" class="input_names-container"></form>
             
             <div id="container-btn-sytle" class="container-btn-sytle">
-                <button id="modificarTexto" class="btn-syle__btn">Modificar Texto Menu</button>
+                <button id="btnModificarTextoMenu" class="btn-syle__btn">Modificar Texto Menu</button>
                 <button id="modificarBtn" class="btn-syle__btn">Modificar Botón</button>
             </div>
 
@@ -336,6 +263,46 @@ BPPJ
                     <div class="btn__style_texto">Borrar todo el formato</div>      
                 </div>
             </div>
+
+
+
+            <div id="estilos" class="estilos">
+                <div class="estilos__titulo">Estilos Generales</div>
+                    
+                <div class="estilos__contenedor1">
+                    <div class="contenedor__fuentes">
+                        <div class="fuentes__titulo">Estilo Fuentes</div>
+                        <div class="fuentes__select">
+                            <label for="">Fuentes</label>
+                            <select id="selectFuentes">
+                                <option select>Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contenedor__letras">
+                        <div for="" class="letras__titulo">Estilos Letras</div>
+                        <div class="letras__inputs">
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Negrita:</label>
+                                <input type="checkbox">                                
+                            </div>
+                                
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Cursiva:</label>
+                                <input type="checkbox">                                
+                            </div>
+                                
+                            <div class="inputs__xd">
+                                <label for="" class="input__estilo">Subrayar:</label>
+                                <input type="checkbox">                                
+                            </div>
+                        </div>
+                        <button id="cerrarMenu">Cerrar</button>    
+                    </div>
+                </div>
+                
+            </div> 
 
             <div class="container-btn">
                 <!--button onClick="getData()">GetData</button-->

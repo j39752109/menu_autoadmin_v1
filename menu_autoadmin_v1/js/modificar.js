@@ -18,14 +18,14 @@ BPPJ
 // Declara una variable llamada Menu como un array vacío
 let Menu = [];
 
-// let Fuentes = [
-//     {"id" : 1 , "nombre" : "serif"},
-//     {"id" : 2 , "nombre" : "sans-serif"},
-//     {"id" : 3 , "nombre" : "monospace"},
-//     {"id" : 4 , "nombre" : "cursive"},
-//     {"id" : 5 , "nombre" : "fantasy"},
-//     {"id" : 6 , "nombre" : "system-ui"}
-// ];
+let Fuentes = [
+    {"id" : 1 , "nombre" : "serif"},
+    {"id" : 2 , "nombre" : "sans-serif"},
+    {"id" : 3 , "nombre" : "monospace"},
+    {"id" : 4 , "nombre" : "cursive"},
+    {"id" : 5 , "nombre" : "fantasy"},
+    {"id" : 6 , "nombre" : "system-ui"}
+];
 
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
-    makeElementDraggable('btn-modificar-boton');
+    makeElementDraggable('estilos');
     makeElementDraggable('btn-modificar-texto');
 
     // Obtener referencias a los elementos del DOM necesarios
@@ -67,22 +67,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Agregar un evento al botón 'modificarTexto' para mostrar el menú de modificar texto y ocultar el menú de modificar botón cuando se haga clic
-    modificarTexto.addEventListener('click', function() {
-        divModificarTexto.style.display = 'block';
-        divModificarBoton.style.display = 'none';
-    });
+    //   modificarTexto.addEventListener('click', function() {
+        //      divModificarTexto.style.display = 'block';
+        //       divModificarBoton.style.display = 'none';
+        //   });
 
     ////
 
-    // let selectFuentes = document.getElementById('selectFuentes');
 
-    // Fuentes.forEach(fuente => {
-    //     let option = document.createElement('option');
-    //     option.value = fuente.nombre;  // Establece el valor de la opción
-    //     option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
-    //     selectFuentes.appendChild(option);  // Añade la opción al select
-    // });
-    // CambiarFuente();
+    var boton = document.getElementById('btnModificarTextoMenu');
+
+    var menu = document.getElementById('estilos');
+
+    boton.addEventListener('click', function() {
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'flex';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+
+
+
+
+    let selectFuentes = document.getElementById('selectFuentes');
+
+    Fuentes.forEach(fuente => {
+        let option = document.createElement('option');
+        option.value = fuente.nombre;  // Establece el valor de la opción
+        option.textContent = fuente.nombre;  // Establece el texto que se muestra en la opción
+        selectFuentes.appendChild(option);  // Añade la opción al select
+    });
+    CambiarFuente();
     // Agrega un evento de tecla presionada al contenedor con la clase 'input_names-container'
     document.querySelector('.input_names-container').addEventListener('keydown', function (event) {
         // Verifica si la tecla presionada es 'Enter'
@@ -266,6 +282,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Dispara manualmente el evento 'change' en el elemento <select>
         document.getElementById("opciones").dispatchEvent(new Event('change'));
     }
+});
+
+//hace funcionar el boton de cerrar menu
+document.addEventListener('DOMContentLoaded', function() {
+    const cerrarMenu = document.getElementById('cerrarMenu');
+    cerrarMenu.addEventListener('click', function() {
+        document.getElementById('estilos').style.display = 'none';
+    });
 });
 
 // Define una función llamada obtenerJSON que toma el valor seleccionado como argumento
@@ -955,23 +979,23 @@ async function saveNav() {
 
 
 
-// function CambiarFuente(){
+function CambiarFuente(){
     
-//     // Agregar un event listener al <select> para escuchar cambios
-//     selectFuentes.addEventListener('change', function() {
-//         // Obtener el valor de la opción seleccionada en lugar de textContent
-//         let content = this.value;
+    // Agregar un event listener al <select> para escuchar cambios
+    selectFuentes.addEventListener('change', function() {
+        // Obtener el valor de la opción seleccionada en lugar de textContent
+        let content = this.value;
 
-//         // Obtener todos los elementos con la clase 'menu_anchor'
-//         let textos = document.getElementsByClassName('menu_anchor');
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
 
-//         // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
-//         Array.from(textos).forEach(texto => {
-//             texto.style.fontFamily = content;
-//         });
-//     });
-//     selectFuentes.dispatchEvent(new Event('change'));
-// }
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-family
+        Array.from(textos).forEach(texto => {
+            texto.style.fontFamily = content;
+        });
+    });
+    selectFuentes.dispatchEvent(new Event('change'));
+}
 
 //FUNCIONES DE "MENU BOTON"
 function bgcolor() {
