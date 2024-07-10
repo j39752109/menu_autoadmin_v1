@@ -1379,6 +1379,35 @@ function CambiarFuente(){
 
 }
 
+function CambiarNegrita() {
+    // Suponiendo que tienes un checkbox con el ID 'checkboxNegrita'
+    var checkboxNegrita = document.getElementById('checkboxNegrita');
+
+    // Verificar si el elemento checkboxNegrita existe
+    if (!checkboxNegrita) {
+        console.error('El elemento checkboxNegrita no se encontró en el DOM.');
+        return; // Salir de la función si no se encuentra el elemento
+    }
+
+    // Agregar un event listener al checkbox para escuchar cambios
+    checkboxNegrita.addEventListener('change', function() {
+        // Determinar si el checkbox está marcado o no
+        let isBold = this.checked ? 'bold' : 'normal';
+
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight
+        Array.from(textos).forEach(texto => {
+            texto.style.fontWeight = isBold;
+        });
+    });
+
+    // Disparar el evento 'change' manualmente para aplicar el estilo de negrita inmediatamente
+    // si el checkbox está marcado cuando se carga la página
+    checkboxNegrita.dispatchEvent(new Event('change'));
+}
+
 //FUNCIONES DE "MENU BOTON"
 function bgcolor() {
 
@@ -1558,10 +1587,10 @@ function makeElementDraggable(elementId) {
 }
 
 
-
-function showAlert() {
-    alert('¡Hola! Esta es una prueba de mensaje de alerta.');
-}
+//funcion para hacer pruebaz
+//function showAlert() {
+//    alert('¡Hola! Esta es una prueba de mensaje de alerta.');
+//}
 // FIN FUNCIONES DE "MENU BOTON"
 /* ---------------------------------------------------------------------------------------------------------------------
    -------------------------------------- FIN ITred Spa eliminar.js ----------------------------------------------------

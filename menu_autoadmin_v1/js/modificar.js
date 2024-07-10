@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let divModificarTexto = document.getElementById('btn-modificar-texto'); // Elemento del texto modificar
     let cerrarTexto = document.getElementById('cerrar_menu_texto'); // Botón para cerrar el menú de modificar texto
-    let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
+    //let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
 
     // Agregar un evento al botón 'cerrarmodificar' para ocultar el menú de modificar botón cuando se haga clic
     cerrarmodificar.addEventListener('click', function() {
