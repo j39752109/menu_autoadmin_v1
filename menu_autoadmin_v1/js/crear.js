@@ -1399,7 +1399,7 @@ function CambiarNegrita() {
 
         // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight
         Array.from(textos).forEach(texto => {
-            texto.style.fontWeight = isBold;
+            texto.style.fontweight = isBold;
         });
     });
 
