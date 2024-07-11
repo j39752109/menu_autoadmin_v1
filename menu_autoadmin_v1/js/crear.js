@@ -72,17 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     
 
-    document.getElementById('checkboxNegrita').addEventListener('change', function() {
-        let isChecked = this.checked;
-
-        // Obtener todos los elementos con la clase 'menu_anchor'
-        let textos = document.getElementsByClassName('menu_anchor');
-
-        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight
-        Array.from(textos).forEach(texto => {
-            texto.style.fontWeight = isChecked ? 'bold' : 'normal';
-        });
-    });
 
 
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
@@ -94,9 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let cerrarmodificar = document.getElementById('cerrar_menu'); // Botón para cerrar el menú de modificar botón
     let modificarBtn = document.getElementById('modificarBtn'); // Botón que abre el menú de modificar botón
 
-    let divModificarTexto = document.getElementById('btn-modificar-texto'); // Elemento del texto modificar
-    let cerrarTexto = document.getElementById('cerrar_menu_texto'); // Botón para cerrar el menú de modificar texto
-    let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
+    
 
     // Agregar un evento al botón 'cerrarmodificar' para ocultar el menú de modificar botón cuando se haga clic
     cerrarmodificar.addEventListener('click', function() {
@@ -106,19 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar un evento al botón 'modificarBtn' para mostrar el menú de modificar botón y ocultar el menú de modificar texto cuando se haga clic
     modificarBtn.addEventListener('click', function() {
         divModificarBoton.style.display = 'block';
-        divModificarTexto.style.display = 'none';
+        
     });
 
-    // Agregar un evento al botón 'cerrarTexto' para ocultar el menú de modificar texto cuando se haga clic
-    cerrarTexto.addEventListener('click', function() {
-        divModificarTexto.style.display = 'none';
-    });
-
-    // Agregar un evento al botón 'modificarTexto' para mostrar el menú de modificar texto y ocultar el menú de modificar botón cuando se haga clic
-    modificarTexto.addEventListener('click', function() {
-        divModificarTexto.style.display = 'block';
-        divModificarBoton.style.display = 'none';
-    });
+    
 });
 
 
@@ -1391,15 +1369,7 @@ function CambiarFuente(){
 }
 
 
-function PonerNegrita() {
-    // Obtener todos los elementos con la clase 'menu_anchor'
-    let textos = document.getElementsByClassName('menu_anchor');
 
-    // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight a 'bold'
-    Array.from(textos).forEach(texto => {
-        texto.style.fontWeight = 'bold';
-    });
-}
 
 //FUNCIONES DE "MENU BOTON"
 function bgcolor() {
