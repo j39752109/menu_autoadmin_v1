@@ -111,8 +111,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
 // Se añade un evento que se ejecuta cuando el contenido HTML del documento ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => {
+
+    //se añade para cuando se de click para hacer negrita el texto
+    document.getElementById('checkboxNegrita').addEventListener('change', function() {
+        let isChecked = this.checked;
+    
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+    
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight
+        Array.from(textos).forEach(texto => {
+            texto.style.fontWeight = isChecked ? 'bold' : 'normal';
+        });
+    });
+
 
     var boton = document.getElementById('btnModificarTextoMenu');
 
@@ -1368,6 +1384,16 @@ function CambiarFuente(){
 
 }
 
+function PonerNegrita() {
+    // Obtener todos los elementos con la clase 'menu_anchor'
+    let textos = document.getElementsByClassName('menu_anchor');
+
+    // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight a 'bold'
+    Array.from(textos).forEach(texto => {
+        texto.style.fontWeight = 'bold';
+    });
+}
+
 
 
 
@@ -1480,7 +1506,6 @@ function bghover(){
     tituloSeleccionado.textContent = 'Color Fondo Bóton Hover';
     MenuSeleccionado.style.display = "block";
 }
-
 // Función para convertir un color en formato RGB a formato hexadecimal
 function rgbToHex(rgb) {
     // Usa una expresión regular para extraer los valores de rojo (r), verde (g) y azul (b) del color RGB.
@@ -1494,6 +1519,7 @@ function rgbToHex(rgb) {
     // toUpperCase() convierte la cadena resultante a mayúsculas.
     return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase()}`;
 }
+
 
 
 // FIN FUNCIONES DE "MENU BOTON"
