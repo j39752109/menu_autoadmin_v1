@@ -27,8 +27,27 @@ let Fuentes = [
     {"id" : 6 , "nombre" : "system-ui"}
 ];
 
+
+
+
+
 // Agrega un evento que se activa cuando se completa la carga inicial del DOM
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    document.getElementById('checkboxNegrita').addEventListener('change', function() {
+        let isChecked = this.checked;
+
+        // Obtén todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+
+        // Itera sobre todos los elementos con la clase 'menu_anchor' y cambia su font-weight
+        Array.from(textos).forEach(texto => {
+            texto.style.fontWeight = isChecked ? 'bold' : 'normal';
+        });
+    });
+    
+
 
     var MenuSeleccionado = document.getElementById('MenuSeleccionado');
     var seleccionado__cerrar = document.getElementById('seleccionado__cerrar');
@@ -48,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let divModificarTexto = document.getElementById('btn-modificar-texto'); // Elemento del texto modificar
     let cerrarTexto = document.getElementById('cerrar_menu_texto'); // Botón para cerrar el menú de modificar texto
-    //let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
+    let modificarTexto = document.getElementById('modificarTexto'); // Botón que abre el menú de modificar texto
 
     // Agregar un evento al botón 'cerrarmodificar' para ocultar el menú de modificar botón cuando se haga clic
     cerrarmodificar.addEventListener('click', function() {
@@ -1175,6 +1194,18 @@ function makeElementDraggable(elementId) {
         document.addEventListener('mouseup', onMouseUp); // Añade el evento de liberación del mouse.
     });
 }
+
+
+function PonerNegrita() {
+    // Obtener todos los elementos con la clase 'menu_anchor'
+    let textos = document.getElementsByClassName('menu_anchor');
+
+    // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight a 'bold'
+    Array.from(textos).forEach(texto => {
+        texto.style.fontWeight = 'bold';
+    });
+}
+
 
 
 /* ---------------------------------------------------------------------------------------------------------------------

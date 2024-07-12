@@ -64,6 +64,20 @@ let isCreated = false;
 
 document.addEventListener('DOMContentLoaded', function() {
 
+
+
+    document.getElementById('checkboxNegrita').addEventListener('change', function() {
+        let isChecked = this.checked;
+
+        // Obtener todos los elementos con la clase 'menu_anchor'
+        let textos = document.getElementsByClassName('menu_anchor');
+
+        // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight
+        Array.from(textos).forEach(texto => {
+            texto.style.fontWeight = isChecked ? 'bold' : 'normal';
+        });
+    });
+
     var MenuSeleccionado = document.getElementById('MenuSeleccionado');
     var seleccionado__cerrar = document.getElementById('seleccionado__cerrar');
     
@@ -1506,6 +1520,7 @@ function bghover(){
     tituloSeleccionado.textContent = 'Color Fondo Bóton Hover';
     MenuSeleccionado.style.display = "block";
 }
+
 // Función para convertir un color en formato RGB a formato hexadecimal
 function rgbToHex(rgb) {
     // Usa una expresión regular para extraer los valores de rojo (r), verde (g) y azul (b) del color RGB.
@@ -1521,8 +1536,8 @@ function rgbToHex(rgb) {
 }
 
 
-
 // FIN FUNCIONES DE "MENU BOTON"
+
 
 function makeElementDraggable(elementId) {
     const draggableElement = document.getElementById(elementId);
@@ -1577,9 +1592,9 @@ function makeElementDraggable(elementId) {
 
 
 
-function showAlert() {
-    alert('¡Hola! Esta es una prueba de mensaje de alerta.');
-}
+//function showAlert() {
+//    alert('¡Hola! Esta es una prueba de mensaje de alerta.');
+//}
 // FIN FUNCIONES DE "MENU BOTON"
 /* ---------------------------------------------------------------------------------------------------------------------
    -------------------------------------- FIN ITred Spa eliminar.js ----------------------------------------------------

@@ -285,7 +285,7 @@ BPPJ
                         <div class="letras__inputs">
                             <div class="inputs__xd">
                                 <label for="" class="input__estilo">Negrita:</label>
-                                <input type="checkbox">                                
+                                <input type="checkbox" id=checkboxNegrita>                                
                             </div>
                                 
                             <div class="inputs__xd">
@@ -298,7 +298,7 @@ BPPJ
                                 <input type="checkbox">                                
                             </div>
                         </div>
-                        <button id="cerrarMenu">Cerrar</button>    
+                        <button id="cerrarMenu">Cerrar</button>   
                     </div>
                 </div>
                 

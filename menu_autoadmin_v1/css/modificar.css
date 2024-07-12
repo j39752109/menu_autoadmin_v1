@@ -330,18 +330,8 @@ BPPJ
 
 
 .estilos{
-   display: none;  /* Oculta el contenedor de estilos por defecto */
-   flex-direction: column;  
-   position: fixed;  /* Mantiene el menú flotante */
-   top: 50%;         /* Centra el menú verticalmente */
-   left: 50%;        /* Centra el menú horizontalmente */
-   transform: translate(-50%, -50%); /* Ajusta la posición exacta al centro */
-   z-index: 1000;    /* Asegura que el menú esté sobre otros elementos */
-   background-color: white; /* Fondo para mejorar la visibilidad */
-   padding: 10px;    /* Espaciado interno */
-   border-radius: 5px; /* Bordes redondeados */
-   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para profundidad */
-   padding-bottom: 50px; /* Asegura espacio suficiente en la parte inferior para el botón */
+   display: flex;       /* Establece el contenedor como un contenedor flex */
+   flex-direction: column;  /* Organiza los elementos hijos en una columna */
 }
 
 .estilos__titulo{
