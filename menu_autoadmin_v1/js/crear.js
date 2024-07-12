@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
     makeElementDraggable('estilos');
-    makeElementDraggable('btn-modificar-boton');
+    makeElementDraggable('btn-modifcar-boton');
 
     // Obtener referencias a los elementos del DOM necesarios
     let divModificarBoton = document.getElementById('btn-modificar-boton'); // Elemento del botón modificar

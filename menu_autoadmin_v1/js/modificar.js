@@ -35,17 +35,7 @@ let Fuentes = [
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    document.getElementById('checkboxNegrita').addEventListener('change', function() {
-        let isChecked = this.checked;
-
-        // Obtén todos los elementos con la clase 'menu_anchor'
-        let textos = document.getElementsByClassName('menu_anchor');
-
-        // Itera sobre todos los elementos con la clase 'menu_anchor' y cambia su font-weight
-        Array.from(textos).forEach(texto => {
-            texto.style.fontWeight = isChecked ? 'bold' : 'normal';
-        });
-    });
+    
     
 
 
@@ -57,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     
     // Hacer que los elementos con los IDs 'btn-modificar-boton' y 'btn-modificar-texto' sean arrastrables
+    makeElementDraggable('btn-modificar-boton');
     makeElementDraggable('estilos');
-    makeElementDraggable('btn-modificar-texto');
+    
 
     // Obtener referencias a los elementos del DOM necesarios
     let divModificarBoton = document.getElementById('btn-modificar-boton'); // Elemento del botón modificar
@@ -86,12 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Agregar un evento al botón 'modificarTexto' para mostrar el menú de modificar texto y ocultar el menú de modificar botón cuando se haga clic
-    //   modificarTexto.addEventListener('click', function() {
-        //      divModificarTexto.style.display = 'block';
-        //       divModificarBoton.style.display = 'none';
-        //   });
+    document.getElementById('modificarTexto').addEventListener('click', function() {
+        divModificarTexto.style.display = 'block';
+        divModificarBoton.style.display = 'none';
+    });
 
-    ////
+    
 
 
     var boton = document.getElementById('btnModificarTextoMenu');
@@ -1016,6 +1007,18 @@ function CambiarFuente(){
     selectFuentes.dispatchEvent(new Event('change'));
 }
 
+function PonerNegrita() {
+    // Obtener todos los elementos con la clase 'menu_anchor'
+    let textos = document.getElementsByClassName('menu_anchor');
+
+    // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight a 'bold'
+    Array.from(textos).forEach(texto => {
+        texto.style.fontWeight = 'bold';
+    });
+}
+
+
+
 //FUNCIONES DE "MENU BOTON"
 function bgcolor() {
 
@@ -1145,66 +1148,56 @@ function rgbToHex(rgb) {
 
 
 function makeElementDraggable(elementId) {
-    const draggableElement = document.getElementById(elementId); // Obtiene el elemento que será arrastrable por su ID.
-    let offsetX = 0; // Desplazamiento horizontal inicial del mouse respecto al elemento.
-    let offsetY = 0; // Desplazamiento vertical inicial del mouse respecto al elemento.
-    let initialX = 0; // Posición horizontal inicial del elemento.
-    let initialY = 0; // Posición vertical inicial del elemento.
-    let isDragging = false; // Indica si el elemento está siendo arrastrado.
+    const draggableElement = document.getElementById(elementId);
+    let offsetX = 0;
+    let offsetY = 0;
+    let initialX = 0;
+    let initialY = 0;
+    let isDragging = false;
 
     function onMouseMove(e) {
-        if (isDragging) { // Solo ejecuta el movimiento si el elemento está siendo arrastrado.
-            const windowWidth = window.innerWidth; // Ancho de la ventana del navegador.
-            const elementWidth = draggableElement.offsetWidth; // Ancho del elemento arrastrable.
+        if (isDragging) {
+            const windowWidth = window.innerWidth;
+            const elementWidth = draggableElement.offsetWidth;
 
-            let newLeft = e.clientX - offsetX; // Nueva posición horizontal del elemento.
-            let newTop = e.clientY - offsetY; // Nueva posición vertical del elemento.
+            let newLeft = e.clientX - offsetX;
+            let newTop = e.clientY - offsetY;
 
-            // Limitar movimiento a la izquierda y derecha.
-            if (newLeft < 0) newLeft = 0; // Evita que el elemento se mueva fuera del borde izquierdo.
-            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth; // Evita que el elemento se mueva fuera del borde derecho.
+            // Limitar movimiento a la izquierda y derecha
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft + elementWidth > windowWidth) newLeft = windowWidth - elementWidth;
 
-            // Limitar movimiento hacia arriba.
-            if (newTop < 0) newTop = 0; // Evita que el elemento se mueva fuera del borde superior.
+            // Limitar movimiento hacia arriba
+            if (newTop < 0) newTop = 0;
 
-            // Actualizar la posición del elemento.
+            // Actualizar la posición del elemento
             draggableElement.style.left = `${newLeft}px`;
             draggableElement.style.top = `${newTop}px`;
         }
     }
 
     function onMouseUp() {
-        if (isDragging) { // Solo ejecuta si el elemento estaba siendo arrastrado.
-            isDragging = false; // Detiene el arrastre del elemento.
-            document.body.style.cursor = 'auto'; // Restaura el cursor por defecto.
-            document.removeEventListener('mousemove', onMouseMove); // Elimina el evento de movimiento del mouse.
-            document.removeEventListener('mouseup', onMouseUp); // Elimina el evento de liberación del mouse.
+        if (isDragging) {
+            isDragging = false;
+            document.body.style.cursor = 'auto';
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
         }
     }
 
     draggableElement.addEventListener('mousedown', (e) => {
-        isDragging = true; // Indica que el elemento está siendo arrastrado.
-        initialX = draggableElement.offsetLeft; // Guarda la posición horizontal inicial del elemento.
-        initialY = draggableElement.offsetTop; // Guarda la posición vertical inicial del elemento.
-        offsetX = e.clientX - initialX; // Calcula el desplazamiento horizontal inicial.
-        offsetY = e.clientY - initialY; // Calcula el desplazamiento vertical inicial.
-        document.body.style.cursor = 'move'; // Cambia el cursor para indicar que se está arrastrando.
+        isDragging = true;
+        initialX = draggableElement.offsetLeft;
+        initialY = draggableElement.offsetTop;
+        offsetX = e.clientX - initialX;
+        offsetY = e.clientY - initialY;
+        document.body.style.cursor = 'move';
 
-        document.addEventListener('mousemove', onMouseMove); // Añade el evento de movimiento del mouse.
-        document.addEventListener('mouseup', onMouseUp); // Añade el evento de liberación del mouse.
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
     });
 }
 
-
-function PonerNegrita() {
-    // Obtener todos los elementos con la clase 'menu_anchor'
-    let textos = document.getElementsByClassName('menu_anchor');
-
-    // Iterar sobre todos los elementos con la clase 'menu_anchor' y cambiar su font-weight a 'bold'
-    Array.from(textos).forEach(texto => {
-        texto.style.fontWeight = 'bold';
-    });
-}
 
 
 

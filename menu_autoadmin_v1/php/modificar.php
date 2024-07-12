@@ -233,7 +233,7 @@ BPPJ
                 </div>
             </div>
 
-            <div id="btn-modificar-texto" class="btn-modifcar-texto">
+            <!-- <div id="btn-modificar-texto" class="btn-modifcar-texto">
                 <div class="container-title">
                     <div class="title__menu">Menu Texto </div>
                     <div id="cerrar_menu_texto" class="cerrar_menu_texto">X</div>                    
@@ -262,7 +262,7 @@ BPPJ
                     <div class="btn__style_texto">Tiempo Animación</div>
                     <div class="btn__style_texto">Borrar todo el formato</div>      
                 </div>
-            </div>
+            </div> -->
 
 
 
